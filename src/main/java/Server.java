@@ -11,7 +11,7 @@ import io.netty.handler.codec.protobuf.ProtobufEncoder;
 import io.netty.handler.codec.protobuf.ProtobufVarint32FrameDecoder;
 import io.netty.handler.codec.protobuf.ProtobufVarint32LengthFieldPrepender;
 import io.netty.handler.timeout.IdleStateHandler;
-import proto_files.Protofiles.*;
+import proto_files.DangerStickman;
 
 public class Server implements Runnable {
     private int port = 32;
@@ -27,7 +27,6 @@ public class Server implements Runnable {
     public static void main(String[] args) {
         Server server = new Server();
         server.run();
-
     }
 
 
@@ -46,7 +45,7 @@ public class Server implements Runnable {
                             //Если пакетов не было 10 секуд то соединение закроется
 
                             ch.pipeline().addLast(new ProtobufVarint32FrameDecoder());
-                            ch.pipeline().addLast(new ProtobufDecoder(RequestWrapper.getDefaultInstance()));
+                            ch.pipeline().addLast(new ProtobufDecoder(DangerStickman.PacketWrapper.getDefaultInstance()));
 
                             ch.pipeline().addLast(new ProtobufVarint32LengthFieldPrepender());
                             ch.pipeline().addLast(new ProtobufEncoder());
