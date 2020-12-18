@@ -1,0 +1,38 @@
+syntax = "proto3";
+package proto_files;
+
+option java_outer_classname = "FriendMessages";
+
+message FindFriendsRequest{
+
+}
+message FindFriendsResponse{
+
+}
+message MakeFriendsRequest{
+
+}
+message MakeFriendsRequestConfirmation{
+
+}
+message RemoveFriendRequest{
+
+}
+message RemoveFriendResponse{
+
+}
+message UpdateFriendsListRequest{
+
+}
+message UpdateFriendsListResponse{
+
+}
+message MakeFriendResponse{
+
+}
+message MakeFriendResponseConfirmation{
+
+}
+message FriendError{
+
+}

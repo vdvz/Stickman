@@ -1,0 +1,75 @@
+syntax = "proto3";
+package proto_files;
+
+import "FriendMessages.proto";
+import "RoomMessages.proto";
+import "UserMessages.proto";
+
+//option java_outer_classname = "PacketWrapper";
+
+message PacketWrapper{
+
+
+    message UpdateWrapper{
+        message updateRequest{
+        }
+        message updateResponse{
+            repeated PacketWrapper update = 1;
+        }
+    }
+
+    message UserWrapper{
+        oneof Type{
+            UpdateUserRequest updateUserRequest = 1;
+            LoadUserRequest loadUserRequest = 2;
+            UserResponse userResponse = 3;
+        }
+    }
+
+    message FriendWrapper{
+        oneof Type{
+            FindFriendsRequest findFriendsRequest = 1;
+            FindFriendsResponse findFriendsResponse = 2;
+            MakeFriendsRequest makeFriendsRequest = 3;
+            MakeFriendsRequestConfirmation makeFriendsRequestConfirmation = 4;
+            RemoveFriendRequest removeFriendRequest = 5;
+            RemoveFriendResponse removeFriendResponse = 6;
+            UpdateFriendsListRequest updateFriendsListRequest = 7;
+            UpdateFriendsListResponse updateFriendsListResponse = 8;
+            MakeFriendResponse makeFriendResponse = 9;
+            MakeFriendResponseConfirmation makeFriendResponseConfirmation = 10;
+            FriendError friendError = 11;
+        }
+    }
+
+    message LobbyWrapper{
+        message roomsListRequest{
+
+        }
+        message roomsListResponse{
+
+        }
+    }
+
+    message RoomWrapper{
+        oneof Type{
+            CreateNewRoomRequest createNewRoomRequest = 1;
+            CreateNewRoomResponse createNewRoomResponse = 2;
+            UpdateRoom updateRoom = 3;
+            AppendToRoomRequest appendToRoomRequest = 4;
+            AppendToRoomResponse appendToRoomResponse = 5;
+            ExitFromRoom exitFromRoom = 6;
+            RandomRoomRequest RandomRoomRequest = 7;
+            RandomRoomResponse RandomRoomResponse = 8;
+        }
+    }
+    
+    oneof Type{
+        UpdateWrapper update = 1;
+        FriendWrapper friend = 2;
+        UserWrapper user = 3;
+        LobbyWrapper lobby = 4;
+        RoomWrapper room = 5;
+        //GameWrapper game = 5;
+    }
+}

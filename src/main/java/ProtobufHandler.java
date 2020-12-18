@@ -1,15 +1,13 @@
-import io.netty.buffer.ByteBuf;
-import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
-import io.netty.util.concurrent.EventExecutorGroup;
-import proto_files.Protofiles.*;
+import proto_files.DangerStickman;
 
-public class ProtobufHandler extends SimpleChannelInboundHandler<RequestWrapper> {
+public class ProtobufHandler extends SimpleChannelInboundHandler<DangerStickman.PacketWrapper> {
 
     private final RequestExecutor executor = new RequestExecutor();
 
-    protected void channelRead0(ChannelHandlerContext channelHandlerContext, RequestWrapper o) throws Exception {
+    protected void channelRead0(ChannelHandlerContext channelHandlerContext, DangerStickman.PacketWrapper o) throws Exception {
+
         //нужен механизм того как мы будем получать юзера и где
         channelHandlerContext.write(executor.executeRequest(o));
 
