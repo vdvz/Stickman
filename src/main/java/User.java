@@ -1,15 +1,38 @@
 import com.google.protobuf.MessageLite;
 import proto_files.DangerStickman;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 public class User implements ProtobufSerializable{
 
+    public static enum USER_STATUS{
+        ONLINE,
+        DISCONNECTED,
+        CHANGED
+    }
+
     private final int id;
-    private final String name;
+    private String name;
+    private USER_STATUS Status;
+
+    int getId(){
+        return id;
+    }
+
+    public String getName(){
+        return name;
+    }
+
+    public void setName(String newName){
+        name = newName;
+    }
+
+    void setStatus(boolean status){
+    }
+
+    USER_STATUS getStatus(){
+        return Status;
+    }
 
     private final List<Integer> skins = new ArrayList<>();
     List<Friend> IncomingRequestForFriend = new ArrayList<>();
@@ -21,7 +44,6 @@ public class User implements ProtobufSerializable{
     //FOR FUTURE MB MAKE PRIORITY QUEUE -> MOST EXPENSIVE UPDATES WILL SEND FASTER
     Queue<DangerStickman.PacketWrapper> UpdateQueue = new LinkedList<>();
 
-
     User(int _id, String _name){
         id = _id;
         name = _name;
@@ -31,14 +53,15 @@ public class User implements ProtobufSerializable{
         this(_id, null);
     }
 
-    Integer getId(){return id;}
-    String getName(){return name;}
-
     void addUpdate(DangerStickman.PacketWrapper update){
 
     }
 
-    DangerStickman.PacketWrapper getUpdates(){
+    boolean hasUpdate(){
+        return false;
+    }
+
+    DangerStickman.PacketWrapper getUpdate(){
         return null;
     }
 
@@ -46,4 +69,5 @@ public class User implements ProtobufSerializable{
     public MessageLite Serialize() {
         return null;
     }
+
 }
