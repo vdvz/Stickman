@@ -1,10 +1,5 @@
 public class Game {
-    enum GameStatus{
-        PROCESS,
-        WIN_1,
-        WIN_2
-    }
-    private GameStatus status;
+    private GAME_STATUS status;
 
     private Player player1;
     private Player player2;
@@ -19,14 +14,20 @@ public class Game {
     }
 
     void PlayerDisconnected(int player_id){
-
     }
 
     void CalculateDamage(){
-
     }
 
     void UpdatePlayerPosition(int player_id, Player player/*, new position*/){
 
+    }
+
+    public GAME_STATUS getStatus() {
+        return status;
+    }
+
+    public void setStatus(GAME_STATUS status) {
+        this.status = status;
     }
 }

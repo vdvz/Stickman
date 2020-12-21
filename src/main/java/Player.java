@@ -1,16 +1,8 @@
-public class Player {
+public class Player extends Player_A{
     private final int id;
     private final String name;
-    int health = 100;
-    int skin_id;
-
-    static final float HeadRadius = 0;
-    static final float HandWeight = 0;
-    static final float FootWeight = 0;
-    static final float TorsoWeight = 0;
-    static final float HandHeight = 0;
-    static final float FootHeight = 0;
-    static final float TorsoHeight = 0;
+    private int Health = 100;
+    private int skin_id;
 
     private PlayerPosition PlayerPosition;
 
@@ -28,7 +20,14 @@ public class Player {
         PlayerPosition = playerPosition;
     }
 
-    void setHealth(int health){
+    @Override
+    public void addDamage(int damage) {
+        Health-=damage;
+    }
+
+    @Override
+    public void addHealth(int health) {
+        Health+=health;
     }
 
     public String getName() {
@@ -40,7 +39,7 @@ public class Player {
     }
 
     public boolean checkIfPlayerAlive(){
-        return false;
+        return Health>0;
     }
 
 }

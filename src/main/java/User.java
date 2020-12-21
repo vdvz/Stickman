@@ -1,19 +1,15 @@
 import com.google.protobuf.MessageLite;
+import io.netty.channel.ChannelHandlerContext;
 import proto_files.DangerStickman;
 
 import java.util.*;
 
 public class User implements ProtobufSerializable{
 
-    public static enum USER_STATUS{
-        ONLINE,
-        DISCONNECTED,
-        CHANGED
-    }
-
     private final int id;
     private String name;
     private USER_STATUS Status;
+    private final ChannelHandlerContext channelHandlerContext;
 
     int getId(){
         return id;
@@ -27,7 +23,8 @@ public class User implements ProtobufSerializable{
         name = newName;
     }
 
-    void setStatus(boolean status){
+    void setStatus(USER_STATUS status){
+        Status = status;
     }
 
     USER_STATUS getStatus(){
@@ -44,17 +41,17 @@ public class User implements ProtobufSerializable{
     //FOR FUTURE MB MAKE PRIORITY QUEUE -> MOST EXPENSIVE UPDATES WILL SEND FASTER
     Queue<DangerStickman.PacketWrapper> UpdateQueue = new LinkedList<>();
 
-    User(int _id, String _name){
+    User(ChannelHandlerContext _channelHandlerContext, int _id, String _name){
+        channelHandlerContext = _channelHandlerContext;
         id = _id;
         name = _name;
     }
 
-    User(int _id){
-        this(_id, null);
+    User(ChannelHandlerContext _channelHandlerContext, int _id){
+        this(_channelHandlerContext, _id, null);
     }
 
     void addUpdate(DangerStickman.PacketWrapper update){
-
     }
 
     boolean hasUpdate(){
@@ -65,9 +62,12 @@ public class User implements ProtobufSerializable{
         return null;
     }
 
+    public void send(DangerStickman.PacketWrapper msg){
+        channelHandlerContext.write(msg);
+    }
+
     @Override
     public MessageLite Serialize() {
         return null;
     }
-
 }

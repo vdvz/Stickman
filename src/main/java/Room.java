@@ -1,7 +1,8 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Room {
+public class Room implements Room_I{
+    private ROOM_STATUS Status;
     private final int Id;
     private User Admin = null;
     private final List<User> UsersInRoom = new ArrayList<>();
@@ -56,20 +57,29 @@ public class Room {
         Admin = admin;
     }
 
-    void AddingUser(User user){
+    public ROOM_STATUS getStatus() {
+        return Status;
     }
 
-    void RemovingUser(User user){
-    }
-
-    void PickNewAdmin(){
-    }
-
-    boolean IsUserAdmin(User user){
-        return false;
+    public void setStatus(ROOM_STATUS status) {
+        Status = status;
     }
 
     public int getId() {
         return Id;
     }
+
+    public void AddUser(User user){
+    }
+
+    public void RemoveUser(User user){
+    }
+
+    private void PickNewAdmin(){
+    }
+
+    private boolean IsUserAdmin(User user){
+        return false;
+    }
+
 }

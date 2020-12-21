@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Lobby {
@@ -9,10 +10,19 @@ public class Lobby {
 
     Map<Integer, Room> AvailableRoom = new HashMap<>();
 
-    void AddRoom(Room room){
+    private final GameFactory GameFactory = new GameFactory();
+
+    private void AddRoom(Room room){}
+
+    Room GetRoom(int room_id){
+        return null;
     }
 
-    Room GetRoom(int room_id ){
+    List<Room> GetAvailableRooms(){
+        return null;
+    }
+
+    Room CreateNewRoom(){
         return null;
     }
 
