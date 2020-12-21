@@ -14,10 +14,10 @@ import io.netty.handler.timeout.IdleStateHandler;
 import proto_files.DangerStickman;
 
 public class Server implements Runnable {
-    private int port = 32;
+    private final int port;
 
     public Server(){
-
+        this(32);
     }
 
     public Server(int _port){

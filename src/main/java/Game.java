@@ -1,37 +1,32 @@
 public class Game {
     enum GameStatus{
-        RUNNING,
-        START,
-        AWAIT_USER,
-        RESULT,
-        DELETE
+        PROCESS,
+        WIN_1,
+        WIN_2
     }
-
     private GameStatus status;
 
     private Player player1;
     private Player player2;
 
-
-    void NewUserConnected(User user){
-
-    }
-
-    void UserDisconnected(User user){
+    Game(User user1, User user2){
 
     }
 
-    Player GetPlayer(User user){
+    /*User or id_user*/
+    Player GetPlayer(int player_id){
         return null;
+    }
+
+    void PlayerDisconnected(int player_id){
+
     }
 
     void CalculateDamage(){
 
     }
 
-    void UpdatePosition(Player player/*, new position*/){
+    void UpdatePlayerPosition(int player_id, Player player/*, new position*/){
 
     }
-
-
 }

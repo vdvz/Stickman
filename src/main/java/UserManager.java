@@ -44,17 +44,5 @@ public class UserManager {
         return null;
     }
 
-    void receivePing(int user_id){
-
-    }
-
-    Map<Integer, Integer> receivedPingMsg = new HashMap<>();
-    int delayCheckingUserOnline = 10;
-    void checkIfUserOnline(){
-        receivedPingMsg.forEach((key, value) -> {
-
-        });
-    }
-
 }
 
