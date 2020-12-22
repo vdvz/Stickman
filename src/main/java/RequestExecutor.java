@@ -1,7 +1,6 @@
 import proto_files.DangerStickman.*;
 
-public class RequestExecutor {
-
+public class RequestExecutor implements RequestExecutor_I{
 
     public PacketWrapper executeRequest(PacketWrapper request) {
 
@@ -62,7 +61,5 @@ public class RequestExecutor {
 
         return null;
     }
-
-
 
 }

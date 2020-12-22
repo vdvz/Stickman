@@ -1,8 +1,6 @@
 import java.util.List;
 
 public class FriendManager implements FriendManager_I {
-
-
     @Override
     public List<Friend> GetFriends() {
         return null;
