@@ -4,6 +4,24 @@ public class Game {
     private Player player1;
     private Player player2;
 
+    private int Damage = 0;
+    private int Gravity = 0;
+    private int Speed = 0;
+    private int Bounce = 0;
+
+    public void setDamage(int damage) {
+        Damage = damage;
+    }
+    public void setGravity(int gravity) {
+        Gravity = gravity;
+    }
+    public void setSpeed(int speed) {
+        Speed = speed;
+    }
+    public void setBounce(int bounce) {
+        Bounce = bounce;
+    }
+
     Game(User user1, User user2){
 
     }
@@ -30,4 +48,5 @@ public class Game {
     public void setStatus(GAME_STATUS status) {
         this.status = status;
     }
+
 }

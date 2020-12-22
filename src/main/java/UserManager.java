@@ -1,6 +1,6 @@
-import java.util.ArrayList;
+import exceptions.NoUserException;
+
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 
@@ -20,7 +20,7 @@ public class UserManager {
 
     }
 
-    //Возвращает юзера если он онайн иначе кидает NoUserException
+    //Возвращает юзера если он онайн иначе кидает exceptions.NoUserException
     public User GetUser() throws NoUserException {
 
         throw new NoUserException();

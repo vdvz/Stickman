@@ -41,5 +41,4 @@ public class Player extends Player_A{
     public boolean checkIfPlayerAlive(){
         return Health>0;
     }
-
 }

@@ -13,16 +13,13 @@ public class FriendManager implements FriendManager_I {
 
     @Override
     public void AddFriend(User user) {
-
     }
 
     @Override
     public void AddFriend(int user_id) {
-
     }
 
     @Override
     public void RemoveFriend(int user_id) {
-
     }
 }

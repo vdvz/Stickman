@@ -3,11 +3,9 @@ public class Point {
     private float y;
 
     Point(/*Protobuf Point*/){
-
     }
 
     Point(float _x, float _y){
-
     }
 
     public float getX() {
