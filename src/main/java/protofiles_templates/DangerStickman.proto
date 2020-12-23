@@ -4,6 +4,8 @@ package proto_files;
 import "FriendMessages.proto";
 import "RoomMessages.proto";
 import "UserMessages.proto";
+import "LobbyMessages.proto";
+import "GameMessages.proto";
 
 //option java_outer_classname = "PacketWrapper";
 
@@ -54,6 +56,13 @@ message PacketWrapper{
             RandomRoomResponse RandomRoomResponse = 8;
         }
     }
+
+    message GameWrapper{
+
+
+
+    }
+
 
     message ErrorWrapper{
 

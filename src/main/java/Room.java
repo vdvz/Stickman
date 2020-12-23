@@ -5,6 +5,7 @@ public class Room implements Room_I{
     private ROOM_STATUS Status;
     private final int Id;
     private User Admin = null;
+
     private final List<User> UsersInRoom = new ArrayList<>();
 
     private int Damage = 0;
@@ -82,4 +83,7 @@ public class Room implements Room_I{
         return false;
     }
 
+    public List<User> getUsersInRoom() {
+        return UsersInRoom;
+    }
 }

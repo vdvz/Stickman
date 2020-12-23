@@ -60,8 +60,9 @@ public class Lobby {
     }
 
     void StartRoom(int room_id) throws NoSuchRoomException {
-        //TODO
-        GameFactory.createGame(GetRoom(room_id));
+        Game game = GameFactory.createGame(GetRoom(room_id));
+        game.start();
+        GameManager.getInstance().AddGame(game);
     }
 
 }

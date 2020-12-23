@@ -23,9 +23,12 @@ public class GameManager implements Updatable_I, GameManager_I{
         OnlineGames.put(game.getId(), game);
     }
 
-
     @Override
     public void update() {
 
     }
+
+    public void RemoveGame(){
+    }
+
 }

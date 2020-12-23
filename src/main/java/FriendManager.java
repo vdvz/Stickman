@@ -1,5 +1,5 @@
-import BD.FRIEND_DB;
-import BD.FRIEND_DB_I;
+import DB.FRIEND_DB;
+import DB.FRIEND_DB_I;
 
 import java.util.List;
 

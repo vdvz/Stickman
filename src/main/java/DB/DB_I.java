@@ -1,4 +1,4 @@
-package BD;
+package DB;
 
 public interface DB_I {
 

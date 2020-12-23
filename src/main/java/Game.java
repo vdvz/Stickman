@@ -1,8 +1,10 @@
+import java.util.LinkedList;
+import java.util.List;
+
 public class Game {
     private GAME_STATUS status;
 
-    private Player player1;
-    private Player player2;
+    private final List<Player> Players = new LinkedList<>();
 
     private final int Id;
 
@@ -24,10 +26,9 @@ public class Game {
         Bounce = bounce;
     }
 
-    Game(User user1, User user2, int game_id){
-        Id=game_id;
+    Game(int game_id) {
+        Id = game_id;
     }
-
     /*User or id_user*/
     Player GetPlayer(int player_id){
         return null;
@@ -42,8 +43,21 @@ public class Game {
     void UpdatePlayerPosition(int player_id, Player player/*, new position*/){
     }
 
+    public void AddPlayer(User user){
+        //Invoke constructor
+        //put player to players
+    }
+
+    public Game build(){
+        return null;
+    }
+
+    public void start(){
+
+    }
+
     public boolean hasUser(int user_id){
-        return player1.getId()==user_id || player2.getId()==user_id;
+        return Players.stream().anyMatch(e -> e.getId() == user_id);
     }
 
     public GAME_STATUS getStatus() {
