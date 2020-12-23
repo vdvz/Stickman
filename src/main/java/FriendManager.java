@@ -1,6 +1,16 @@
+import BD.FRIEND_DB;
+import BD.FRIEND_DB_I;
+
 import java.util.List;
 
 public class FriendManager implements FriendManager_I {
+
+    private static final FriendManager Instance = new FriendManager();
+    public static FriendManager_I getInstance(){ return Instance;};
+    public FriendManager(){}
+
+    private final FRIEND_DB_I FriendDB = new FRIEND_DB();
+
     @Override
     public List<Friend> GetFriends() {
         return null;
@@ -22,4 +32,5 @@ public class FriendManager implements FriendManager_I {
     @Override
     public void RemoveFriend(int user_id) {
     }
+
 }

@@ -2,18 +2,18 @@ import exceptions.NoUserException;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.NoSuchElementException;
 
 
-
-public class UserManager {
+public class UserManager implements Updatable_I, UserManager_I{
 
     /*Singleton*/
     private static final UserManager Instance = new UserManager();
-    public static UserManager getInstance(){ return Instance;};
-    private  UserManager(){}
+    public static UserManager_I getInstance(){ return Instance;};
+    public UserManager(){}
 
     //LIST - хранит всех онлайн юзеров
-    private final Map<Integer, User> onlineUsers = new HashMap<>();
+    private final Map<Integer, User> OnlineUsers = new HashMap<>();
 
     //Добавляет юзера в список онлайн юзеров
     private void AddToOnline(User user){
@@ -21,9 +21,12 @@ public class UserManager {
     }
 
     //Возвращает юзера если он онайн иначе кидает exceptions.NoUserException
-    public User GetUser() throws NoUserException {
+    public User GetUser(int user_id) throws NoSuchElementException {
+        return OnlineUsers.entrySet().stream().filter(e -> e.getKey().equals(user_id)).findFirst().get().getValue();
+    }
 
-        throw new NoUserException();
+    public User GetUser(String android_id){
+        return null;
     }
 
     //Вызывается каждый раз когда User подключается к серверу -> на основании android_id создает юзера, добавляет в список онлайн
@@ -44,5 +47,9 @@ public class UserManager {
         return null;
     }
 
+    @Override
+    public void update() {
+
+    }
 }
 

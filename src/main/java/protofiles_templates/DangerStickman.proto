@@ -9,19 +9,15 @@ import "UserMessages.proto";
 
 message PacketWrapper{
 
-
-    message UpdateWrapper{
-        message updateRequest{
-        }
-        message updateResponse{
-            repeated PacketWrapper update = 1;
-        }
-    }
+    message PingMsg{}
 
     message UserWrapper{
         oneof Type{
+            /*Отправляем при обновлении user'a - например, после окончания игры. Ошибка: Юзер не онлайн(NoSuchOnlineUserException) */
             UpdateUserRequest updateUserRequest = 1;
+            /*Отправляем про входе.Ошибка: */
             LoadUserRequest loadUserRequest = 2;
+            /*Содержит в себе объект юзера*/
             UserResponse userResponse = 3;
         }
     }
@@ -30,24 +26,19 @@ message PacketWrapper{
         oneof Type{
             FindFriendsRequest findFriendsRequest = 1;
             FindFriendsResponse findFriendsResponse = 2;
-            MakeFriendsRequest makeFriendsRequest = 3;
-            MakeFriendsRequestConfirmation makeFriendsRequestConfirmation = 4;
-            RemoveFriendRequest removeFriendRequest = 5;
-            RemoveFriendResponse removeFriendResponse = 6;
+            MakeFriendsRequest makeFriendsRequest = 3;//Если такого юзера не существует, то игнорируем это запрос
+            ConfirmationFriendsRequest ConfirmationFriendsRequest = 4;
+            ConfirmationFriendResponse ConfirmationFriendResponse = 5;
+            RemoveFriendRequest removeFriendRequest = 6;
             UpdateFriendsListRequest updateFriendsListRequest = 7;
             UpdateFriendsListResponse updateFriendsListResponse = 8;
-            MakeFriendResponse makeFriendResponse = 9;
-            MakeFriendResponseConfirmation makeFriendResponseConfirmation = 10;
-            FriendError friendError = 11;
         }
     }
 
     message LobbyWrapper{
-        message roomsListRequest{
-
-        }
-        message roomsListResponse{
-
+        oneof Type{
+            UpdateRoomsRequest updateRoomsRequest = 1;
+            UpdateRoomsResponse updateRoomsResponse = 2;
         }
     }
 
@@ -63,13 +54,18 @@ message PacketWrapper{
             RandomRoomResponse RandomRoomResponse = 8;
         }
     }
-    
+
+    message ErrorWrapper{
+
+    }
+
     oneof Type{
-        UpdateWrapper update = 1;
-        FriendWrapper friend = 2;
-        UserWrapper user = 3;
-        LobbyWrapper lobby = 4;
-        RoomWrapper room = 5;
+        FriendWrapper friend = 1;
+        UserWrapper user = 2;
+        LobbyWrapper lobby = 3;
+        RoomWrapper room = 4;
         //GameWrapper game = 5;
+
+        PingMsg ping = 15;
     }
 }

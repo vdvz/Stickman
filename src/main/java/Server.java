@@ -15,6 +15,7 @@ import proto_files.DangerStickman;
 
 public class Server implements Runnable {
     private final int port;
+    private ProtobufHandler ProtobufHandler;
 
     public Server(){
         this(32);
@@ -29,6 +30,10 @@ public class Server implements Runnable {
         server.run();
     }
 
+    void initialize(){
+        ProtobufHandler = new ProtobufHandler();
+
+    }
 
     public void run(){
         EventLoopGroup bossGroup = new NioEventLoopGroup();
@@ -50,7 +55,7 @@ public class Server implements Runnable {
                             ch.pipeline().addLast(new ProtobufVarint32LengthFieldPrepender());
                             ch.pipeline().addLast(new ProtobufEncoder());
 
-                            ch.pipeline().addLast(new ProtobufHandler());
+                            ch.pipeline().addLast(ProtobufHandler);
                         }
                     })
                     .option(ChannelOption.SO_BACKLOG, 128)          // (5)
