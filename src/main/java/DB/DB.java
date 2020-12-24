@@ -29,6 +29,8 @@ public class DB implements DB_I{
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
+
+        System.out.println("DB connected");
     }
 
     private MyConnection_I createConnection() throws SQLException {
