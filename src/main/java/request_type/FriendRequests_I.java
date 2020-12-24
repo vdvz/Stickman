@@ -6,6 +6,4 @@ import proto_files.FriendMessages;
 
 public interface FriendRequests_I extends Requests_I{
 
-    DangerStickman.PacketWrapper handle(DangerStickman.PacketWrapper.FriendWrapper request);
-
 }

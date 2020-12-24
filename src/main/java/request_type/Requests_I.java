@@ -1,9 +1,10 @@
 package request_type;
 
 import com.google.protobuf.MessageLite;
+import proto_files.DangerStickman;
 
 public interface Requests_I {
 
-    MessageLite handle(MessageLite request);
+    DangerStickman.PacketWrapper execute(MessageLite request);
 
 }

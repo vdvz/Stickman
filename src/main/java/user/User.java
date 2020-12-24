@@ -1,11 +1,11 @@
 package user;
 
-import all_classes_need_to_sep_by_packets.ProtobufSerializable;
-import all_classes_need_to_sep_by_packets.USER_STATUS;
+import server.ProtobufSerializable;
 import friend.Friend;
 import com.google.protobuf.MessageLite;
 import io.netty.channel.ChannelHandlerContext;
 import proto_files.DangerStickman;
+import proto_files.UserMessages;
 
 import java.util.*;
 
@@ -19,6 +19,23 @@ public class User implements ProtobufSerializable {
     private int trophies = 0;
     private int count_win = 0;
     private int count_loss = 0;
+
+    private final List<Integer> skins = new ArrayList<>();
+
+    private final List<Friend> friends = new ArrayList<>();
+
+    private final List<Friend> inboundRequestsForFriend = new ArrayList<>();
+
+    private final List<Friend> outgoingRequestsForFriend = new ArrayList<>();
+
+    public User(){
+        id = 0;
+    }
+
+    public User(int _id, String _name){
+        id = _id;
+        name = _name;
+    }
 
     public int getId(){
         return id;
@@ -40,43 +57,12 @@ public class User implements ProtobufSerializable {
         return Status;
     }
 
-    private final List<Integer> skins = new ArrayList<>();
-
-    public User(){
-        id = 0;
-    }
-
-    public User(int _id, String _name){
-        id = _id;
-        name = _name;
-    }
-
     void setChannelHandlerContext(ChannelHandlerContext chx){
         channelHandlerContext = chx;
     }
 
-    User(ChannelHandlerContext _channelHandlerContext, int _id){
-        this(_id, null);
-    }
-
-    void addUpdate(DangerStickman.PacketWrapper update){
-    }
-
-    boolean hasUpdate(){
-        return false;
-    }
-
-    DangerStickman.PacketWrapper getUpdate(){
-        return null;
-    }
-
     public void send(DangerStickman.PacketWrapper msg){
         channelHandlerContext.write(msg);
-    }
-
-    @Override
-    public MessageLite Serialize() {
-        return null;
     }
 
     public int getMoney() {
@@ -110,4 +96,33 @@ public class User implements ProtobufSerializable {
     public void setCount_loss(int count_loss) {
         this.count_loss = count_loss;
     }
+
+    private void updateFriends(){
+
+    }
+
+    private void addFriend(){
+
+    }
+
+    public List<Friend> GetFriendList(){
+        //todo
+    }
+
+    private void updateInboundRequestsForFriend(){
+
+    }
+
+    public void ConfirmFriendship(){
+
+    }
+
+    @Override
+    public MessageLite Serialize() {
+        return UserMessages.user.newBuilder().setId(getId())
+                .setName(getName())
+                .setMoney(getMoney())
+                .setTrophies(getTrophies()).build();
+    }
+
 }

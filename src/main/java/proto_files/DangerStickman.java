@@ -11535,7 +11535,7 @@ public final class DangerStickman {
     internal_static_proto_files_PacketWrapper_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_files_PacketWrapper_descriptor,
-        new java.lang.String[] {"friend", "user.User", "all_classes_need_to_sep_by_packets.Lobby", "all_classes_need_to_sep_by_packets.Room", "Ping", "Type", });
+        new java.lang.String[] {"friend", "user.User", "lobby.Lobby", "lobby.Room", "Ping", "Type", });
     internal_static_proto_files_PacketWrapper_PingMsg_descriptor =
       internal_static_proto_files_PacketWrapper_descriptor.getNestedTypes().get(0);
     internal_static_proto_files_PacketWrapper_PingMsg_fieldAccessorTable = new

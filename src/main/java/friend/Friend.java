@@ -1,6 +1,6 @@
 package friend;
 
-import all_classes_need_to_sep_by_packets.ProtobufSerializable;
+import server.ProtobufSerializable;
 import com.google.protobuf.MessageLite;
 
 public class Friend implements ProtobufSerializable {

@@ -1,13 +1,14 @@
 package request_type;
 
 import DB.FRIEND_DB;
-import all_classes_need_to_sep_by_packets.Managers;
+import managers.Managers;
 import com.google.protobuf.MessageLite;
 import friend.Friend;
 import proto_files.DangerStickman;
 import proto_files.FriendMessages;
 import user.User;
 
+import java.sql.SQLException;
 import java.util.List;
 import java.util.NoSuchElementException;
 
@@ -16,12 +17,8 @@ public class FriendRequests implements FriendRequests_I{
     private final FRIEND_DB friendDB = new FRIEND_DB();
 
     @Override
-    public MessageLite handle(MessageLite request) {
-        return null;
-    }
-
-    @Override
-    public DangerStickman.PacketWrapper handle(DangerStickman.PacketWrapper.FriendWrapper request) {
+    public DangerStickman.PacketWrapper execute(MessageLite _request) {
+        DangerStickman.PacketWrapper.FriendWrapper request = (DangerStickman.PacketWrapper.FriendWrapper) _request;
         if(request.hasFindFriendsRequest()){
 
         }
@@ -41,7 +38,12 @@ public class FriendRequests implements FriendRequests_I{
     }
 
     private FriendMessages.FindFriendsResponse.Builder FindFriends(String find_query){
-        List<Friend> finded = friendDB.FindAllFriend(find_query);
+        List<Friend> finded = null;
+        try {
+            finded = friendDB.FindAllFriend(find_query);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
         FriendMessages.FindFriendsResponse.Builder builder = FriendMessages.FindFriendsResponse.newBuilder();
         finded.forEach(e -> builder.addFriends((FriendMessages.friend) e.Serialize()));
         return builder;
@@ -64,13 +66,34 @@ public class FriendRequests implements FriendRequests_I{
 
     }
 
-    private void RemoveFriend(){
+    private void RemoveFriend(Integer from, Integer to){
+        try {
+            friendDB.RemoveFriend(from.toString(), to.toString());
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        User fromUser = null;
+        User toUser = null;
+        try{
+            fromUser = Managers.getUserManager().GetUser(from);
+            //TODO logic
+        } catch (NoSuchElementException e){
+
+        }
+
+        try{
+            toUser = Managers.getUserManager().GetUser(to);
+            //TODO logic
+        } catch (NoSuchElementException e){
+
+        }
 
     }
 
     private FriendMessages.UpdateFriendsListResponse.Builder UpdateFriendList(Integer for_user){
 
     }
+
 
 
 }

@@ -956,7 +956,7 @@ public final class GameMessages {
   }
 
   public interface GameOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:proto_files.all_classes_need_to_sep_by_packets.Game)
+      // @@protoc_insertion_point(interface_extends:proto_files.game.Game)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -966,14 +966,14 @@ public final class GameMessages {
     int getGameId();
   }
   /**
-   * Protobuf type {@code proto_files.all_classes_need_to_sep_by_packets.Game}
+   * Protobuf type {@code proto_files.game.Game}
    */
   public static final class Game extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:proto_files.all_classes_need_to_sep_by_packets.Game)
+      // @@protoc_insertion_point(message_implements:proto_files.game.Game)
       GameOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use all_classes_need_to_sep_by_packets.Game.newBuilder() to construct.
+    // Use game.Game.newBuilder() to construct.
     private Game(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
@@ -1214,11 +1214,11 @@ public final class GameMessages {
       return builder;
     }
     /**
-     * Protobuf type {@code proto_files.all_classes_need_to_sep_by_packets.Game}
+     * Protobuf type {@code proto_files.game.Game}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:proto_files.all_classes_need_to_sep_by_packets.Game)
+        // @@protoc_insertion_point(builder_implements:proto_files.game.Game)
         proto_files.GameMessages.GameOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
@@ -1233,7 +1233,7 @@ public final class GameMessages {
                 proto_files.GameMessages.Game.class, proto_files.GameMessages.Game.Builder.class);
       }
 
-      // Construct using proto_files.GameMessages.all_classes_need_to_sep_by_packets.Game.newBuilder()
+      // Construct using proto_files.GameMessages.game.Game.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -1403,10 +1403,10 @@ public final class GameMessages {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:proto_files.all_classes_need_to_sep_by_packets.Game)
+      // @@protoc_insertion_point(builder_scope:proto_files.game.Game)
     }
 
-    // @@protoc_insertion_point(class_scope:proto_files.all_classes_need_to_sep_by_packets.Game)
+    // @@protoc_insertion_point(class_scope:proto_files.game.Game)
     private static final proto_files.GameMessages.Game DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new proto_files.GameMessages.Game();
@@ -1444,7 +1444,7 @@ public final class GameMessages {
   }
 
   public interface PlayerOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:proto_files.all_classes_need_to_sep_by_packets.Player)
+      // @@protoc_insertion_point(interface_extends:proto_files.game.Player)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -1483,17 +1483,17 @@ public final class GameMessages {
     int getPlayerHealth();
 
     /**
-     * <code>.proto_files.all_classes_need_to_sep_by_packets.PlayerPosition all_classes_need_to_sep_by_packets.PlayerPosition = 5;</code>
+     * <code>.proto_files.game.PlayerPosition game.PlayerPosition = 5;</code>
      * @return Whether the playerPosition field is set.
      */
     boolean hasPlayerPosition();
     /**
-     * <code>.proto_files.all_classes_need_to_sep_by_packets.PlayerPosition all_classes_need_to_sep_by_packets.PlayerPosition = 5;</code>
+     * <code>.proto_files.game.PlayerPosition game.PlayerPosition = 5;</code>
      * @return The playerPosition.
      */
     proto_files.GameMessages.PlayerPosition getPlayerPosition();
     /**
-     * <code>.proto_files.all_classes_need_to_sep_by_packets.PlayerPosition all_classes_need_to_sep_by_packets.PlayerPosition = 5;</code>
+     * <code>.proto_files.game.PlayerPosition game.PlayerPosition = 5;</code>
      */
     proto_files.GameMessages.PlayerPositionOrBuilder getPlayerPositionOrBuilder();
 
@@ -1513,14 +1513,14 @@ public final class GameMessages {
     proto_files.GameMessages.WeaponPositionOrBuilder getWeaponPositionOrBuilder();
   }
   /**
-   * Protobuf type {@code proto_files.all_classes_need_to_sep_by_packets.Player}
+   * Protobuf type {@code proto_files.game.Player}
    */
   public static final class Player extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:proto_files.all_classes_need_to_sep_by_packets.Player)
+      // @@protoc_insertion_point(message_implements:proto_files.game.Player)
       PlayerOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use all_classes_need_to_sep_by_packets.Player.newBuilder() to construct.
+    // Use game.Player.newBuilder() to construct.
     private Player(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
@@ -1721,7 +1721,7 @@ public final class GameMessages {
     public static final int PLAYERPOSITION_FIELD_NUMBER = 5;
     private proto_files.GameMessages.PlayerPosition playerPosition_;
     /**
-     * <code>.proto_files.all_classes_need_to_sep_by_packets.PlayerPosition all_classes_need_to_sep_by_packets.PlayerPosition = 5;</code>
+     * <code>.proto_files.game.PlayerPosition game.PlayerPosition = 5;</code>
      * @return Whether the playerPosition field is set.
      */
     @java.lang.Override
@@ -1729,7 +1729,7 @@ public final class GameMessages {
       return playerPosition_ != null;
     }
     /**
-     * <code>.proto_files.all_classes_need_to_sep_by_packets.PlayerPosition all_classes_need_to_sep_by_packets.PlayerPosition = 5;</code>
+     * <code>.proto_files.game.PlayerPosition game.PlayerPosition = 5;</code>
      * @return The playerPosition.
      */
     @java.lang.Override
@@ -1737,7 +1737,7 @@ public final class GameMessages {
       return playerPosition_ == null ? proto_files.GameMessages.PlayerPosition.getDefaultInstance() : playerPosition_;
     }
     /**
-     * <code>.proto_files.all_classes_need_to_sep_by_packets.PlayerPosition all_classes_need_to_sep_by_packets.PlayerPosition = 5;</code>
+     * <code>.proto_files.game.PlayerPosition game.PlayerPosition = 5;</code>
      */
     @java.lang.Override
     public proto_files.GameMessages.PlayerPositionOrBuilder getPlayerPositionOrBuilder() {
@@ -1989,11 +1989,11 @@ public final class GameMessages {
       return builder;
     }
     /**
-     * Protobuf type {@code proto_files.all_classes_need_to_sep_by_packets.Player}
+     * Protobuf type {@code proto_files.game.Player}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:proto_files.all_classes_need_to_sep_by_packets.Player)
+        // @@protoc_insertion_point(builder_implements:proto_files.game.Player)
         proto_files.GameMessages.PlayerOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
@@ -2008,7 +2008,7 @@ public final class GameMessages {
                 proto_files.GameMessages.Player.class, proto_files.GameMessages.Player.Builder.class);
       }
 
-      // Construct using proto_files.GameMessages.all_classes_need_to_sep_by_packets.Player.newBuilder()
+      // Construct using proto_files.GameMessages.game.Player.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -2378,14 +2378,14 @@ public final class GameMessages {
       private com.google.protobuf.SingleFieldBuilderV3<
           proto_files.GameMessages.PlayerPosition, proto_files.GameMessages.PlayerPosition.Builder, proto_files.GameMessages.PlayerPositionOrBuilder> playerPositionBuilder_;
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.PlayerPosition all_classes_need_to_sep_by_packets.PlayerPosition = 5;</code>
+       * <code>.proto_files.game.PlayerPosition game.PlayerPosition = 5;</code>
        * @return Whether the playerPosition field is set.
        */
       public boolean hasPlayerPosition() {
         return playerPositionBuilder_ != null || playerPosition_ != null;
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.PlayerPosition all_classes_need_to_sep_by_packets.PlayerPosition = 5;</code>
+       * <code>.proto_files.game.PlayerPosition game.PlayerPosition = 5;</code>
        * @return The playerPosition.
        */
       public proto_files.GameMessages.PlayerPosition getPlayerPosition() {
@@ -2396,7 +2396,7 @@ public final class GameMessages {
         }
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.PlayerPosition all_classes_need_to_sep_by_packets.PlayerPosition = 5;</code>
+       * <code>.proto_files.game.PlayerPosition game.PlayerPosition = 5;</code>
        */
       public Builder setPlayerPosition(proto_files.GameMessages.PlayerPosition value) {
         if (playerPositionBuilder_ == null) {
@@ -2412,7 +2412,7 @@ public final class GameMessages {
         return this;
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.PlayerPosition all_classes_need_to_sep_by_packets.PlayerPosition = 5;</code>
+       * <code>.proto_files.game.PlayerPosition game.PlayerPosition = 5;</code>
        */
       public Builder setPlayerPosition(
           proto_files.GameMessages.PlayerPosition.Builder builderForValue) {
@@ -2426,7 +2426,7 @@ public final class GameMessages {
         return this;
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.PlayerPosition all_classes_need_to_sep_by_packets.PlayerPosition = 5;</code>
+       * <code>.proto_files.game.PlayerPosition game.PlayerPosition = 5;</code>
        */
       public Builder mergePlayerPosition(proto_files.GameMessages.PlayerPosition value) {
         if (playerPositionBuilder_ == null) {
@@ -2444,7 +2444,7 @@ public final class GameMessages {
         return this;
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.PlayerPosition all_classes_need_to_sep_by_packets.PlayerPosition = 5;</code>
+       * <code>.proto_files.game.PlayerPosition game.PlayerPosition = 5;</code>
        */
       public Builder clearPlayerPosition() {
         if (playerPositionBuilder_ == null) {
@@ -2458,7 +2458,7 @@ public final class GameMessages {
         return this;
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.PlayerPosition all_classes_need_to_sep_by_packets.PlayerPosition = 5;</code>
+       * <code>.proto_files.game.PlayerPosition game.PlayerPosition = 5;</code>
        */
       public proto_files.GameMessages.PlayerPosition.Builder getPlayerPositionBuilder() {
         
@@ -2466,7 +2466,7 @@ public final class GameMessages {
         return getPlayerPositionFieldBuilder().getBuilder();
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.PlayerPosition all_classes_need_to_sep_by_packets.PlayerPosition = 5;</code>
+       * <code>.proto_files.game.PlayerPosition game.PlayerPosition = 5;</code>
        */
       public proto_files.GameMessages.PlayerPositionOrBuilder getPlayerPositionOrBuilder() {
         if (playerPositionBuilder_ != null) {
@@ -2477,7 +2477,7 @@ public final class GameMessages {
         }
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.PlayerPosition all_classes_need_to_sep_by_packets.PlayerPosition = 5;</code>
+       * <code>.proto_files.game.PlayerPosition game.PlayerPosition = 5;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           proto_files.GameMessages.PlayerPosition, proto_files.GameMessages.PlayerPosition.Builder, proto_files.GameMessages.PlayerPositionOrBuilder> 
@@ -2624,10 +2624,10 @@ public final class GameMessages {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:proto_files.all_classes_need_to_sep_by_packets.Player)
+      // @@protoc_insertion_point(builder_scope:proto_files.game.Player)
     }
 
-    // @@protoc_insertion_point(class_scope:proto_files.all_classes_need_to_sep_by_packets.Player)
+    // @@protoc_insertion_point(class_scope:proto_files.game.Player)
     private static final proto_files.GameMessages.Player DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new proto_files.GameMessages.Player();
@@ -4131,7 +4131,7 @@ public final class GameMessages {
   }
 
   public interface PointOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:proto_files.all_classes_need_to_sep_by_packets.Point)
+      // @@protoc_insertion_point(interface_extends:proto_files.game.Point)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -4147,14 +4147,14 @@ public final class GameMessages {
     float getY();
   }
   /**
-   * Protobuf type {@code proto_files.all_classes_need_to_sep_by_packets.Point}
+   * Protobuf type {@code proto_files.game.Point}
    */
   public static final class Point extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:proto_files.all_classes_need_to_sep_by_packets.Point)
+      // @@protoc_insertion_point(message_implements:proto_files.game.Point)
       PointOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use all_classes_need_to_sep_by_packets.Point.newBuilder() to construct.
+    // Use game.Point.newBuilder() to construct.
     private Point(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
@@ -4426,11 +4426,11 @@ public final class GameMessages {
       return builder;
     }
     /**
-     * Protobuf type {@code proto_files.all_classes_need_to_sep_by_packets.Point}
+     * Protobuf type {@code proto_files.game.Point}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:proto_files.all_classes_need_to_sep_by_packets.Point)
+        // @@protoc_insertion_point(builder_implements:proto_files.game.Point)
         proto_files.GameMessages.PointOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
@@ -4445,7 +4445,7 @@ public final class GameMessages {
                 proto_files.GameMessages.Point.class, proto_files.GameMessages.Point.Builder.class);
       }
 
-      // Construct using proto_files.GameMessages.all_classes_need_to_sep_by_packets.Point.newBuilder()
+      // Construct using proto_files.GameMessages.game.Point.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -4652,10 +4652,10 @@ public final class GameMessages {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:proto_files.all_classes_need_to_sep_by_packets.Point)
+      // @@protoc_insertion_point(builder_scope:proto_files.game.Point)
     }
 
-    // @@protoc_insertion_point(class_scope:proto_files.all_classes_need_to_sep_by_packets.Point)
+    // @@protoc_insertion_point(class_scope:proto_files.game.Point)
     private static final proto_files.GameMessages.Point DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new proto_files.GameMessages.Point();
@@ -6241,17 +6241,17 @@ public final class GameMessages {
     proto_files.GameMessages.PlayerStatus getPlayerStatus();
 
     /**
-     * <code>.proto_files.all_classes_need_to_sep_by_packets.PlayerPosition all_classes_need_to_sep_by_packets.PlayerPosition = 4;</code>
+     * <code>.proto_files.game.PlayerPosition game.PlayerPosition = 4;</code>
      * @return Whether the playerPosition field is set.
      */
     boolean hasPlayerPosition();
     /**
-     * <code>.proto_files.all_classes_need_to_sep_by_packets.PlayerPosition all_classes_need_to_sep_by_packets.PlayerPosition = 4;</code>
+     * <code>.proto_files.game.PlayerPosition game.PlayerPosition = 4;</code>
      * @return The playerPosition.
      */
     proto_files.GameMessages.PlayerPosition getPlayerPosition();
     /**
-     * <code>.proto_files.all_classes_need_to_sep_by_packets.PlayerPosition all_classes_need_to_sep_by_packets.PlayerPosition = 4;</code>
+     * <code>.proto_files.game.PlayerPosition game.PlayerPosition = 4;</code>
      */
     proto_files.GameMessages.PlayerPositionOrBuilder getPlayerPositionOrBuilder();
 
@@ -6434,7 +6434,7 @@ public final class GameMessages {
     public static final int PLAYERPOSITION_FIELD_NUMBER = 4;
     private proto_files.GameMessages.PlayerPosition playerPosition_;
     /**
-     * <code>.proto_files.all_classes_need_to_sep_by_packets.PlayerPosition all_classes_need_to_sep_by_packets.PlayerPosition = 4;</code>
+     * <code>.proto_files.game.PlayerPosition game.PlayerPosition = 4;</code>
      * @return Whether the playerPosition field is set.
      */
     @java.lang.Override
@@ -6442,7 +6442,7 @@ public final class GameMessages {
       return playerPosition_ != null;
     }
     /**
-     * <code>.proto_files.all_classes_need_to_sep_by_packets.PlayerPosition all_classes_need_to_sep_by_packets.PlayerPosition = 4;</code>
+     * <code>.proto_files.game.PlayerPosition game.PlayerPosition = 4;</code>
      * @return The playerPosition.
      */
     @java.lang.Override
@@ -6450,7 +6450,7 @@ public final class GameMessages {
       return playerPosition_ == null ? proto_files.GameMessages.PlayerPosition.getDefaultInstance() : playerPosition_;
     }
     /**
-     * <code>.proto_files.all_classes_need_to_sep_by_packets.PlayerPosition all_classes_need_to_sep_by_packets.PlayerPosition = 4;</code>
+     * <code>.proto_files.game.PlayerPosition game.PlayerPosition = 4;</code>
      */
     @java.lang.Override
     public proto_files.GameMessages.PlayerPositionOrBuilder getPlayerPositionOrBuilder() {
@@ -6998,14 +6998,14 @@ public final class GameMessages {
       private com.google.protobuf.SingleFieldBuilderV3<
           proto_files.GameMessages.PlayerPosition, proto_files.GameMessages.PlayerPosition.Builder, proto_files.GameMessages.PlayerPositionOrBuilder> playerPositionBuilder_;
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.PlayerPosition all_classes_need_to_sep_by_packets.PlayerPosition = 4;</code>
+       * <code>.proto_files.game.PlayerPosition game.PlayerPosition = 4;</code>
        * @return Whether the playerPosition field is set.
        */
       public boolean hasPlayerPosition() {
         return playerPositionBuilder_ != null || playerPosition_ != null;
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.PlayerPosition all_classes_need_to_sep_by_packets.PlayerPosition = 4;</code>
+       * <code>.proto_files.game.PlayerPosition game.PlayerPosition = 4;</code>
        * @return The playerPosition.
        */
       public proto_files.GameMessages.PlayerPosition getPlayerPosition() {
@@ -7016,7 +7016,7 @@ public final class GameMessages {
         }
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.PlayerPosition all_classes_need_to_sep_by_packets.PlayerPosition = 4;</code>
+       * <code>.proto_files.game.PlayerPosition game.PlayerPosition = 4;</code>
        */
       public Builder setPlayerPosition(proto_files.GameMessages.PlayerPosition value) {
         if (playerPositionBuilder_ == null) {
@@ -7032,7 +7032,7 @@ public final class GameMessages {
         return this;
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.PlayerPosition all_classes_need_to_sep_by_packets.PlayerPosition = 4;</code>
+       * <code>.proto_files.game.PlayerPosition game.PlayerPosition = 4;</code>
        */
       public Builder setPlayerPosition(
           proto_files.GameMessages.PlayerPosition.Builder builderForValue) {
@@ -7046,7 +7046,7 @@ public final class GameMessages {
         return this;
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.PlayerPosition all_classes_need_to_sep_by_packets.PlayerPosition = 4;</code>
+       * <code>.proto_files.game.PlayerPosition game.PlayerPosition = 4;</code>
        */
       public Builder mergePlayerPosition(proto_files.GameMessages.PlayerPosition value) {
         if (playerPositionBuilder_ == null) {
@@ -7064,7 +7064,7 @@ public final class GameMessages {
         return this;
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.PlayerPosition all_classes_need_to_sep_by_packets.PlayerPosition = 4;</code>
+       * <code>.proto_files.game.PlayerPosition game.PlayerPosition = 4;</code>
        */
       public Builder clearPlayerPosition() {
         if (playerPositionBuilder_ == null) {
@@ -7078,7 +7078,7 @@ public final class GameMessages {
         return this;
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.PlayerPosition all_classes_need_to_sep_by_packets.PlayerPosition = 4;</code>
+       * <code>.proto_files.game.PlayerPosition game.PlayerPosition = 4;</code>
        */
       public proto_files.GameMessages.PlayerPosition.Builder getPlayerPositionBuilder() {
         
@@ -7086,7 +7086,7 @@ public final class GameMessages {
         return getPlayerPositionFieldBuilder().getBuilder();
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.PlayerPosition all_classes_need_to_sep_by_packets.PlayerPosition = 4;</code>
+       * <code>.proto_files.game.PlayerPosition game.PlayerPosition = 4;</code>
        */
       public proto_files.GameMessages.PlayerPositionOrBuilder getPlayerPositionOrBuilder() {
         if (playerPositionBuilder_ != null) {
@@ -7097,7 +7097,7 @@ public final class GameMessages {
         }
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.PlayerPosition all_classes_need_to_sep_by_packets.PlayerPosition = 4;</code>
+       * <code>.proto_files.game.PlayerPosition game.PlayerPosition = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           proto_files.GameMessages.PlayerPosition, proto_files.GameMessages.PlayerPosition.Builder, proto_files.GameMessages.PlayerPositionOrBuilder> 
@@ -7295,17 +7295,17 @@ public final class GameMessages {
     int getPlayerId();
 
     /**
-     * <code>.proto_files.all_classes_need_to_sep_by_packets.PlayerPosition newPlayerPosition = 2;</code>
+     * <code>.proto_files.game.PlayerPosition newPlayerPosition = 2;</code>
      * @return Whether the newPlayerPosition field is set.
      */
     boolean hasNewPlayerPosition();
     /**
-     * <code>.proto_files.all_classes_need_to_sep_by_packets.PlayerPosition newPlayerPosition = 2;</code>
+     * <code>.proto_files.game.PlayerPosition newPlayerPosition = 2;</code>
      * @return The newPlayerPosition.
      */
     proto_files.GameMessages.PlayerPosition getNewPlayerPosition();
     /**
-     * <code>.proto_files.all_classes_need_to_sep_by_packets.PlayerPosition newPlayerPosition = 2;</code>
+     * <code>.proto_files.game.PlayerPosition newPlayerPosition = 2;</code>
      */
     proto_files.GameMessages.PlayerPositionOrBuilder getNewPlayerPositionOrBuilder();
   }
@@ -7418,7 +7418,7 @@ public final class GameMessages {
     public static final int NEWPLAYERPOSITION_FIELD_NUMBER = 2;
     private proto_files.GameMessages.PlayerPosition newPlayerPosition_;
     /**
-     * <code>.proto_files.all_classes_need_to_sep_by_packets.PlayerPosition newPlayerPosition = 2;</code>
+     * <code>.proto_files.game.PlayerPosition newPlayerPosition = 2;</code>
      * @return Whether the newPlayerPosition field is set.
      */
     @java.lang.Override
@@ -7426,7 +7426,7 @@ public final class GameMessages {
       return newPlayerPosition_ != null;
     }
     /**
-     * <code>.proto_files.all_classes_need_to_sep_by_packets.PlayerPosition newPlayerPosition = 2;</code>
+     * <code>.proto_files.game.PlayerPosition newPlayerPosition = 2;</code>
      * @return The newPlayerPosition.
      */
     @java.lang.Override
@@ -7434,7 +7434,7 @@ public final class GameMessages {
       return newPlayerPosition_ == null ? proto_files.GameMessages.PlayerPosition.getDefaultInstance() : newPlayerPosition_;
     }
     /**
-     * <code>.proto_files.all_classes_need_to_sep_by_packets.PlayerPosition newPlayerPosition = 2;</code>
+     * <code>.proto_files.game.PlayerPosition newPlayerPosition = 2;</code>
      */
     @java.lang.Override
     public proto_files.GameMessages.PlayerPositionOrBuilder getNewPlayerPositionOrBuilder() {
@@ -7808,14 +7808,14 @@ public final class GameMessages {
       private com.google.protobuf.SingleFieldBuilderV3<
           proto_files.GameMessages.PlayerPosition, proto_files.GameMessages.PlayerPosition.Builder, proto_files.GameMessages.PlayerPositionOrBuilder> newPlayerPositionBuilder_;
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.PlayerPosition newPlayerPosition = 2;</code>
+       * <code>.proto_files.game.PlayerPosition newPlayerPosition = 2;</code>
        * @return Whether the newPlayerPosition field is set.
        */
       public boolean hasNewPlayerPosition() {
         return newPlayerPositionBuilder_ != null || newPlayerPosition_ != null;
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.PlayerPosition newPlayerPosition = 2;</code>
+       * <code>.proto_files.game.PlayerPosition newPlayerPosition = 2;</code>
        * @return The newPlayerPosition.
        */
       public proto_files.GameMessages.PlayerPosition getNewPlayerPosition() {
@@ -7826,7 +7826,7 @@ public final class GameMessages {
         }
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.PlayerPosition newPlayerPosition = 2;</code>
+       * <code>.proto_files.game.PlayerPosition newPlayerPosition = 2;</code>
        */
       public Builder setNewPlayerPosition(proto_files.GameMessages.PlayerPosition value) {
         if (newPlayerPositionBuilder_ == null) {
@@ -7842,7 +7842,7 @@ public final class GameMessages {
         return this;
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.PlayerPosition newPlayerPosition = 2;</code>
+       * <code>.proto_files.game.PlayerPosition newPlayerPosition = 2;</code>
        */
       public Builder setNewPlayerPosition(
           proto_files.GameMessages.PlayerPosition.Builder builderForValue) {
@@ -7856,7 +7856,7 @@ public final class GameMessages {
         return this;
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.PlayerPosition newPlayerPosition = 2;</code>
+       * <code>.proto_files.game.PlayerPosition newPlayerPosition = 2;</code>
        */
       public Builder mergeNewPlayerPosition(proto_files.GameMessages.PlayerPosition value) {
         if (newPlayerPositionBuilder_ == null) {
@@ -7874,7 +7874,7 @@ public final class GameMessages {
         return this;
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.PlayerPosition newPlayerPosition = 2;</code>
+       * <code>.proto_files.game.PlayerPosition newPlayerPosition = 2;</code>
        */
       public Builder clearNewPlayerPosition() {
         if (newPlayerPositionBuilder_ == null) {
@@ -7888,7 +7888,7 @@ public final class GameMessages {
         return this;
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.PlayerPosition newPlayerPosition = 2;</code>
+       * <code>.proto_files.game.PlayerPosition newPlayerPosition = 2;</code>
        */
       public proto_files.GameMessages.PlayerPosition.Builder getNewPlayerPositionBuilder() {
         
@@ -7896,7 +7896,7 @@ public final class GameMessages {
         return getNewPlayerPositionFieldBuilder().getBuilder();
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.PlayerPosition newPlayerPosition = 2;</code>
+       * <code>.proto_files.game.PlayerPosition newPlayerPosition = 2;</code>
        */
       public proto_files.GameMessages.PlayerPositionOrBuilder getNewPlayerPositionOrBuilder() {
         if (newPlayerPositionBuilder_ != null) {
@@ -7907,7 +7907,7 @@ public final class GameMessages {
         }
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.PlayerPosition newPlayerPosition = 2;</code>
+       * <code>.proto_files.game.PlayerPosition newPlayerPosition = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           proto_files.GameMessages.PlayerPosition, proto_files.GameMessages.PlayerPosition.Builder, proto_files.GameMessages.PlayerPositionOrBuilder> 
@@ -7976,123 +7976,123 @@ public final class GameMessages {
   }
 
   public interface PlayerPositionOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:proto_files.all_classes_need_to_sep_by_packets.PlayerPosition)
+      // @@protoc_insertion_point(interface_extends:proto_files.game.PlayerPosition)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.proto_files.all_classes_need_to_sep_by_packets.Point headPos = 1;</code>
+     * <code>.proto_files.game.Point headPos = 1;</code>
      * @return Whether the headPos field is set.
      */
     boolean hasHeadPos();
     /**
-     * <code>.proto_files.all_classes_need_to_sep_by_packets.Point headPos = 1;</code>
+     * <code>.proto_files.game.Point headPos = 1;</code>
      * @return The headPos.
      */
     proto_files.GameMessages.Point getHeadPos();
     /**
-     * <code>.proto_files.all_classes_need_to_sep_by_packets.Point headPos = 1;</code>
+     * <code>.proto_files.game.Point headPos = 1;</code>
      */
     proto_files.GameMessages.PointOrBuilder getHeadPosOrBuilder();
 
     /**
-     * <code>.proto_files.all_classes_need_to_sep_by_packets.Point leftHandPos = 2;</code>
+     * <code>.proto_files.game.Point leftHandPos = 2;</code>
      * @return Whether the leftHandPos field is set.
      */
     boolean hasLeftHandPos();
     /**
-     * <code>.proto_files.all_classes_need_to_sep_by_packets.Point leftHandPos = 2;</code>
+     * <code>.proto_files.game.Point leftHandPos = 2;</code>
      * @return The leftHandPos.
      */
     proto_files.GameMessages.Point getLeftHandPos();
     /**
-     * <code>.proto_files.all_classes_need_to_sep_by_packets.Point leftHandPos = 2;</code>
+     * <code>.proto_files.game.Point leftHandPos = 2;</code>
      */
     proto_files.GameMessages.PointOrBuilder getLeftHandPosOrBuilder();
 
     /**
-     * <code>.proto_files.all_classes_need_to_sep_by_packets.Point rightHandPos = 3;</code>
+     * <code>.proto_files.game.Point rightHandPos = 3;</code>
      * @return Whether the rightHandPos field is set.
      */
     boolean hasRightHandPos();
     /**
-     * <code>.proto_files.all_classes_need_to_sep_by_packets.Point rightHandPos = 3;</code>
+     * <code>.proto_files.game.Point rightHandPos = 3;</code>
      * @return The rightHandPos.
      */
     proto_files.GameMessages.Point getRightHandPos();
     /**
-     * <code>.proto_files.all_classes_need_to_sep_by_packets.Point rightHandPos = 3;</code>
+     * <code>.proto_files.game.Point rightHandPos = 3;</code>
      */
     proto_files.GameMessages.PointOrBuilder getRightHandPosOrBuilder();
 
     /**
-     * <code>.proto_files.all_classes_need_to_sep_by_packets.Point leftFootPos = 4;</code>
+     * <code>.proto_files.game.Point leftFootPos = 4;</code>
      * @return Whether the leftFootPos field is set.
      */
     boolean hasLeftFootPos();
     /**
-     * <code>.proto_files.all_classes_need_to_sep_by_packets.Point leftFootPos = 4;</code>
+     * <code>.proto_files.game.Point leftFootPos = 4;</code>
      * @return The leftFootPos.
      */
     proto_files.GameMessages.Point getLeftFootPos();
     /**
-     * <code>.proto_files.all_classes_need_to_sep_by_packets.Point leftFootPos = 4;</code>
+     * <code>.proto_files.game.Point leftFootPos = 4;</code>
      */
     proto_files.GameMessages.PointOrBuilder getLeftFootPosOrBuilder();
 
     /**
-     * <code>.proto_files.all_classes_need_to_sep_by_packets.Point rightFootPos = 5;</code>
+     * <code>.proto_files.game.Point rightFootPos = 5;</code>
      * @return Whether the rightFootPos field is set.
      */
     boolean hasRightFootPos();
     /**
-     * <code>.proto_files.all_classes_need_to_sep_by_packets.Point rightFootPos = 5;</code>
+     * <code>.proto_files.game.Point rightFootPos = 5;</code>
      * @return The rightFootPos.
      */
     proto_files.GameMessages.Point getRightFootPos();
     /**
-     * <code>.proto_files.all_classes_need_to_sep_by_packets.Point rightFootPos = 5;</code>
+     * <code>.proto_files.game.Point rightFootPos = 5;</code>
      */
     proto_files.GameMessages.PointOrBuilder getRightFootPosOrBuilder();
 
     /**
-     * <code>.proto_files.all_classes_need_to_sep_by_packets.Point shouldersPos = 6;</code>
+     * <code>.proto_files.game.Point shouldersPos = 6;</code>
      * @return Whether the shouldersPos field is set.
      */
     boolean hasShouldersPos();
     /**
-     * <code>.proto_files.all_classes_need_to_sep_by_packets.Point shouldersPos = 6;</code>
+     * <code>.proto_files.game.Point shouldersPos = 6;</code>
      * @return The shouldersPos.
      */
     proto_files.GameMessages.Point getShouldersPos();
     /**
-     * <code>.proto_files.all_classes_need_to_sep_by_packets.Point shouldersPos = 6;</code>
+     * <code>.proto_files.game.Point shouldersPos = 6;</code>
      */
     proto_files.GameMessages.PointOrBuilder getShouldersPosOrBuilder();
 
     /**
-     * <code>.proto_files.all_classes_need_to_sep_by_packets.Point groinPos = 7;</code>
+     * <code>.proto_files.game.Point groinPos = 7;</code>
      * @return Whether the groinPos field is set.
      */
     boolean hasGroinPos();
     /**
-     * <code>.proto_files.all_classes_need_to_sep_by_packets.Point groinPos = 7;</code>
+     * <code>.proto_files.game.Point groinPos = 7;</code>
      * @return The groinPos.
      */
     proto_files.GameMessages.Point getGroinPos();
     /**
-     * <code>.proto_files.all_classes_need_to_sep_by_packets.Point groinPos = 7;</code>
+     * <code>.proto_files.game.Point groinPos = 7;</code>
      */
     proto_files.GameMessages.PointOrBuilder getGroinPosOrBuilder();
   }
   /**
-   * Protobuf type {@code proto_files.all_classes_need_to_sep_by_packets.PlayerPosition}
+   * Protobuf type {@code proto_files.game.PlayerPosition}
    */
   public static final class PlayerPosition extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:proto_files.all_classes_need_to_sep_by_packets.PlayerPosition)
+      // @@protoc_insertion_point(message_implements:proto_files.game.PlayerPosition)
       PlayerPositionOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use all_classes_need_to_sep_by_packets.PlayerPosition.newBuilder() to construct.
+    // Use game.PlayerPosition.newBuilder() to construct.
     private PlayerPosition(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
@@ -8255,7 +8255,7 @@ public final class GameMessages {
     public static final int HEADPOS_FIELD_NUMBER = 1;
     private proto_files.GameMessages.Point headPos_;
     /**
-     * <code>.proto_files.all_classes_need_to_sep_by_packets.Point headPos = 1;</code>
+     * <code>.proto_files.game.Point headPos = 1;</code>
      * @return Whether the headPos field is set.
      */
     @java.lang.Override
@@ -8263,7 +8263,7 @@ public final class GameMessages {
       return headPos_ != null;
     }
     /**
-     * <code>.proto_files.all_classes_need_to_sep_by_packets.Point headPos = 1;</code>
+     * <code>.proto_files.game.Point headPos = 1;</code>
      * @return The headPos.
      */
     @java.lang.Override
@@ -8271,7 +8271,7 @@ public final class GameMessages {
       return headPos_ == null ? proto_files.GameMessages.Point.getDefaultInstance() : headPos_;
     }
     /**
-     * <code>.proto_files.all_classes_need_to_sep_by_packets.Point headPos = 1;</code>
+     * <code>.proto_files.game.Point headPos = 1;</code>
      */
     @java.lang.Override
     public proto_files.GameMessages.PointOrBuilder getHeadPosOrBuilder() {
@@ -8281,7 +8281,7 @@ public final class GameMessages {
     public static final int LEFTHANDPOS_FIELD_NUMBER = 2;
     private proto_files.GameMessages.Point leftHandPos_;
     /**
-     * <code>.proto_files.all_classes_need_to_sep_by_packets.Point leftHandPos = 2;</code>
+     * <code>.proto_files.game.Point leftHandPos = 2;</code>
      * @return Whether the leftHandPos field is set.
      */
     @java.lang.Override
@@ -8289,7 +8289,7 @@ public final class GameMessages {
       return leftHandPos_ != null;
     }
     /**
-     * <code>.proto_files.all_classes_need_to_sep_by_packets.Point leftHandPos = 2;</code>
+     * <code>.proto_files.game.Point leftHandPos = 2;</code>
      * @return The leftHandPos.
      */
     @java.lang.Override
@@ -8297,7 +8297,7 @@ public final class GameMessages {
       return leftHandPos_ == null ? proto_files.GameMessages.Point.getDefaultInstance() : leftHandPos_;
     }
     /**
-     * <code>.proto_files.all_classes_need_to_sep_by_packets.Point leftHandPos = 2;</code>
+     * <code>.proto_files.game.Point leftHandPos = 2;</code>
      */
     @java.lang.Override
     public proto_files.GameMessages.PointOrBuilder getLeftHandPosOrBuilder() {
@@ -8307,7 +8307,7 @@ public final class GameMessages {
     public static final int RIGHTHANDPOS_FIELD_NUMBER = 3;
     private proto_files.GameMessages.Point rightHandPos_;
     /**
-     * <code>.proto_files.all_classes_need_to_sep_by_packets.Point rightHandPos = 3;</code>
+     * <code>.proto_files.game.Point rightHandPos = 3;</code>
      * @return Whether the rightHandPos field is set.
      */
     @java.lang.Override
@@ -8315,7 +8315,7 @@ public final class GameMessages {
       return rightHandPos_ != null;
     }
     /**
-     * <code>.proto_files.all_classes_need_to_sep_by_packets.Point rightHandPos = 3;</code>
+     * <code>.proto_files.game.Point rightHandPos = 3;</code>
      * @return The rightHandPos.
      */
     @java.lang.Override
@@ -8323,7 +8323,7 @@ public final class GameMessages {
       return rightHandPos_ == null ? proto_files.GameMessages.Point.getDefaultInstance() : rightHandPos_;
     }
     /**
-     * <code>.proto_files.all_classes_need_to_sep_by_packets.Point rightHandPos = 3;</code>
+     * <code>.proto_files.game.Point rightHandPos = 3;</code>
      */
     @java.lang.Override
     public proto_files.GameMessages.PointOrBuilder getRightHandPosOrBuilder() {
@@ -8333,7 +8333,7 @@ public final class GameMessages {
     public static final int LEFTFOOTPOS_FIELD_NUMBER = 4;
     private proto_files.GameMessages.Point leftFootPos_;
     /**
-     * <code>.proto_files.all_classes_need_to_sep_by_packets.Point leftFootPos = 4;</code>
+     * <code>.proto_files.game.Point leftFootPos = 4;</code>
      * @return Whether the leftFootPos field is set.
      */
     @java.lang.Override
@@ -8341,7 +8341,7 @@ public final class GameMessages {
       return leftFootPos_ != null;
     }
     /**
-     * <code>.proto_files.all_classes_need_to_sep_by_packets.Point leftFootPos = 4;</code>
+     * <code>.proto_files.game.Point leftFootPos = 4;</code>
      * @return The leftFootPos.
      */
     @java.lang.Override
@@ -8349,7 +8349,7 @@ public final class GameMessages {
       return leftFootPos_ == null ? proto_files.GameMessages.Point.getDefaultInstance() : leftFootPos_;
     }
     /**
-     * <code>.proto_files.all_classes_need_to_sep_by_packets.Point leftFootPos = 4;</code>
+     * <code>.proto_files.game.Point leftFootPos = 4;</code>
      */
     @java.lang.Override
     public proto_files.GameMessages.PointOrBuilder getLeftFootPosOrBuilder() {
@@ -8359,7 +8359,7 @@ public final class GameMessages {
     public static final int RIGHTFOOTPOS_FIELD_NUMBER = 5;
     private proto_files.GameMessages.Point rightFootPos_;
     /**
-     * <code>.proto_files.all_classes_need_to_sep_by_packets.Point rightFootPos = 5;</code>
+     * <code>.proto_files.game.Point rightFootPos = 5;</code>
      * @return Whether the rightFootPos field is set.
      */
     @java.lang.Override
@@ -8367,7 +8367,7 @@ public final class GameMessages {
       return rightFootPos_ != null;
     }
     /**
-     * <code>.proto_files.all_classes_need_to_sep_by_packets.Point rightFootPos = 5;</code>
+     * <code>.proto_files.game.Point rightFootPos = 5;</code>
      * @return The rightFootPos.
      */
     @java.lang.Override
@@ -8375,7 +8375,7 @@ public final class GameMessages {
       return rightFootPos_ == null ? proto_files.GameMessages.Point.getDefaultInstance() : rightFootPos_;
     }
     /**
-     * <code>.proto_files.all_classes_need_to_sep_by_packets.Point rightFootPos = 5;</code>
+     * <code>.proto_files.game.Point rightFootPos = 5;</code>
      */
     @java.lang.Override
     public proto_files.GameMessages.PointOrBuilder getRightFootPosOrBuilder() {
@@ -8385,7 +8385,7 @@ public final class GameMessages {
     public static final int SHOULDERSPOS_FIELD_NUMBER = 6;
     private proto_files.GameMessages.Point shouldersPos_;
     /**
-     * <code>.proto_files.all_classes_need_to_sep_by_packets.Point shouldersPos = 6;</code>
+     * <code>.proto_files.game.Point shouldersPos = 6;</code>
      * @return Whether the shouldersPos field is set.
      */
     @java.lang.Override
@@ -8393,7 +8393,7 @@ public final class GameMessages {
       return shouldersPos_ != null;
     }
     /**
-     * <code>.proto_files.all_classes_need_to_sep_by_packets.Point shouldersPos = 6;</code>
+     * <code>.proto_files.game.Point shouldersPos = 6;</code>
      * @return The shouldersPos.
      */
     @java.lang.Override
@@ -8401,7 +8401,7 @@ public final class GameMessages {
       return shouldersPos_ == null ? proto_files.GameMessages.Point.getDefaultInstance() : shouldersPos_;
     }
     /**
-     * <code>.proto_files.all_classes_need_to_sep_by_packets.Point shouldersPos = 6;</code>
+     * <code>.proto_files.game.Point shouldersPos = 6;</code>
      */
     @java.lang.Override
     public proto_files.GameMessages.PointOrBuilder getShouldersPosOrBuilder() {
@@ -8411,7 +8411,7 @@ public final class GameMessages {
     public static final int GROINPOS_FIELD_NUMBER = 7;
     private proto_files.GameMessages.Point groinPos_;
     /**
-     * <code>.proto_files.all_classes_need_to_sep_by_packets.Point groinPos = 7;</code>
+     * <code>.proto_files.game.Point groinPos = 7;</code>
      * @return Whether the groinPos field is set.
      */
     @java.lang.Override
@@ -8419,7 +8419,7 @@ public final class GameMessages {
       return groinPos_ != null;
     }
     /**
-     * <code>.proto_files.all_classes_need_to_sep_by_packets.Point groinPos = 7;</code>
+     * <code>.proto_files.game.Point groinPos = 7;</code>
      * @return The groinPos.
      */
     @java.lang.Override
@@ -8427,7 +8427,7 @@ public final class GameMessages {
       return groinPos_ == null ? proto_files.GameMessages.Point.getDefaultInstance() : groinPos_;
     }
     /**
-     * <code>.proto_files.all_classes_need_to_sep_by_packets.Point groinPos = 7;</code>
+     * <code>.proto_files.game.Point groinPos = 7;</code>
      */
     @java.lang.Override
     public proto_files.GameMessages.PointOrBuilder getGroinPosOrBuilder() {
@@ -8691,11 +8691,11 @@ public final class GameMessages {
       return builder;
     }
     /**
-     * Protobuf type {@code proto_files.all_classes_need_to_sep_by_packets.PlayerPosition}
+     * Protobuf type {@code proto_files.game.PlayerPosition}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:proto_files.all_classes_need_to_sep_by_packets.PlayerPosition)
+        // @@protoc_insertion_point(builder_implements:proto_files.game.PlayerPosition)
         proto_files.GameMessages.PlayerPositionOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
@@ -8710,7 +8710,7 @@ public final class GameMessages {
                 proto_files.GameMessages.PlayerPosition.class, proto_files.GameMessages.PlayerPosition.Builder.class);
       }
 
-      // Construct using proto_files.GameMessages.all_classes_need_to_sep_by_packets.PlayerPosition.newBuilder()
+      // Construct using proto_files.GameMessages.game.PlayerPosition.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -8933,14 +8933,14 @@ public final class GameMessages {
       private com.google.protobuf.SingleFieldBuilderV3<
           proto_files.GameMessages.Point, proto_files.GameMessages.Point.Builder, proto_files.GameMessages.PointOrBuilder> headPosBuilder_;
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.Point headPos = 1;</code>
+       * <code>.proto_files.game.Point headPos = 1;</code>
        * @return Whether the headPos field is set.
        */
       public boolean hasHeadPos() {
         return headPosBuilder_ != null || headPos_ != null;
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.Point headPos = 1;</code>
+       * <code>.proto_files.game.Point headPos = 1;</code>
        * @return The headPos.
        */
       public proto_files.GameMessages.Point getHeadPos() {
@@ -8951,7 +8951,7 @@ public final class GameMessages {
         }
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.Point headPos = 1;</code>
+       * <code>.proto_files.game.Point headPos = 1;</code>
        */
       public Builder setHeadPos(proto_files.GameMessages.Point value) {
         if (headPosBuilder_ == null) {
@@ -8967,7 +8967,7 @@ public final class GameMessages {
         return this;
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.Point headPos = 1;</code>
+       * <code>.proto_files.game.Point headPos = 1;</code>
        */
       public Builder setHeadPos(
           proto_files.GameMessages.Point.Builder builderForValue) {
@@ -8981,7 +8981,7 @@ public final class GameMessages {
         return this;
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.Point headPos = 1;</code>
+       * <code>.proto_files.game.Point headPos = 1;</code>
        */
       public Builder mergeHeadPos(proto_files.GameMessages.Point value) {
         if (headPosBuilder_ == null) {
@@ -8999,7 +8999,7 @@ public final class GameMessages {
         return this;
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.Point headPos = 1;</code>
+       * <code>.proto_files.game.Point headPos = 1;</code>
        */
       public Builder clearHeadPos() {
         if (headPosBuilder_ == null) {
@@ -9013,7 +9013,7 @@ public final class GameMessages {
         return this;
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.Point headPos = 1;</code>
+       * <code>.proto_files.game.Point headPos = 1;</code>
        */
       public proto_files.GameMessages.Point.Builder getHeadPosBuilder() {
         
@@ -9021,7 +9021,7 @@ public final class GameMessages {
         return getHeadPosFieldBuilder().getBuilder();
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.Point headPos = 1;</code>
+       * <code>.proto_files.game.Point headPos = 1;</code>
        */
       public proto_files.GameMessages.PointOrBuilder getHeadPosOrBuilder() {
         if (headPosBuilder_ != null) {
@@ -9032,7 +9032,7 @@ public final class GameMessages {
         }
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.Point headPos = 1;</code>
+       * <code>.proto_files.game.Point headPos = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           proto_files.GameMessages.Point, proto_files.GameMessages.Point.Builder, proto_files.GameMessages.PointOrBuilder> 
@@ -9052,14 +9052,14 @@ public final class GameMessages {
       private com.google.protobuf.SingleFieldBuilderV3<
           proto_files.GameMessages.Point, proto_files.GameMessages.Point.Builder, proto_files.GameMessages.PointOrBuilder> leftHandPosBuilder_;
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.Point leftHandPos = 2;</code>
+       * <code>.proto_files.game.Point leftHandPos = 2;</code>
        * @return Whether the leftHandPos field is set.
        */
       public boolean hasLeftHandPos() {
         return leftHandPosBuilder_ != null || leftHandPos_ != null;
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.Point leftHandPos = 2;</code>
+       * <code>.proto_files.game.Point leftHandPos = 2;</code>
        * @return The leftHandPos.
        */
       public proto_files.GameMessages.Point getLeftHandPos() {
@@ -9070,7 +9070,7 @@ public final class GameMessages {
         }
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.Point leftHandPos = 2;</code>
+       * <code>.proto_files.game.Point leftHandPos = 2;</code>
        */
       public Builder setLeftHandPos(proto_files.GameMessages.Point value) {
         if (leftHandPosBuilder_ == null) {
@@ -9086,7 +9086,7 @@ public final class GameMessages {
         return this;
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.Point leftHandPos = 2;</code>
+       * <code>.proto_files.game.Point leftHandPos = 2;</code>
        */
       public Builder setLeftHandPos(
           proto_files.GameMessages.Point.Builder builderForValue) {
@@ -9100,7 +9100,7 @@ public final class GameMessages {
         return this;
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.Point leftHandPos = 2;</code>
+       * <code>.proto_files.game.Point leftHandPos = 2;</code>
        */
       public Builder mergeLeftHandPos(proto_files.GameMessages.Point value) {
         if (leftHandPosBuilder_ == null) {
@@ -9118,7 +9118,7 @@ public final class GameMessages {
         return this;
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.Point leftHandPos = 2;</code>
+       * <code>.proto_files.game.Point leftHandPos = 2;</code>
        */
       public Builder clearLeftHandPos() {
         if (leftHandPosBuilder_ == null) {
@@ -9132,7 +9132,7 @@ public final class GameMessages {
         return this;
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.Point leftHandPos = 2;</code>
+       * <code>.proto_files.game.Point leftHandPos = 2;</code>
        */
       public proto_files.GameMessages.Point.Builder getLeftHandPosBuilder() {
         
@@ -9140,7 +9140,7 @@ public final class GameMessages {
         return getLeftHandPosFieldBuilder().getBuilder();
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.Point leftHandPos = 2;</code>
+       * <code>.proto_files.game.Point leftHandPos = 2;</code>
        */
       public proto_files.GameMessages.PointOrBuilder getLeftHandPosOrBuilder() {
         if (leftHandPosBuilder_ != null) {
@@ -9151,7 +9151,7 @@ public final class GameMessages {
         }
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.Point leftHandPos = 2;</code>
+       * <code>.proto_files.game.Point leftHandPos = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           proto_files.GameMessages.Point, proto_files.GameMessages.Point.Builder, proto_files.GameMessages.PointOrBuilder> 
@@ -9171,14 +9171,14 @@ public final class GameMessages {
       private com.google.protobuf.SingleFieldBuilderV3<
           proto_files.GameMessages.Point, proto_files.GameMessages.Point.Builder, proto_files.GameMessages.PointOrBuilder> rightHandPosBuilder_;
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.Point rightHandPos = 3;</code>
+       * <code>.proto_files.game.Point rightHandPos = 3;</code>
        * @return Whether the rightHandPos field is set.
        */
       public boolean hasRightHandPos() {
         return rightHandPosBuilder_ != null || rightHandPos_ != null;
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.Point rightHandPos = 3;</code>
+       * <code>.proto_files.game.Point rightHandPos = 3;</code>
        * @return The rightHandPos.
        */
       public proto_files.GameMessages.Point getRightHandPos() {
@@ -9189,7 +9189,7 @@ public final class GameMessages {
         }
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.Point rightHandPos = 3;</code>
+       * <code>.proto_files.game.Point rightHandPos = 3;</code>
        */
       public Builder setRightHandPos(proto_files.GameMessages.Point value) {
         if (rightHandPosBuilder_ == null) {
@@ -9205,7 +9205,7 @@ public final class GameMessages {
         return this;
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.Point rightHandPos = 3;</code>
+       * <code>.proto_files.game.Point rightHandPos = 3;</code>
        */
       public Builder setRightHandPos(
           proto_files.GameMessages.Point.Builder builderForValue) {
@@ -9219,7 +9219,7 @@ public final class GameMessages {
         return this;
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.Point rightHandPos = 3;</code>
+       * <code>.proto_files.game.Point rightHandPos = 3;</code>
        */
       public Builder mergeRightHandPos(proto_files.GameMessages.Point value) {
         if (rightHandPosBuilder_ == null) {
@@ -9237,7 +9237,7 @@ public final class GameMessages {
         return this;
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.Point rightHandPos = 3;</code>
+       * <code>.proto_files.game.Point rightHandPos = 3;</code>
        */
       public Builder clearRightHandPos() {
         if (rightHandPosBuilder_ == null) {
@@ -9251,7 +9251,7 @@ public final class GameMessages {
         return this;
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.Point rightHandPos = 3;</code>
+       * <code>.proto_files.game.Point rightHandPos = 3;</code>
        */
       public proto_files.GameMessages.Point.Builder getRightHandPosBuilder() {
         
@@ -9259,7 +9259,7 @@ public final class GameMessages {
         return getRightHandPosFieldBuilder().getBuilder();
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.Point rightHandPos = 3;</code>
+       * <code>.proto_files.game.Point rightHandPos = 3;</code>
        */
       public proto_files.GameMessages.PointOrBuilder getRightHandPosOrBuilder() {
         if (rightHandPosBuilder_ != null) {
@@ -9270,7 +9270,7 @@ public final class GameMessages {
         }
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.Point rightHandPos = 3;</code>
+       * <code>.proto_files.game.Point rightHandPos = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           proto_files.GameMessages.Point, proto_files.GameMessages.Point.Builder, proto_files.GameMessages.PointOrBuilder> 
@@ -9290,14 +9290,14 @@ public final class GameMessages {
       private com.google.protobuf.SingleFieldBuilderV3<
           proto_files.GameMessages.Point, proto_files.GameMessages.Point.Builder, proto_files.GameMessages.PointOrBuilder> leftFootPosBuilder_;
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.Point leftFootPos = 4;</code>
+       * <code>.proto_files.game.Point leftFootPos = 4;</code>
        * @return Whether the leftFootPos field is set.
        */
       public boolean hasLeftFootPos() {
         return leftFootPosBuilder_ != null || leftFootPos_ != null;
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.Point leftFootPos = 4;</code>
+       * <code>.proto_files.game.Point leftFootPos = 4;</code>
        * @return The leftFootPos.
        */
       public proto_files.GameMessages.Point getLeftFootPos() {
@@ -9308,7 +9308,7 @@ public final class GameMessages {
         }
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.Point leftFootPos = 4;</code>
+       * <code>.proto_files.game.Point leftFootPos = 4;</code>
        */
       public Builder setLeftFootPos(proto_files.GameMessages.Point value) {
         if (leftFootPosBuilder_ == null) {
@@ -9324,7 +9324,7 @@ public final class GameMessages {
         return this;
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.Point leftFootPos = 4;</code>
+       * <code>.proto_files.game.Point leftFootPos = 4;</code>
        */
       public Builder setLeftFootPos(
           proto_files.GameMessages.Point.Builder builderForValue) {
@@ -9338,7 +9338,7 @@ public final class GameMessages {
         return this;
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.Point leftFootPos = 4;</code>
+       * <code>.proto_files.game.Point leftFootPos = 4;</code>
        */
       public Builder mergeLeftFootPos(proto_files.GameMessages.Point value) {
         if (leftFootPosBuilder_ == null) {
@@ -9356,7 +9356,7 @@ public final class GameMessages {
         return this;
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.Point leftFootPos = 4;</code>
+       * <code>.proto_files.game.Point leftFootPos = 4;</code>
        */
       public Builder clearLeftFootPos() {
         if (leftFootPosBuilder_ == null) {
@@ -9370,7 +9370,7 @@ public final class GameMessages {
         return this;
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.Point leftFootPos = 4;</code>
+       * <code>.proto_files.game.Point leftFootPos = 4;</code>
        */
       public proto_files.GameMessages.Point.Builder getLeftFootPosBuilder() {
         
@@ -9378,7 +9378,7 @@ public final class GameMessages {
         return getLeftFootPosFieldBuilder().getBuilder();
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.Point leftFootPos = 4;</code>
+       * <code>.proto_files.game.Point leftFootPos = 4;</code>
        */
       public proto_files.GameMessages.PointOrBuilder getLeftFootPosOrBuilder() {
         if (leftFootPosBuilder_ != null) {
@@ -9389,7 +9389,7 @@ public final class GameMessages {
         }
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.Point leftFootPos = 4;</code>
+       * <code>.proto_files.game.Point leftFootPos = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           proto_files.GameMessages.Point, proto_files.GameMessages.Point.Builder, proto_files.GameMessages.PointOrBuilder> 
@@ -9409,14 +9409,14 @@ public final class GameMessages {
       private com.google.protobuf.SingleFieldBuilderV3<
           proto_files.GameMessages.Point, proto_files.GameMessages.Point.Builder, proto_files.GameMessages.PointOrBuilder> rightFootPosBuilder_;
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.Point rightFootPos = 5;</code>
+       * <code>.proto_files.game.Point rightFootPos = 5;</code>
        * @return Whether the rightFootPos field is set.
        */
       public boolean hasRightFootPos() {
         return rightFootPosBuilder_ != null || rightFootPos_ != null;
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.Point rightFootPos = 5;</code>
+       * <code>.proto_files.game.Point rightFootPos = 5;</code>
        * @return The rightFootPos.
        */
       public proto_files.GameMessages.Point getRightFootPos() {
@@ -9427,7 +9427,7 @@ public final class GameMessages {
         }
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.Point rightFootPos = 5;</code>
+       * <code>.proto_files.game.Point rightFootPos = 5;</code>
        */
       public Builder setRightFootPos(proto_files.GameMessages.Point value) {
         if (rightFootPosBuilder_ == null) {
@@ -9443,7 +9443,7 @@ public final class GameMessages {
         return this;
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.Point rightFootPos = 5;</code>
+       * <code>.proto_files.game.Point rightFootPos = 5;</code>
        */
       public Builder setRightFootPos(
           proto_files.GameMessages.Point.Builder builderForValue) {
@@ -9457,7 +9457,7 @@ public final class GameMessages {
         return this;
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.Point rightFootPos = 5;</code>
+       * <code>.proto_files.game.Point rightFootPos = 5;</code>
        */
       public Builder mergeRightFootPos(proto_files.GameMessages.Point value) {
         if (rightFootPosBuilder_ == null) {
@@ -9475,7 +9475,7 @@ public final class GameMessages {
         return this;
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.Point rightFootPos = 5;</code>
+       * <code>.proto_files.game.Point rightFootPos = 5;</code>
        */
       public Builder clearRightFootPos() {
         if (rightFootPosBuilder_ == null) {
@@ -9489,7 +9489,7 @@ public final class GameMessages {
         return this;
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.Point rightFootPos = 5;</code>
+       * <code>.proto_files.game.Point rightFootPos = 5;</code>
        */
       public proto_files.GameMessages.Point.Builder getRightFootPosBuilder() {
         
@@ -9497,7 +9497,7 @@ public final class GameMessages {
         return getRightFootPosFieldBuilder().getBuilder();
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.Point rightFootPos = 5;</code>
+       * <code>.proto_files.game.Point rightFootPos = 5;</code>
        */
       public proto_files.GameMessages.PointOrBuilder getRightFootPosOrBuilder() {
         if (rightFootPosBuilder_ != null) {
@@ -9508,7 +9508,7 @@ public final class GameMessages {
         }
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.Point rightFootPos = 5;</code>
+       * <code>.proto_files.game.Point rightFootPos = 5;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           proto_files.GameMessages.Point, proto_files.GameMessages.Point.Builder, proto_files.GameMessages.PointOrBuilder> 
@@ -9528,14 +9528,14 @@ public final class GameMessages {
       private com.google.protobuf.SingleFieldBuilderV3<
           proto_files.GameMessages.Point, proto_files.GameMessages.Point.Builder, proto_files.GameMessages.PointOrBuilder> shouldersPosBuilder_;
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.Point shouldersPos = 6;</code>
+       * <code>.proto_files.game.Point shouldersPos = 6;</code>
        * @return Whether the shouldersPos field is set.
        */
       public boolean hasShouldersPos() {
         return shouldersPosBuilder_ != null || shouldersPos_ != null;
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.Point shouldersPos = 6;</code>
+       * <code>.proto_files.game.Point shouldersPos = 6;</code>
        * @return The shouldersPos.
        */
       public proto_files.GameMessages.Point getShouldersPos() {
@@ -9546,7 +9546,7 @@ public final class GameMessages {
         }
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.Point shouldersPos = 6;</code>
+       * <code>.proto_files.game.Point shouldersPos = 6;</code>
        */
       public Builder setShouldersPos(proto_files.GameMessages.Point value) {
         if (shouldersPosBuilder_ == null) {
@@ -9562,7 +9562,7 @@ public final class GameMessages {
         return this;
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.Point shouldersPos = 6;</code>
+       * <code>.proto_files.game.Point shouldersPos = 6;</code>
        */
       public Builder setShouldersPos(
           proto_files.GameMessages.Point.Builder builderForValue) {
@@ -9576,7 +9576,7 @@ public final class GameMessages {
         return this;
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.Point shouldersPos = 6;</code>
+       * <code>.proto_files.game.Point shouldersPos = 6;</code>
        */
       public Builder mergeShouldersPos(proto_files.GameMessages.Point value) {
         if (shouldersPosBuilder_ == null) {
@@ -9594,7 +9594,7 @@ public final class GameMessages {
         return this;
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.Point shouldersPos = 6;</code>
+       * <code>.proto_files.game.Point shouldersPos = 6;</code>
        */
       public Builder clearShouldersPos() {
         if (shouldersPosBuilder_ == null) {
@@ -9608,7 +9608,7 @@ public final class GameMessages {
         return this;
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.Point shouldersPos = 6;</code>
+       * <code>.proto_files.game.Point shouldersPos = 6;</code>
        */
       public proto_files.GameMessages.Point.Builder getShouldersPosBuilder() {
         
@@ -9616,7 +9616,7 @@ public final class GameMessages {
         return getShouldersPosFieldBuilder().getBuilder();
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.Point shouldersPos = 6;</code>
+       * <code>.proto_files.game.Point shouldersPos = 6;</code>
        */
       public proto_files.GameMessages.PointOrBuilder getShouldersPosOrBuilder() {
         if (shouldersPosBuilder_ != null) {
@@ -9627,7 +9627,7 @@ public final class GameMessages {
         }
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.Point shouldersPos = 6;</code>
+       * <code>.proto_files.game.Point shouldersPos = 6;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           proto_files.GameMessages.Point, proto_files.GameMessages.Point.Builder, proto_files.GameMessages.PointOrBuilder> 
@@ -9647,14 +9647,14 @@ public final class GameMessages {
       private com.google.protobuf.SingleFieldBuilderV3<
           proto_files.GameMessages.Point, proto_files.GameMessages.Point.Builder, proto_files.GameMessages.PointOrBuilder> groinPosBuilder_;
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.Point groinPos = 7;</code>
+       * <code>.proto_files.game.Point groinPos = 7;</code>
        * @return Whether the groinPos field is set.
        */
       public boolean hasGroinPos() {
         return groinPosBuilder_ != null || groinPos_ != null;
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.Point groinPos = 7;</code>
+       * <code>.proto_files.game.Point groinPos = 7;</code>
        * @return The groinPos.
        */
       public proto_files.GameMessages.Point getGroinPos() {
@@ -9665,7 +9665,7 @@ public final class GameMessages {
         }
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.Point groinPos = 7;</code>
+       * <code>.proto_files.game.Point groinPos = 7;</code>
        */
       public Builder setGroinPos(proto_files.GameMessages.Point value) {
         if (groinPosBuilder_ == null) {
@@ -9681,7 +9681,7 @@ public final class GameMessages {
         return this;
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.Point groinPos = 7;</code>
+       * <code>.proto_files.game.Point groinPos = 7;</code>
        */
       public Builder setGroinPos(
           proto_files.GameMessages.Point.Builder builderForValue) {
@@ -9695,7 +9695,7 @@ public final class GameMessages {
         return this;
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.Point groinPos = 7;</code>
+       * <code>.proto_files.game.Point groinPos = 7;</code>
        */
       public Builder mergeGroinPos(proto_files.GameMessages.Point value) {
         if (groinPosBuilder_ == null) {
@@ -9713,7 +9713,7 @@ public final class GameMessages {
         return this;
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.Point groinPos = 7;</code>
+       * <code>.proto_files.game.Point groinPos = 7;</code>
        */
       public Builder clearGroinPos() {
         if (groinPosBuilder_ == null) {
@@ -9727,7 +9727,7 @@ public final class GameMessages {
         return this;
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.Point groinPos = 7;</code>
+       * <code>.proto_files.game.Point groinPos = 7;</code>
        */
       public proto_files.GameMessages.Point.Builder getGroinPosBuilder() {
         
@@ -9735,7 +9735,7 @@ public final class GameMessages {
         return getGroinPosFieldBuilder().getBuilder();
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.Point groinPos = 7;</code>
+       * <code>.proto_files.game.Point groinPos = 7;</code>
        */
       public proto_files.GameMessages.PointOrBuilder getGroinPosOrBuilder() {
         if (groinPosBuilder_ != null) {
@@ -9746,7 +9746,7 @@ public final class GameMessages {
         }
       }
       /**
-       * <code>.proto_files.all_classes_need_to_sep_by_packets.Point groinPos = 7;</code>
+       * <code>.proto_files.game.Point groinPos = 7;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           proto_files.GameMessages.Point, proto_files.GameMessages.Point.Builder, proto_files.GameMessages.PointOrBuilder> 
@@ -9774,10 +9774,10 @@ public final class GameMessages {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:proto_files.all_classes_need_to_sep_by_packets.PlayerPosition)
+      // @@protoc_insertion_point(builder_scope:proto_files.game.PlayerPosition)
     }
 
-    // @@protoc_insertion_point(class_scope:proto_files.all_classes_need_to_sep_by_packets.PlayerPosition)
+    // @@protoc_insertion_point(class_scope:proto_files.game.PlayerPosition)
     private static final proto_files.GameMessages.PlayerPosition DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new proto_files.GameMessages.PlayerPosition();
@@ -10316,7 +10316,7 @@ public final class GameMessages {
       "\005\022\014\n\004name\030\002 \001(\t\022/\n\014PlayerStatus\030\003 \001(\0162\031." +
       "proto_files.PlayerStatus\022\024\n\014PlayerHealth" +
       "\030\004 \001(\005\0223\n\016PlayerPosition\030\005 \001(\0132\033.proto_f" +
-      "iles.all_classes_need_to_sep_by_packets.PlayerPosition\0223\n\016WeaponPosition\030\006 " +
+      "iles.game.PlayerPosition\0223\n\016WeaponPosition\030\006 " +
       "\001(\0132\033.proto_files.WeaponPosition\"4\n\020Star" +
       "tGameRequest\022\017\n\007self_id\030\001 \001(\005\022\017\n\007room_id" +
       "\030\002 \001(\005\"\210\001\n\021StartGameResponse\022\017\n\007game_id\030" +
@@ -10331,19 +10331,19 @@ public final class GameMessages {
       "atePlayer\022\021\n\tplayer_id\030\001 \001(\005\022\024\n\014PlayerHe" +
       "alth\030\002 \001(\005\022/\n\014PlayerStatus\030\003 \001(\0162\031.proto" +
       "_files.PlayerStatus\0223\n\016PlayerPosition\030\004 " +
-      "\001(\0132\033.proto_files.all_classes_need_to_sep_by_packets.PlayerPosition\0223\n\016Weap" +
+      "\001(\0132\033.proto_files.game.PlayerPosition\0223\n\016Weap" +
       "onPosition\030\005 \001(\0132\033.proto_files.WeaponPos" +
       "ition\"a\n\024ChangePlayerPosition\022\021\n\tplayer_" +
       "id\030\001 \001(\005\0226\n\021newPlayerPosition\030\002 \001(\0132\033.pr" +
-      "oto_files.all_classes_need_to_sep_by_packets.PlayerPosition\"\253\002\n\016PlayerPosit" +
-      "ion\022#\n\007headPos\030\001 \001(\0132\022.proto_files.all_classes_need_to_sep_by_packets.Point" +
+      "oto_files.game.PlayerPosition\"\253\002\n\016PlayerPosit" +
+      "ion\022#\n\007headPos\030\001 \001(\0132\022.proto_files.game.Point" +
       "\022\'\n\013leftHandPos\030\002 \001(\0132\022.proto_files.Poin" +
       "t\022(\n\014rightHandPos\030\003 \001(\0132\022.proto_files.Po" +
       "int\022\'\n\013leftFootPos\030\004 \001(\0132\022.proto_files.P" +
       "oint\022(\n\014rightFootPos\030\005 \001(\0132\022.proto_files" +
-      ".all_classes_need_to_sep_by_packets.Point\022(\n\014shouldersPos\030\006 \001(\0132\022.proto_fil" +
-      "es.all_classes_need_to_sep_by_packets.Point\022$\n\010groinPos\030\007 \001(\0132\022.proto_files" +
-      ".all_classes_need_to_sep_by_packets.Point\"\020\n\016WeaponPosition*,\n\nGameStatus\022\t" +
+      ".game.Point\022(\n\014shouldersPos\030\006 \001(\0132\022.proto_fil" +
+      "es.game.Point\022$\n\010groinPos\030\007 \001(\0132\022.proto_files" +
+      ".game.Point\"\020\n\016WeaponPosition*,\n\nGameStatus\022\t" +
       "\n\005READY\020\000\022\n\n\006ACTIVE\020\001\022\007\n\003END\020\002*<\n\014Player" +
       "Status\022\016\n\nDISCONNECT\020\000\022\007\n\003WIN\020\001\022\010\n\004DIED\020" +
       "\002\022\t\n\005ALIVE\020\003B\016B\014GameMessagesb\006proto3"
@@ -10369,7 +10369,7 @@ public final class GameMessages {
     internal_static_proto_files_Player_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_files_Player_descriptor,
-        new java.lang.String[] { "Id", "Name", "PlayerStatus", "PlayerHealth", "all_classes_need_to_sep_by_packets.PlayerPosition", "WeaponPosition", });
+        new java.lang.String[] { "Id", "Name", "PlayerStatus", "PlayerHealth", "game.PlayerPosition", "WeaponPosition", });
     internal_static_proto_files_StartGameRequest_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_proto_files_StartGameRequest_fieldAccessorTable = new
@@ -10405,7 +10405,7 @@ public final class GameMessages {
     internal_static_proto_files_UpdatePlayer_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_files_UpdatePlayer_descriptor,
-        new java.lang.String[] { "PlayerId", "PlayerHealth", "PlayerStatus", "all_classes_need_to_sep_by_packets.PlayerPosition", "WeaponPosition", });
+        new java.lang.String[] { "PlayerId", "PlayerHealth", "PlayerStatus", "game.PlayerPosition", "WeaponPosition", });
     internal_static_proto_files_ChangePlayerPosition_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_proto_files_ChangePlayerPosition_fieldAccessorTable = new
