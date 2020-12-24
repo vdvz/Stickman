@@ -8,6 +8,6 @@ public interface USER_DB_I {
 
     User GetUser(String android_id) throws SQLException;
 
-    boolean SaveUser(User user);
+    void SaveUser(User user) throws SQLException;
 
 }

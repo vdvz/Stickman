@@ -15,10 +15,10 @@ public class DB implements DB_I{
     }
 
     private static final int POOL_SIZE = 3;
-    private final String username = "user";//mb make as constants in outer class
-    private final String password = "pw";
+    private final String username = "project_dangerstickman";//mb make as constants in outer class
+    private final String password = "k>n2g#ZN";
     private final String server = "localhost";
-    private final String port = "8098";
+    private final String port = "3306";
     private final Queue<MyConnection_I> ConnectionsPool = new LinkedList<>();
 
     private DB(){
@@ -39,7 +39,7 @@ public class DB implements DB_I{
         connectionProps.put("user", this.username);
         connectionProps.put("password", this.password);
         Connection = DriverManager.getConnection(
-                "jdbc:mysql://" + this.server + ":" + this.port + "/",
+                "jdbc:mysql://" + this.server + ":" + this.port + "/dangerstickman?serverTimezone=UTC",
                 connectionProps);
         System.out.println("Connected to database");
         assert Connection != null;

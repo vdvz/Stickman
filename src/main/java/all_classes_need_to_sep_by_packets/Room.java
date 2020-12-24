@@ -97,7 +97,7 @@ public class Room implements Room_I, ProtobufSerializable{
     public MessageLite Serialize() {
         return RoomMessages.Room.newBuilder()
                 .setAdmin(getAdmin().getId())
-                .addAllPlayer()
+                //.addAllPlayer()
                 .setRoomSettings(RoomMessages.RoomSettings.newBuilder()
                         .setBounce(getBounce())
                         .setDamage(getDamage())

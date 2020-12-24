@@ -1,17 +1,19 @@
 package DB;
 import friend.Friend;
+
+import java.sql.SQLException;
 import java.util.List;
 
 public interface FRIEND_DB_I {
 
-    List<Friend> FindAllFriend(String query);
+    List<Friend> FindAllFriend(String query) throws SQLException;
 
-    void MakeRequestForFriend(String query);
+    void MakeRequestForFriend(String from, String to);
 
-    boolean ConfirmRequestForFriend(String query);
+    boolean ConfirmRequestForFriend(String from, String to);
 
-    void RemoveFriend(String query);
+    void RemoveFriend(String from, String to) throws SQLException;
 
-    List<Friend> GetFriendsByUser(String query);
+    List<Friend> GetFriendsByUser(String query) throws SQLException;
 
 }

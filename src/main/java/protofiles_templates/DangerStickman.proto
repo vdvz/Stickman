@@ -78,7 +78,7 @@ message PacketWrapper{
         UserWrapper user = 2;
         LobbyWrapper lobby = 3;
         RoomWrapper room = 4;
-        //GameWrapper game = 5;
+        GameWrapper game = 5;
 
         PingMsg ping = 15;
     }

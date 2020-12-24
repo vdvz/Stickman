@@ -14,7 +14,7 @@ public class MyConnection implements MyConnection_I{
     }
 
     @Override
-    public boolean execute(String sql) {
+    public boolean execute(String sql) throws SQLException {
         if(statement == null) {
             try {
                 statement = Connection.createStatement();
@@ -23,11 +23,11 @@ public class MyConnection implements MyConnection_I{
             }
         }
 
-        return false;
+        return statement.execute(sql);
     }
 
     @Override
-    public int executeUpdate(String sql) {
+    public int executeUpdate(String sql) throws SQLException {
         if(statement == null) {
             try {
                 statement = Connection.createStatement();
@@ -36,11 +36,11 @@ public class MyConnection implements MyConnection_I{
             }
         }
 
-        return 0;
+        return statement.executeUpdate(sql);
     }
 
     @Override
-    public ResultSet executeQuery(String sql) {
+    public ResultSet executeQuery(String sql) throws SQLException {
         if(statement == null) {
             try {
                 statement = Connection.createStatement();
@@ -49,10 +49,17 @@ public class MyConnection implements MyConnection_I{
             }
         }
 
-        return null;
+        return statement.executeQuery(sql);
+    }
+
+    @Override
+    public ResultSet getResultSet() throws SQLException {
+        if(statement == null) return null;
+        return statement.getResultSet();
     }
 
     public void release(){
+        if(statement==null) return;
         try {
             statement.close();
         } catch (SQLException throwables) {

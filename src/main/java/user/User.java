@@ -20,7 +20,7 @@ public class User implements ProtobufSerializable {
     private int count_win = 0;
     private int count_loss = 0;
 
-    int getId(){
+    public int getId(){
         return id;
     }
 
@@ -41,14 +41,10 @@ public class User implements ProtobufSerializable {
     }
 
     private final List<Integer> skins = new ArrayList<>();
-    List<Friend> IncomingRequestForFriend = new ArrayList<>();
-    List<Friend> Friends = new ArrayList<>();
 
-    //MB NOT AND JUST PUT RECORD IN DATABASE
-    List<Friend> OutGoingRequestForFriend = new ArrayList<>();
-
-    //FOR FUTURE MB MAKE PRIORITY QUEUE -> MOST EXPENSIVE UPDATES WILL SEND FASTER
-    Queue<DangerStickman.PacketWrapper> UpdateQueue = new LinkedList<>();
+    public User(){
+        id = 0;
+    }
 
     public User(int _id, String _name){
         id = _id;
