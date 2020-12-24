@@ -12,6 +12,8 @@ public interface UserManager_I {
 
     void AddToOnline(User user);
 
+    void UserDisconnected(int user_id);
+
     //Возвращает юзера если он онайн иначе кидает exceptions.NoUserException
     User GetUser(int user_id) throws NoSuchUserException;
 }

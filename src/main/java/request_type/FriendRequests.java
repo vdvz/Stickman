@@ -1,6 +1,7 @@
 package request_type;
 
 import DB.FRIEND_DB;
+import exceptions.NoResponse;
 import exceptions.UnknownTypeOfRequest;
 import managers.Managers;
 import com.google.protobuf.MessageLite;
@@ -18,19 +19,26 @@ public class FriendRequests implements FriendRequests_I{
     private final FRIEND_DB friendDB = new FRIEND_DB();
 
     @Override
-    public DangerStickman.PacketWrapper execute(MessageLite _request) throws UnknownTypeOfRequest {
+    public DangerStickman.PacketWrapper execute(MessageLite _request) throws UnknownTypeOfRequest, NoResponse {
         DangerStickman.PacketWrapper.FriendWrapper request = (DangerStickman.PacketWrapper.FriendWrapper) _request;
         if(request.hasFindFriendsRequest()){
-
+            return DangerStickman.PacketWrapper.newBuilder().setFriend(
+                    DangerStickman.PacketWrapper.FriendWrapper.newBuilder()
+                            .setFindFriendsResponse(FindFriends(request.getFindFriendsRequest().getStrForSearch()))
+            ).build();
         }
         if(request.hasMakeFriendsRequest()){
-
+            MakeRequestForFriend(request.getMakeFriendsRequest().getSelfId(), request.getMakeFriendsRequest().getFriendId());
+            throw new NoResponse();
         }
-        if(request.hasConfirmationFriendsRequest()){
-
+        if(request.hasConfirmationFriendResponse()){
+            ConfirmFriendship(request.getConfirmationFriendResponse().getSelfId(),
+                    request.getConfirmationFriendResponse().getFriendId(), request.getConfirmationFriendResponse().getConfirmFriendStatus());
+            throw new NoResponse();
         }
         if(request.hasRemoveFriendRequest()){
-
+            RemoveFriend(request.getRemoveFriendRequest().getSelfId(), request.getRemoveFriendRequest().getFriendId());
+            throw new NoResponse();
         }
         if(request.hasUpdateFriendsListRequest()){
 
@@ -51,7 +59,12 @@ public class FriendRequests implements FriendRequests_I{
     }
 
     private void MakeRequestForFriend(Integer from, Integer to){
-        friendDB.MakeRequestForFriend(from.toString(), to.toString());
+        try {
+            friendDB.MakeRequestForFriend(from.toString(), to.toString());
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
         User toUser = null;
         User fromUser = null;
         try {
@@ -60,11 +73,40 @@ public class FriendRequests implements FriendRequests_I{
         } catch (NoSuchElementException e){
             return;
         }
+
         toUser.send((DangerStickman.PacketWrapper) new Friend(fromUser.getId(), fromUser.getName(), fromUser.getTrophies()).Serialize());
     }
 
-    private void GetConfirmationFromUser(){
+    private void ConfirmFriendship(Integer from, Integer to, int status){
+        if(status == FriendMessages.ConfirmFriendStatus.DISMISS.getNumber()){
+            try {
+                friendDB.RemoveFriend(from.toString(), to.toString());
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+        }else{
+            try {
+                friendDB.ConfirmRequestForFriend(from.toString(), to.toString());
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
 
+            User fromUser = null;
+            User toUser = null;
+            try{
+                fromUser = Managers.getUserManager().GetUser(from);
+                //TODO logic
+            } catch (NoSuchElementException e){
+
+            }
+
+            try{
+                toUser = Managers.getUserManager().GetUser(to);
+                //TODO logic
+            } catch (NoSuchElementException e){
+
+            }
+        }
     }
 
     private void RemoveFriend(Integer from, Integer to){
@@ -88,13 +130,10 @@ public class FriendRequests implements FriendRequests_I{
         } catch (NoSuchElementException e){
 
         }
-
     }
 
     private FriendMessages.UpdateFriendsListResponse.Builder UpdateFriendList(Integer for_user){
-
+        return null;
     }
-
-
 
 }

@@ -43,7 +43,8 @@ public class USER_DB implements USER_DB_I{
     private synchronized boolean CreateUser(String android_id) throws SQLException {
         MyConnection_I Connection = DB.getInstance().getConnection();
         String qr = "INSERT INTO USERS (android_id) VALUES ('" + android_id + "');";
+        boolean status = Connection.execute(qr);
         DB.getInstance().releaseConnection(Connection);
-        return Connection.execute(qr);
+        return status;
     }
 }

@@ -4,7 +4,7 @@ import exceptions.UserAreNotAdmin;
 import game.Game;
 import managers.GameFactory;
 import managers.GameManager;
-import server.Updatable_I;
+import managers.Updatable_I;
 import exceptions.NoAvailableIDException;
 import exceptions.NoSuchRoomException;
 import user.User;
@@ -49,6 +49,7 @@ public class Lobby implements Lobby_I, Updatable_I {
     }
 
     public List<Room> GetAvailableRooms(){
+        //return deep copy!!!
         return AvailableRoom.values().stream().limit(countOfReturningRooms).collect(Collectors.toList());
     }
 
@@ -59,7 +60,7 @@ public class Lobby implements Lobby_I, Updatable_I {
         return room;
     }
 
-    void RemoveRoom(Room room){
+    private void RemoveRoom(Room room){
         int room_id = room.getId();
         AvailableRoom.remove(room_id);
         freeID(room_id);

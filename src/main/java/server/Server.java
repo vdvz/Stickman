@@ -15,7 +15,7 @@ import io.netty.handler.codec.protobuf.ProtobufVarint32LengthFieldPrepender;
 import io.netty.handler.timeout.IdleStateHandler;
 import proto_files.DangerStickman;
 
-public class Server implements Runnable {
+public class Server implements Runnable, Server_I {
     private final int port;
     private ProtobufHandler ProtobufHandler;
 
@@ -25,6 +25,7 @@ public class Server implements Runnable {
 
     public Server(int _port){
         port = _port;
+        initialize();
     }
 
     public static void main(String[] args) {
@@ -32,9 +33,9 @@ public class Server implements Runnable {
         server.run();
     }
 
-    void initialize(){
+    @Override
+    public void initialize(){
         ProtobufHandler = new ProtobufHandler();
-
     }
 
     public void run(){

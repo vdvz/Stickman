@@ -1,5 +1,6 @@
 package lobby;
 
+import proto_files.LobbyMessages;
 import user.User;
 
 public interface Room_I {
@@ -34,4 +35,5 @@ public interface Room_I {
 
      void RemoveUser(User user);
 
+     LobbyMessages.LiteRoom.Builder GetLiteRoom();
 }

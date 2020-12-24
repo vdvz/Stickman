@@ -24,35 +24,64 @@ public class FRIEND_DB implements FRIEND_DB_I{
     @Override
     public synchronized void MakeRequestForFriend(String from, String to) throws SQLException {
         MyConnection_I Connection = DB.getInstance().getConnection();
-        String query = "SELECT COUNT(*) AS count, status FROM friends WHERE user_id==" + from + " or friend_id==" + to + " GROUP BY status;";
+        String query = "SELECT COUNT(*) AS count, status FROM friends WHERE (user_id==" + from + " and friend_id==" + to + ") " +
+                " or (user_id==" + to + " and friend_id==" + from + ") GROUP BY status;";
         ResultSet result  = Connection.executeQuery(query);
         while(result.next()){
             if(result.getInt("count") != 0){
                 int status = result.getInt("status");
-                if(status == friend.FRIEND_STATUS.INCOMING.ordinal()){
+                if(status == FRIEND_STATUS.INCOMING.ordinal()){
                     //todo throw exceptioin already incoming
                 }
-                if(status == friend.FRIEND_STATUS.FRIENDSHIP.ordinal()){
+                if(status == FRIEND_STATUS.FRIENDSHIP.ordinal()){
                     //todo throw exception already friends
                 }
-                if(status == friend.FRIEND_STATUS.OUTGOING.ordinal()){
+                if(status == FRIEND_STATUS.OUTGOING.ordinal()){
                     //todo throw exceptioin already incoming
                 }
             }
         }
-        query = "INSERT INTO friends (user_id, friend_id, status) VALUES (" + from + ", " + to + ", " + friend.FRIEND_STATUS.OUTGOING +");";
-        Connection.executeQuery(query);
+        query = "INSERT INTO friends (user_id, friend_id, status) VALUES (" + from + ", " + to + ", " + FRIEND_STATUS.OUTGOING +");";
+        Connection.executeUpdate(query);
 
-        query = "INSERT INTO friends (user_id, friend_id, status) VALUES (" + to + ", " + from + ", " + friend.FRIEND_STATUS.INCOMING +");";
-        Connection.executeQuery(query);
-
+        query = "INSERT INTO friends (user_id, friend_id, status) VALUES (" + to + ", " + from + ", "
+                + FRIEND_STATUS.INCOMING +");";
+        Connection.executeUpdate(query);
 
         DB.getInstance().releaseConnection(Connection);
     }
 
     @Override
-    public boolean ConfirmRequestForFriend(String from, String to) {
-        return false;
+    public void ConfirmRequestForFriend(String from, String to) throws SQLException {
+        MyConnection_I Connection = DB.getInstance().getConnection();
+        String query = "SELECT status, COUNT(friendship_id) AS count " +
+                "FROM friends WHERE user_id==" + from + " and friend_id==" + to + " GROUP BY status;";
+        ResultSet result  = Connection.executeQuery(query);
+        boolean allRight = false;
+        while(result.next()){
+            int status = result.getInt("status");
+            if(status == FRIEND_STATUS.INCOMING.ordinal()){
+                allRight = true;
+            }
+            if(status == FRIEND_STATUS.FRIENDSHIP.ordinal()){
+                //todo throw exception already friends
+            }
+            if(status == FRIEND_STATUS.OUTGOING.ordinal()){
+                //todo throw exception there is no can happen buuut ...  throw some exception
+            }
+        }
+        if(!allRight) {}// todo throw excpetion that indicate that there was no incoming status
+
+        query = "SELECT user_id, friend_id, status FROM friends WHERE " +
+                "(user_id==" + from + " and friend_id==" + to + " and status==" + FRIEND_STATUS.INCOMING + ") " +
+                "(user_id==" + to + " and friend_id==" + from + " and status==" + FRIEND_STATUS.OUTGOING + ");";
+        result = Connection.executeQuery(query);
+        while(result.next()) {
+            result.updateInt("status", FRIEND_STATUS.FRIENDSHIP.ordinal());
+            result.updateRow();
+        }
+
+        DB.getInstance().releaseConnection(Connection);
     }
 
     @Override

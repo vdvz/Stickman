@@ -1,5 +1,7 @@
 package server;
 
+import exceptions.NoResponse;
+import exceptions.UnknownTypeOfRequest;
 import proto_files.DangerStickman;
 import request_type.*;
 
@@ -10,24 +12,45 @@ public class RequestExecutor implements RequestExecutor_I{
     private final FriendRequests_I friendRequests = new FriendRequests();
     private final RoomRequests_I roomRequests = new RoomRequests();
     private final LobbyRequests_I lobbyRequests = new LobbyRequests();
-    public DangerStickman.PacketWrapper executeRequest(DangerStickman.PacketWrapper request) {
+
+    public DangerStickman.PacketWrapper executeRequest(DangerStickman.PacketWrapper request) throws NoResponse {
 
         DangerStickman.PacketWrapper.Builder response = DangerStickman.PacketWrapper.newBuilder();
 
         if(request.hasUser()){
-            userRequests.execute(request.getUser());
+            try {
+                userRequests.execute(request.getUser());
+            } catch (UnknownTypeOfRequest unknownTypeOfRequest) {
+                unknownTypeOfRequest.printStackTrace();
+            }
         }
         if(request.hasRoom()){
-            roomRequests.execute(request.getRoom());
+            try {
+                roomRequests.execute(request.getRoom());
+            } catch (UnknownTypeOfRequest unknownTypeOfRequest) {
+                unknownTypeOfRequest.printStackTrace();
+            }
         }
         if(request.hasLobby()){
-            lobbyRequests.execute(request.getLobby());
+            try {
+                lobbyRequests.execute(request.getLobby());
+            } catch (UnknownTypeOfRequest unknownTypeOfRequest) {
+                unknownTypeOfRequest.printStackTrace();
+            }
         }
         if(request.hasFriend()){
-            friendRequests.execute(request.getFriend());
+            try {
+                friendRequests.execute(request.getFriend());
+            } catch (UnknownTypeOfRequest unknownTypeOfRequest) {
+                unknownTypeOfRequest.printStackTrace();
+            }
         }
         if(request.hasGame()){
-            gameRequests.execute(request.getGame());
+            try {
+                gameRequests.execute(request.getGame());
+            } catch (UnknownTypeOfRequest unknownTypeOfRequest) {
+                unknownTypeOfRequest.printStackTrace();
+            }
         }
 
         return response.build();

@@ -10,7 +10,7 @@ public interface FRIEND_DB_I {
 
     void MakeRequestForFriend(String from, String to) throws SQLException;
 
-    boolean ConfirmRequestForFriend(String from, String to);
+    void ConfirmRequestForFriend(String from, String to) throws SQLException;
 
     void RemoveFriend(String from, String to) throws SQLException;
 

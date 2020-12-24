@@ -12,7 +12,7 @@ import java.util.NoSuchElementException;
 public class GameRequests implements GameRequests_I{
 
     @Override
-    public DangerStickman.PacketWrapper execute(MessageLite _request) throws UnknownTypeOfRequest {
+    public DangerStickman.PacketWrapper execute(MessageLite _request) throws UnknownTypeOfRequest, NoResponse {
         DangerStickman.PacketWrapper.GameWrapper request = (DangerStickman.PacketWrapper.GameWrapper) _request;
         if(request.hasStartGameRequest()){
             try {
@@ -23,8 +23,8 @@ public class GameRequests implements GameRequests_I{
                 userAreNotAdmin.printStackTrace();
             }
             catch(NoSuchUserException e){
-
             }
+            throw new NoResponse();
         }
         if(request.hasChangePlayerPosition()){
             try{
@@ -33,6 +33,7 @@ public class GameRequests implements GameRequests_I{
             } catch(NoSuchGameException | NoSuchPlayerException e){
 
             }
+            throw new NoResponse();
         }
         throw new UnknownTypeOfRequest();
     }

@@ -1,6 +1,5 @@
 package managers;
 
-import server.Updatable_I;
 import game.Game;
 import user.User;
 

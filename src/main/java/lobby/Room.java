@@ -1,5 +1,6 @@
 package lobby;
 
+import proto_files.LobbyMessages;
 import server.ProtobufSerializable;
 import com.google.protobuf.MessageLite;
 import proto_files.RoomMessages;
@@ -11,6 +12,7 @@ import java.util.List;
 public class Room implements Room_I, ProtobufSerializable {
     private ROOM_STATUS Status;
     private final int Id;
+    private String Name;
     private User Admin = null;
 
     private final List<User> UsersInRoom = new ArrayList<>();
@@ -23,6 +25,7 @@ public class Room implements Room_I, ProtobufSerializable {
     Room(int room_id, User user){
         Id = room_id;
         Admin = user;
+        Name = user.getName();
     }
 
     public int getDamage() {
@@ -83,6 +86,14 @@ public class Room implements Room_I, ProtobufSerializable {
     public void RemoveUser(User user){
     }
 
+    @Override
+    public LobbyMessages.LiteRoom.Builder GetLiteRoom() {
+        return LobbyMessages.LiteRoom.newBuilder()
+                .setRoomId(getId())
+                .setRoomName(getName())
+                .setCountUsers(UsersInRoom.size());
+    }
+
     private void PickNewAdmin(){
     }
 
@@ -105,5 +116,13 @@ public class Room implements Room_I, ProtobufSerializable {
                         .setGravity(getGravity())
                         .setSpeed(getSpeed()))
                 .build();
+    }
+
+    public String getName() {
+        return Name;
+    }
+
+    public void setName(String name) {
+        Name = name;
     }
 }

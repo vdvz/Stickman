@@ -24,10 +24,6 @@ public class User implements ProtobufSerializable {
 
     private final List<Friend> friends = new ArrayList<>();
 
-    private final List<Friend> inboundRequestsForFriend = new ArrayList<>();
-
-    private final List<Friend> outgoingRequestsForFriend = new ArrayList<>();
-
     public User(){
         id = 0;
     }
@@ -102,7 +98,6 @@ public class User implements ProtobufSerializable {
     }
 
     private void addFriend(){
-
     }
 
     public List<Friend> GetFriendList(){
@@ -110,11 +105,9 @@ public class User implements ProtobufSerializable {
     }
 
     private void updateInboundRequestsForFriend(){
-
     }
 
     public void ConfirmFriendship(){
-
     }
 
     @Override

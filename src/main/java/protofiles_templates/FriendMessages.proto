@@ -32,11 +32,13 @@ enum ConfirmFriendStatus{
 /*Друг послыает согласие на дружбу или отказ на сервер*/
 message ConfirmationFriendResponse{
   int32 self_id = 1;
-  int32 confirm_friend_id = 2;
+  int32 friend_id = 2;
   int32 ConfirmFriendStatus = 3;
 }
 /*Запрос на удаление друга к серверу*/
 message RemoveFriendRequest{
+  int32 self_id = 1;
+  int32 friend_id = 2;
 }
 
 /*посылается либо принудительно(типа потянуть вверх или отдельная кнопка), либо при первой загрузке страницы с друзьями*/
