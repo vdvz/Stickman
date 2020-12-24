@@ -1,5 +1,6 @@
 import DB.FRIEND_DB;
 import DB.FRIEND_DB_I;
+import Friend.Friend;
 
 import java.util.List;
 

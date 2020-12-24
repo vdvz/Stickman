@@ -1,3 +1,4 @@
+import Friend.Friend;
 import com.google.protobuf.MessageLite;
 import io.netty.channel.ChannelHandlerContext;
 import proto_files.DangerStickman;

@@ -29,6 +29,6 @@ public class GameManager implements Updatable_I, GameManager_I{
     }
 
     public void RemoveGame(){
-    }
 
+    }
 }

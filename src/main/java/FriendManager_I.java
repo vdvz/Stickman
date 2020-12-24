@@ -1,3 +1,5 @@
+import Friend.Friend;
+
 import java.util.List;
 
 public interface FriendManager_I {
