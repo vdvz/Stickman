@@ -1,5 +1,6 @@
 import java.util.LinkedList;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 public class Game {
     private GAME_STATUS status;
@@ -29,9 +30,10 @@ public class Game {
     Game(int game_id) {
         Id = game_id;
     }
+
     /*User or id_user*/
-    Player GetPlayer(int player_id){
-        return null;
+    Player GetPlayer(int player_id) throws NoSuchElementException {
+        return Players.stream().filter(e->e.getId() == player_id).findFirst().get();
     }
 
     void PlayerDisconnected(int player_id){

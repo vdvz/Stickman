@@ -1,4 +1,7 @@
-public class PlayerPosition {
+import com.google.protobuf.MessageLite;
+import proto_files.GameMessages;
+
+public class PlayerPosition implements ProtobufSerializable{
     private Point HeadPosition;
     private Point LeftHandPosition;
     private Point RightHandPosition;
@@ -61,5 +64,14 @@ public class PlayerPosition {
 
     public void setGroinPosition(Point groinPosition) {
         GroinPosition = groinPosition;
+    }
+
+    @Override
+    public MessageLite Serialize() {
+        return GameMessages.PlayerPosition.newBuilder()
+                .setHeadPos((GameMessages.Point) getHeadPosition().Serialize())
+                .setLeftHandPos((GameMessages.Point) getLeftHandPosition().Serialize()).setRightHandPos((GameMessages.Point) getRightHandPosition().Serialize())
+                .setLeftFootPos((GameMessages.Point) getLeftFootPosition().Serialize()).setRightFootPos((GameMessages.Point) getRightFootPosition().Serialize())
+                .setShouldersPos((GameMessages.Point) getShoulderPosition().Serialize()).setGroinPos((GameMessages.Point) getGroinPosition().Serialize()).build();
     }
 }

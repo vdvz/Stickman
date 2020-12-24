@@ -3,7 +3,7 @@ package proto_files;
 
 option java_outer_classname = "RoomMessages";
 
-message Player{
+message PlayerInRoom{
     int32 id = 1;
     string name = 2;
     int32 current_skin = 3;
@@ -11,11 +11,8 @@ message Player{
 }
 
 message Room{
-    repeated Player player = 1;
-    /*optional
-    message Player1;
-    message Player2;
-    ...*/
+    int32 admin = 1;
+    repeated PlayerInRoom player = 3;
     RoomSettings room_settings = 2;
 }
 

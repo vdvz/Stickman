@@ -18,7 +18,7 @@ message Player{
   int32 id = 1;
   string name = 2;
   PlayerStatus PlayerStatus = 3;
-  PlayerHealth PlayerHealth = 4;
+  int32 PlayerHealth = 4;
   PlayerPosition PlayerPosition = 5;
   WeaponPosition WeaponPosition = 6;
 }
@@ -66,7 +66,7 @@ message UpdatePlayers{
 
 message UpdatePlayer{
   int32 player_id = 1;
-  PlayerHealth PlayerHealth = 2;
+  int32 PlayerHealth = 2;
   PlayerStatus PlayerStatus = 3;
   PlayerPosition PlayerPosition = 4;
   WeaponPosition WeaponPosition = 5;
@@ -91,6 +91,3 @@ message WeaponPosition{
   //TODO type and left or right hand
 }
 
-message PlayerHealth{
-  int32 health = 1;
-}

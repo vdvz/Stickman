@@ -1,6 +1,7 @@
 import java.util.HashMap;
 import java.util.Map;
 import java.util.NoSuchElementException;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class GameManager implements Updatable_I, GameManager_I{
 
@@ -8,7 +9,7 @@ public class GameManager implements Updatable_I, GameManager_I{
     public static GameManager_I getInstance(){ return Instance;}
     private GameManager(){}
 
-    private final Map<Integer, Game> OnlineGames = new HashMap<>();
+    private final Map<Integer, Game> OnlineGames = new ConcurrentHashMap<>();
 
     public synchronized Game GetGame(int game_id) throws NoSuchElementException{
         return OnlineGames.entrySet().stream().filter(e -> e.getKey().equals(game_id)).findFirst().get().getValue();
@@ -28,7 +29,9 @@ public class GameManager implements Updatable_I, GameManager_I{
 
     }
 
-    public void RemoveGame(){
+    public synchronized void RemoveGame(Game game){
+        // mb invoke game.toRemove
+        OnlineGames.remove(game.getId());
     }
 
 }

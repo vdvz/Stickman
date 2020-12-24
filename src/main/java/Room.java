@@ -1,7 +1,10 @@
+import com.google.protobuf.MessageLite;
+import proto_files.RoomMessages;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class Room implements Room_I{
+public class Room implements Room_I, ProtobufSerializable{
     private ROOM_STATUS Status;
     private final int Id;
     private User Admin = null;
@@ -85,5 +88,18 @@ public class Room implements Room_I{
 
     public List<User> getUsersInRoom() {
         return UsersInRoom;
+    }
+
+    @Override
+    public MessageLite Serialize() {
+        return RoomMessages.Room.newBuilder()
+                .setAdmin(getAdmin().getId())
+                .addAllPlayer()
+                .setRoomSettings(RoomMessages.RoomSettings.newBuilder()
+                        .setBounce(getBounce())
+                        .setDamage(getDamage())
+                        .setGravity(getGravity())
+                        .setSpeed(getSpeed()))
+                .build();
     }
 }
