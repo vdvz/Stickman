@@ -1,12 +1,13 @@
 package game;
 
+import exceptions.NoSuchPlayerException;
 import user.User;
 
 import java.util.LinkedList;
 import java.util.List;
 import java.util.NoSuchElementException;
 
-public class Game {
+public class Game implements Game_I {
     private GAME_STATUS status;
 
     private final List<Player> Players = new LinkedList<>();
@@ -35,9 +36,11 @@ public class Game {
         Id = game_id;
     }
 
-    /*user.User or id_user*/
-    Player GetPlayer(int player_id) throws NoSuchElementException {
-        return Players.stream().filter(e->e.getId() == player_id).findFirst().get();
+    @Override
+    public Player GetPlayer(int player_id) throws NoSuchPlayerException {
+        try {
+            return Players.stream().filter(e -> e.getId() == player_id).findFirst().get();
+        }catch(NoSuchElementException e){throw new NoSuchPlayerException();}
     }
 
     void PlayerDisconnected(int player_id){

@@ -1,5 +1,6 @@
 package lobby;
 
+import exceptions.UserAreNotAdmin;
 import game.Game;
 import managers.GameFactory;
 import managers.GameManager;
@@ -14,11 +15,11 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-public class Lobby implements Updatable_I {
+public class Lobby implements Lobby_I, Updatable_I {
     final int countOfReturningRooms = 10;
     static final int maxIdRoom = 5000;
-    private static final Lobby Instance = new Lobby();
-    public static Lobby getInstance(){ return Instance;}
+    private static final Lobby_I Instance = new Lobby();
+    public static Lobby_I getInstance(){ return Instance;}
     private  Lobby(){
         IntStream.range(0, maxIdRoom).boxed().forEach(IDS::add);
     }
@@ -41,17 +42,18 @@ public class Lobby implements Updatable_I {
         AvailableRoom.put(room.getId(), room);
     }
 
-    Room GetRoom(int room_id) throws NoSuchRoomException {
+    public Room GetRoom(int room_id) throws NoSuchRoomException {
         Room room = AvailableRoom.get(room_id);
         if(room!=null) return room;
         else throw new NoSuchRoomException();
     }
 
-    List<Room> GetAvailableRooms(){
+    public List<Room> GetAvailableRooms(){
         return AvailableRoom.values().stream().limit(countOfReturningRooms).collect(Collectors.toList());
     }
 
-    Room CreateNewRoom(User user) throws NoAvailableIDException {
+    @Override
+    public Room CreateNewRoom(User user) throws NoAvailableIDException {
         Room room = new Room(getNextFreeId(), user);
         AddRoom(room);
         return room;
@@ -63,8 +65,11 @@ public class Lobby implements Updatable_I {
         freeID(room_id);
     }
 
-    void StartRoom(int room_id) throws NoSuchRoomException {
-        Game game = GameFactory.createGame(GetRoom(room_id));
+    @Override
+    public void StartRoom(User admin, int room_id) throws NoSuchRoomException, UserAreNotAdmin {
+        Room room = GetRoom(room_id);
+        if(!room.getAdmin().equals(admin)) throw new UserAreNotAdmin();
+        Game game = GameFactory.createGame(room);
         game.start();
         GameManager.getInstance().AddGame(game);
     }

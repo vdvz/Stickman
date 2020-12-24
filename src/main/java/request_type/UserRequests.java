@@ -1,11 +1,12 @@
 package request_type;
 
 import com.google.protobuf.MessageLite;
+import exceptions.UnknownTypeOfRequest;
 import proto_files.DangerStickman;
 
 public class UserRequests implements UserRequests_I{
     @Override
-    public DangerStickman.PacketWrapper execute(MessageLite _request) {
+    public DangerStickman.PacketWrapper execute(MessageLite _request) throws UnknownTypeOfRequest {
         DangerStickman.PacketWrapper.UserWrapper request = (DangerStickman.PacketWrapper.UserWrapper) _request;
         if(request.hasLoadUserRequest()){
 
@@ -13,7 +14,7 @@ public class UserRequests implements UserRequests_I{
         if(request.hasUpdateUserRequest()){
 
         }
-        return null;//todo throw new exception
+        throw new UnknownTypeOfRequest();
     }
 
     void LoadNewUser(){

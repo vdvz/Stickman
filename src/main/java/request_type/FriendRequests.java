@@ -1,6 +1,7 @@
 package request_type;
 
 import DB.FRIEND_DB;
+import exceptions.UnknownTypeOfRequest;
 import managers.Managers;
 import com.google.protobuf.MessageLite;
 import friend.Friend;
@@ -17,7 +18,7 @@ public class FriendRequests implements FriendRequests_I{
     private final FRIEND_DB friendDB = new FRIEND_DB();
 
     @Override
-    public DangerStickman.PacketWrapper execute(MessageLite _request) {
+    public DangerStickman.PacketWrapper execute(MessageLite _request) throws UnknownTypeOfRequest {
         DangerStickman.PacketWrapper.FriendWrapper request = (DangerStickman.PacketWrapper.FriendWrapper) _request;
         if(request.hasFindFriendsRequest()){
 
@@ -34,7 +35,7 @@ public class FriendRequests implements FriendRequests_I{
         if(request.hasUpdateFriendsListRequest()){
 
         }
-        return null;
+        throw new UnknownTypeOfRequest();
     }
 
     private FriendMessages.FindFriendsResponse.Builder FindFriends(String find_query){

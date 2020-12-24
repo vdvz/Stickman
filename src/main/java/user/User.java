@@ -106,7 +106,7 @@ public class User implements ProtobufSerializable {
     }
 
     public List<Friend> GetFriendList(){
-        //todo
+        return null;
     }
 
     private void updateInboundRequestsForFriend(){

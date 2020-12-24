@@ -5885,7 +5885,7 @@ public final class FriendMessages {
     internal_static_proto_files_ConfirmationFriendRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_files_ConfirmationFriendRequest_descriptor,
-        new java.lang.String[] {"friend", });
+        new java.lang.String[] { "Friend", });
     internal_static_proto_files_ConfirmationFriendResponse_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_proto_files_ConfirmationFriendResponse_fieldAccessorTable = new

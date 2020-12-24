@@ -13,6 +13,10 @@ public class PlayerPosition implements ProtobufSerializable {
     private Point ShoulderPosition;
     private Point GroinPosition;
 
+    public PlayerPosition(GameMessages.PlayerPosition position){
+
+    }
+
     public Point getHeadPosition() {
         return HeadPosition;
     }

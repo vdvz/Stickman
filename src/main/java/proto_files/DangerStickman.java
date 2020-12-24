@@ -64,31 +64,34 @@ public final class DangerStickman {
     proto_files.DangerStickman.PacketWrapper.LobbyWrapperOrBuilder getLobbyOrBuilder();
 
     /**
-     * <pre>
-     *GameWrapper game = 5;
-     * </pre>
-     *
      * <code>.proto_files.PacketWrapper.RoomWrapper room = 4;</code>
      * @return Whether the room field is set.
      */
     boolean hasRoom();
     /**
-     * <pre>
-     *GameWrapper game = 5;
-     * </pre>
-     *
      * <code>.proto_files.PacketWrapper.RoomWrapper room = 4;</code>
      * @return The room.
      */
     proto_files.DangerStickman.PacketWrapper.RoomWrapper getRoom();
     /**
-     * <pre>
-     *GameWrapper game = 5;
-     * </pre>
-     *
      * <code>.proto_files.PacketWrapper.RoomWrapper room = 4;</code>
      */
     proto_files.DangerStickman.PacketWrapper.RoomWrapperOrBuilder getRoomOrBuilder();
+
+    /**
+     * <code>.proto_files.PacketWrapper.GameWrapper game = 5;</code>
+     * @return Whether the game field is set.
+     */
+    boolean hasGame();
+    /**
+     * <code>.proto_files.PacketWrapper.GameWrapper game = 5;</code>
+     * @return The game.
+     */
+    proto_files.DangerStickman.PacketWrapper.GameWrapper getGame();
+    /**
+     * <code>.proto_files.PacketWrapper.GameWrapper game = 5;</code>
+     */
+    proto_files.DangerStickman.PacketWrapper.GameWrapperOrBuilder getGameOrBuilder();
 
     /**
      * <code>.proto_files.PacketWrapper.PingMsg ping = 15;</code>
@@ -206,6 +209,20 @@ public final class DangerStickman {
                 type_ = subBuilder.buildPartial();
               }
               typeCase_ = 4;
+              break;
+            }
+            case 42: {
+              proto_files.DangerStickman.PacketWrapper.GameWrapper.Builder subBuilder = null;
+              if (typeCase_ == 5) {
+                subBuilder = ((proto_files.DangerStickman.PacketWrapper.GameWrapper) type_).toBuilder();
+              }
+              type_ =
+                  input.readMessage(proto_files.DangerStickman.PacketWrapper.GameWrapper.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((proto_files.DangerStickman.PacketWrapper.GameWrapper) type_);
+                type_ = subBuilder.buildPartial();
+              }
+              typeCase_ = 5;
               break;
             }
             case 122: {
@@ -9967,6 +9984,7 @@ public final class DangerStickman {
       USER(2),
       LOBBY(3),
       ROOM(4),
+      GAME(5),
       PING(15),
       TYPE_NOT_SET(0);
       private final int value;
@@ -9989,6 +10007,7 @@ public final class DangerStickman {
           case 2: return USER;
           case 3: return LOBBY;
           case 4: return ROOM;
+          case 5: return GAME;
           case 15: return PING;
           case 0: return TYPE_NOT_SET;
           default: return null;
@@ -10100,10 +10119,6 @@ public final class DangerStickman {
 
     public static final int ROOM_FIELD_NUMBER = 4;
     /**
-     * <pre>
-     *GameWrapper game = 5;
-     * </pre>
-     *
      * <code>.proto_files.PacketWrapper.RoomWrapper room = 4;</code>
      * @return Whether the room field is set.
      */
@@ -10112,10 +10127,6 @@ public final class DangerStickman {
       return typeCase_ == 4;
     }
     /**
-     * <pre>
-     *GameWrapper game = 5;
-     * </pre>
-     *
      * <code>.proto_files.PacketWrapper.RoomWrapper room = 4;</code>
      * @return The room.
      */
@@ -10127,10 +10138,6 @@ public final class DangerStickman {
       return proto_files.DangerStickman.PacketWrapper.RoomWrapper.getDefaultInstance();
     }
     /**
-     * <pre>
-     *GameWrapper game = 5;
-     * </pre>
-     *
      * <code>.proto_files.PacketWrapper.RoomWrapper room = 4;</code>
      */
     @java.lang.Override
@@ -10139,6 +10146,37 @@ public final class DangerStickman {
          return (proto_files.DangerStickman.PacketWrapper.RoomWrapper) type_;
       }
       return proto_files.DangerStickman.PacketWrapper.RoomWrapper.getDefaultInstance();
+    }
+
+    public static final int GAME_FIELD_NUMBER = 5;
+    /**
+     * <code>.proto_files.PacketWrapper.GameWrapper game = 5;</code>
+     * @return Whether the game field is set.
+     */
+    @java.lang.Override
+    public boolean hasGame() {
+      return typeCase_ == 5;
+    }
+    /**
+     * <code>.proto_files.PacketWrapper.GameWrapper game = 5;</code>
+     * @return The game.
+     */
+    @java.lang.Override
+    public proto_files.DangerStickman.PacketWrapper.GameWrapper getGame() {
+      if (typeCase_ == 5) {
+         return (proto_files.DangerStickman.PacketWrapper.GameWrapper) type_;
+      }
+      return proto_files.DangerStickman.PacketWrapper.GameWrapper.getDefaultInstance();
+    }
+    /**
+     * <code>.proto_files.PacketWrapper.GameWrapper game = 5;</code>
+     */
+    @java.lang.Override
+    public proto_files.DangerStickman.PacketWrapper.GameWrapperOrBuilder getGameOrBuilder() {
+      if (typeCase_ == 5) {
+         return (proto_files.DangerStickman.PacketWrapper.GameWrapper) type_;
+      }
+      return proto_files.DangerStickman.PacketWrapper.GameWrapper.getDefaultInstance();
     }
 
     public static final int PING_FIELD_NUMBER = 15;
@@ -10198,6 +10236,9 @@ public final class DangerStickman {
       if (typeCase_ == 4) {
         output.writeMessage(4, (proto_files.DangerStickman.PacketWrapper.RoomWrapper) type_);
       }
+      if (typeCase_ == 5) {
+        output.writeMessage(5, (proto_files.DangerStickman.PacketWrapper.GameWrapper) type_);
+      }
       if (typeCase_ == 15) {
         output.writeMessage(15, (proto_files.DangerStickman.PacketWrapper.PingMsg) type_);
       }
@@ -10225,6 +10266,10 @@ public final class DangerStickman {
       if (typeCase_ == 4) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, (proto_files.DangerStickman.PacketWrapper.RoomWrapper) type_);
+      }
+      if (typeCase_ == 5) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, (proto_files.DangerStickman.PacketWrapper.GameWrapper) type_);
       }
       if (typeCase_ == 15) {
         size += com.google.protobuf.CodedOutputStream
@@ -10263,6 +10308,10 @@ public final class DangerStickman {
           if (!getRoom()
               .equals(other.getRoom())) return false;
           break;
+        case 5:
+          if (!getGame()
+              .equals(other.getGame())) return false;
+          break;
         case 15:
           if (!getPing()
               .equals(other.getPing())) return false;
@@ -10297,6 +10346,10 @@ public final class DangerStickman {
         case 4:
           hash = (37 * hash) + ROOM_FIELD_NUMBER;
           hash = (53 * hash) + getRoom().hashCode();
+          break;
+        case 5:
+          hash = (37 * hash) + GAME_FIELD_NUMBER;
+          hash = (53 * hash) + getGame().hashCode();
           break;
         case 15:
           hash = (37 * hash) + PING_FIELD_NUMBER;
@@ -10494,6 +10547,13 @@ public final class DangerStickman {
             result.type_ = roomBuilder_.build();
           }
         }
+        if (typeCase_ == 5) {
+          if (gameBuilder_ == null) {
+            result.type_ = type_;
+          } else {
+            result.type_ = gameBuilder_.build();
+          }
+        }
         if (typeCase_ == 15) {
           if (pingBuilder_ == null) {
             result.type_ = type_;
@@ -10565,6 +10625,10 @@ public final class DangerStickman {
           }
           case ROOM: {
             mergeRoom(other.getRoom());
+            break;
+          }
+          case GAME: {
+            mergeGame(other.getGame());
             break;
           }
           case PING: {
@@ -11045,10 +11109,6 @@ public final class DangerStickman {
       private com.google.protobuf.SingleFieldBuilderV3<
           proto_files.DangerStickman.PacketWrapper.RoomWrapper, proto_files.DangerStickman.PacketWrapper.RoomWrapper.Builder, proto_files.DangerStickman.PacketWrapper.RoomWrapperOrBuilder> roomBuilder_;
       /**
-       * <pre>
-       *GameWrapper game = 5;
-       * </pre>
-       *
        * <code>.proto_files.PacketWrapper.RoomWrapper room = 4;</code>
        * @return Whether the room field is set.
        */
@@ -11057,10 +11117,6 @@ public final class DangerStickman {
         return typeCase_ == 4;
       }
       /**
-       * <pre>
-       *GameWrapper game = 5;
-       * </pre>
-       *
        * <code>.proto_files.PacketWrapper.RoomWrapper room = 4;</code>
        * @return The room.
        */
@@ -11079,10 +11135,6 @@ public final class DangerStickman {
         }
       }
       /**
-       * <pre>
-       *GameWrapper game = 5;
-       * </pre>
-       *
        * <code>.proto_files.PacketWrapper.RoomWrapper room = 4;</code>
        */
       public Builder setRoom(proto_files.DangerStickman.PacketWrapper.RoomWrapper value) {
@@ -11099,10 +11151,6 @@ public final class DangerStickman {
         return this;
       }
       /**
-       * <pre>
-       *GameWrapper game = 5;
-       * </pre>
-       *
        * <code>.proto_files.PacketWrapper.RoomWrapper room = 4;</code>
        */
       public Builder setRoom(
@@ -11117,10 +11165,6 @@ public final class DangerStickman {
         return this;
       }
       /**
-       * <pre>
-       *GameWrapper game = 5;
-       * </pre>
-       *
        * <code>.proto_files.PacketWrapper.RoomWrapper room = 4;</code>
        */
       public Builder mergeRoom(proto_files.DangerStickman.PacketWrapper.RoomWrapper value) {
@@ -11143,10 +11187,6 @@ public final class DangerStickman {
         return this;
       }
       /**
-       * <pre>
-       *GameWrapper game = 5;
-       * </pre>
-       *
        * <code>.proto_files.PacketWrapper.RoomWrapper room = 4;</code>
        */
       public Builder clearRoom() {
@@ -11166,20 +11206,12 @@ public final class DangerStickman {
         return this;
       }
       /**
-       * <pre>
-       *GameWrapper game = 5;
-       * </pre>
-       *
        * <code>.proto_files.PacketWrapper.RoomWrapper room = 4;</code>
        */
       public proto_files.DangerStickman.PacketWrapper.RoomWrapper.Builder getRoomBuilder() {
         return getRoomFieldBuilder().getBuilder();
       }
       /**
-       * <pre>
-       *GameWrapper game = 5;
-       * </pre>
-       *
        * <code>.proto_files.PacketWrapper.RoomWrapper room = 4;</code>
        */
       @java.lang.Override
@@ -11194,10 +11226,6 @@ public final class DangerStickman {
         }
       }
       /**
-       * <pre>
-       *GameWrapper game = 5;
-       * </pre>
-       *
        * <code>.proto_files.PacketWrapper.RoomWrapper room = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -11217,6 +11245,147 @@ public final class DangerStickman {
         typeCase_ = 4;
         onChanged();;
         return roomBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          proto_files.DangerStickman.PacketWrapper.GameWrapper, proto_files.DangerStickman.PacketWrapper.GameWrapper.Builder, proto_files.DangerStickman.PacketWrapper.GameWrapperOrBuilder> gameBuilder_;
+      /**
+       * <code>.proto_files.PacketWrapper.GameWrapper game = 5;</code>
+       * @return Whether the game field is set.
+       */
+      @java.lang.Override
+      public boolean hasGame() {
+        return typeCase_ == 5;
+      }
+      /**
+       * <code>.proto_files.PacketWrapper.GameWrapper game = 5;</code>
+       * @return The game.
+       */
+      @java.lang.Override
+      public proto_files.DangerStickman.PacketWrapper.GameWrapper getGame() {
+        if (gameBuilder_ == null) {
+          if (typeCase_ == 5) {
+            return (proto_files.DangerStickman.PacketWrapper.GameWrapper) type_;
+          }
+          return proto_files.DangerStickman.PacketWrapper.GameWrapper.getDefaultInstance();
+        } else {
+          if (typeCase_ == 5) {
+            return gameBuilder_.getMessage();
+          }
+          return proto_files.DangerStickman.PacketWrapper.GameWrapper.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.proto_files.PacketWrapper.GameWrapper game = 5;</code>
+       */
+      public Builder setGame(proto_files.DangerStickman.PacketWrapper.GameWrapper value) {
+        if (gameBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          type_ = value;
+          onChanged();
+        } else {
+          gameBuilder_.setMessage(value);
+        }
+        typeCase_ = 5;
+        return this;
+      }
+      /**
+       * <code>.proto_files.PacketWrapper.GameWrapper game = 5;</code>
+       */
+      public Builder setGame(
+          proto_files.DangerStickman.PacketWrapper.GameWrapper.Builder builderForValue) {
+        if (gameBuilder_ == null) {
+          type_ = builderForValue.build();
+          onChanged();
+        } else {
+          gameBuilder_.setMessage(builderForValue.build());
+        }
+        typeCase_ = 5;
+        return this;
+      }
+      /**
+       * <code>.proto_files.PacketWrapper.GameWrapper game = 5;</code>
+       */
+      public Builder mergeGame(proto_files.DangerStickman.PacketWrapper.GameWrapper value) {
+        if (gameBuilder_ == null) {
+          if (typeCase_ == 5 &&
+              type_ != proto_files.DangerStickman.PacketWrapper.GameWrapper.getDefaultInstance()) {
+            type_ = proto_files.DangerStickman.PacketWrapper.GameWrapper.newBuilder((proto_files.DangerStickman.PacketWrapper.GameWrapper) type_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            type_ = value;
+          }
+          onChanged();
+        } else {
+          if (typeCase_ == 5) {
+            gameBuilder_.mergeFrom(value);
+          }
+          gameBuilder_.setMessage(value);
+        }
+        typeCase_ = 5;
+        return this;
+      }
+      /**
+       * <code>.proto_files.PacketWrapper.GameWrapper game = 5;</code>
+       */
+      public Builder clearGame() {
+        if (gameBuilder_ == null) {
+          if (typeCase_ == 5) {
+            typeCase_ = 0;
+            type_ = null;
+            onChanged();
+          }
+        } else {
+          if (typeCase_ == 5) {
+            typeCase_ = 0;
+            type_ = null;
+          }
+          gameBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.proto_files.PacketWrapper.GameWrapper game = 5;</code>
+       */
+      public proto_files.DangerStickman.PacketWrapper.GameWrapper.Builder getGameBuilder() {
+        return getGameFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.proto_files.PacketWrapper.GameWrapper game = 5;</code>
+       */
+      @java.lang.Override
+      public proto_files.DangerStickman.PacketWrapper.GameWrapperOrBuilder getGameOrBuilder() {
+        if ((typeCase_ == 5) && (gameBuilder_ != null)) {
+          return gameBuilder_.getMessageOrBuilder();
+        } else {
+          if (typeCase_ == 5) {
+            return (proto_files.DangerStickman.PacketWrapper.GameWrapper) type_;
+          }
+          return proto_files.DangerStickman.PacketWrapper.GameWrapper.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.proto_files.PacketWrapper.GameWrapper game = 5;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          proto_files.DangerStickman.PacketWrapper.GameWrapper, proto_files.DangerStickman.PacketWrapper.GameWrapper.Builder, proto_files.DangerStickman.PacketWrapper.GameWrapperOrBuilder> 
+          getGameFieldBuilder() {
+        if (gameBuilder_ == null) {
+          if (!(typeCase_ == 5)) {
+            type_ = proto_files.DangerStickman.PacketWrapper.GameWrapper.getDefaultInstance();
+          }
+          gameBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              proto_files.DangerStickman.PacketWrapper.GameWrapper, proto_files.DangerStickman.PacketWrapper.GameWrapper.Builder, proto_files.DangerStickman.PacketWrapper.GameWrapperOrBuilder>(
+                  (proto_files.DangerStickman.PacketWrapper.GameWrapper) type_,
+                  getParentForChildren(),
+                  isClean());
+          type_ = null;
+        }
+        typeCase_ = 5;
+        onChanged();;
+        return gameBuilder_;
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -11464,62 +11633,63 @@ public final class DangerStickman {
       "\n\024DangerStickman.proto\022\013proto_files\032\024Fri" +
       "endMessages.proto\032\022RoomMessages.proto\032\022U" +
       "serMessages.proto\032\023LobbyMessages.proto\032\022" +
-      "GameMessages.proto\"\377\020\n\rPacketWrapper\022:\n\006" +
+      "GameMessages.proto\"\267\021\n\rPacketWrapper\022:\n\006" +
       "friend\030\001 \001(\0132(.proto_files.PacketWrapper" +
       ".FriendWrapperH\000\0226\n\004user\030\002 \001(\0132&.proto_f" +
       "iles.PacketWrapper.UserWrapperH\000\0228\n\005lobb" +
       "y\030\003 \001(\0132\'.proto_files.PacketWrapper.Lobb" +
       "yWrapperH\000\0226\n\004room\030\004 \001(\0132&.proto_files.P" +
-      "acketWrapper.RoomWrapperH\000\0222\n\004ping\030\017 \001(\013" +
-      "2\".proto_files.PacketWrapper.PingMsgH\000\032\t" +
-      "\n\007PingMsg\032\276\001\n\013UserWrapper\022;\n\021updateUserR" +
-      "equest\030\001 \001(\0132\036.proto_files.UpdateUserReq" +
-      "uestH\000\0227\n\017loadUserRequest\030\002 \001(\0132\034.proto_" +
-      "files.LoadUserRequestH\000\0221\n\014userResponse\030" +
-      "\003 \001(\0132\031.proto_files.UserResponseH\000B\006\n\004Ty" +
-      "pe\032\314\004\n\rFriendWrapper\022=\n\022findFriendsReque" +
-      "st\030\001 \001(\0132\037.proto_files.FindFriendsReques" +
-      "tH\000\022?\n\023findFriendsResponse\030\002 \001(\0132 .proto" +
-      "_files.FindFriendsResponseH\000\022=\n\022makeFrie" +
-      "ndsRequest\030\003 \001(\0132\037.proto_files.MakeFrien" +
-      "dsRequestH\000\022L\n\032ConfirmationFriendsReques" +
-      "t\030\004 \001(\0132&.proto_files.ConfirmationFriend" +
-      "RequestH\000\022M\n\032ConfirmationFriendResponse\030" +
-      "\005 \001(\0132\'.proto_files.ConfirmationFriendRe" +
-      "sponseH\000\022?\n\023removeFriendRequest\030\006 \001(\0132 ." +
-      "proto_files.RemoveFriendRequestH\000\022I\n\030upd" +
-      "ateFriendsListRequest\030\007 \001(\0132%.proto_file" +
-      "s.UpdateFriendsListRequestH\000\022K\n\031updateFr" +
-      "iendsListResponse\030\010 \001(\0132&.proto_files.Up" +
-      "dateFriendsListResponseH\000B\006\n\004Type\032\226\001\n\014Lo" +
-      "bbyWrapper\022=\n\022updateRoomsRequest\030\001 \001(\0132\037" +
-      ".proto_files.UpdateRoomsRequestH\000\022?\n\023upd" +
-      "ateRoomsResponse\030\002 \001(\0132 .proto_files.Upd" +
-      "ateRoomsResponseH\000B\006\n\004Type\032\320\004\n\013RoomWrapp" +
-      "er\022A\n\024createNewRoomRequest\030\001 \001(\0132!.proto" +
-      "_files.CreateNewRoomRequestH\000\022C\n\025createN" +
-      "ewRoomResponse\030\002 \001(\0132\".proto_files.Creat" +
-      "eNewRoomResponseH\000\022-\n\nupdateRoom\030\003 \001(\0132\027" +
-      ".proto_files.UpdateRoomH\000\022?\n\023appendToRoo" +
-      "mRequest\030\004 \001(\0132 .proto_files.AppendToRoo" +
-      "mRequestH\000\022A\n\024appendToRoomResponse\030\005 \001(\013" +
-      "2!.proto_files.AppendToRoomResponseH\000\022?\n" +
-      "\023exitFromRoomRequest\030\006 \001(\0132 .proto_files" +
-      ".ExitFromRoomRequestH\000\022A\n\024exitFromRoomRe" +
-      "sponse\030\t \001(\0132!.proto_files.ExitFromRoomR" +
-      "esponseH\000\022;\n\021RandomRoomRequest\030\007 \001(\0132\036.p" +
-      "roto_files.RandomRoomRequestH\000\022=\n\022Random" +
-      "RoomResponse\030\010 \001(\0132\037.proto_files.RandomR" +
-      "oomResponseH\000B\006\n\004Type\032\264\002\n\013GameWrapper\0229\n" +
-      "\020startGameRequest\030\001 \001(\0132\035.proto_files.St" +
-      "artGameRequestH\000\022;\n\021startGameResponse\030\002 " +
-      "\001(\0132\036.proto_files.StartGameResponseH\000\022-\n" +
-      "\nupdateGame\030\003 \001(\0132\027.proto_files.UpdateGa" +
-      "meH\000\0223\n\rupdatePlayers\030\004 \001(\0132\032.proto_file" +
-      "s.UpdatePlayersH\000\022A\n\024changePlayerPositio" +
-      "n\030\005 \001(\0132!.proto_files.ChangePlayerPositi" +
-      "onH\000B\006\n\004Type\032\016\n\014ErrorWrapperB\006\n\004Typeb\006pr" +
-      "oto3"
+      "acketWrapper.RoomWrapperH\000\0226\n\004game\030\005 \001(\013" +
+      "2&.proto_files.PacketWrapper.GameWrapper" +
+      "H\000\0222\n\004ping\030\017 \001(\0132\".proto_files.PacketWra" +
+      "pper.PingMsgH\000\032\t\n\007PingMsg\032\276\001\n\013UserWrappe" +
+      "r\022;\n\021updateUserRequest\030\001 \001(\0132\036.proto_fil" +
+      "es.UpdateUserRequestH\000\0227\n\017loadUserReques" +
+      "t\030\002 \001(\0132\034.proto_files.LoadUserRequestH\000\022" +
+      "1\n\014userResponse\030\003 \001(\0132\031.proto_files.User" +
+      "ResponseH\000B\006\n\004Type\032\314\004\n\rFriendWrapper\022=\n\022" +
+      "findFriendsRequest\030\001 \001(\0132\037.proto_files.F" +
+      "indFriendsRequestH\000\022?\n\023findFriendsRespon" +
+      "se\030\002 \001(\0132 .proto_files.FindFriendsRespon" +
+      "seH\000\022=\n\022makeFriendsRequest\030\003 \001(\0132\037.proto" +
+      "_files.MakeFriendsRequestH\000\022L\n\032Confirmat" +
+      "ionFriendsRequest\030\004 \001(\0132&.proto_files.Co" +
+      "nfirmationFriendRequestH\000\022M\n\032Confirmatio" +
+      "nFriendResponse\030\005 \001(\0132\'.proto_files.Conf" +
+      "irmationFriendResponseH\000\022?\n\023removeFriend" +
+      "Request\030\006 \001(\0132 .proto_files.RemoveFriend" +
+      "RequestH\000\022I\n\030updateFriendsListRequest\030\007 " +
+      "\001(\0132%.proto_files.UpdateFriendsListReque" +
+      "stH\000\022K\n\031updateFriendsListResponse\030\010 \001(\0132" +
+      "&.proto_files.UpdateFriendsListResponseH" +
+      "\000B\006\n\004Type\032\226\001\n\014LobbyWrapper\022=\n\022updateRoom" +
+      "sRequest\030\001 \001(\0132\037.proto_files.UpdateRooms" +
+      "RequestH\000\022?\n\023updateRoomsResponse\030\002 \001(\0132 " +
+      ".proto_files.UpdateRoomsResponseH\000B\006\n\004Ty" +
+      "pe\032\320\004\n\013RoomWrapper\022A\n\024createNewRoomReque" +
+      "st\030\001 \001(\0132!.proto_files.CreateNewRoomRequ" +
+      "estH\000\022C\n\025createNewRoomResponse\030\002 \001(\0132\".p" +
+      "roto_files.CreateNewRoomResponseH\000\022-\n\nup" +
+      "dateRoom\030\003 \001(\0132\027.proto_files.UpdateRoomH" +
+      "\000\022?\n\023appendToRoomRequest\030\004 \001(\0132 .proto_f" +
+      "iles.AppendToRoomRequestH\000\022A\n\024appendToRo" +
+      "omResponse\030\005 \001(\0132!.proto_files.AppendToR" +
+      "oomResponseH\000\022?\n\023exitFromRoomRequest\030\006 \001" +
+      "(\0132 .proto_files.ExitFromRoomRequestH\000\022A" +
+      "\n\024exitFromRoomResponse\030\t \001(\0132!.proto_fil" +
+      "es.ExitFromRoomResponseH\000\022;\n\021RandomRoomR" +
+      "equest\030\007 \001(\0132\036.proto_files.RandomRoomReq" +
+      "uestH\000\022=\n\022RandomRoomResponse\030\010 \001(\0132\037.pro" +
+      "to_files.RandomRoomResponseH\000B\006\n\004Type\032\264\002" +
+      "\n\013GameWrapper\0229\n\020startGameRequest\030\001 \001(\0132" +
+      "\035.proto_files.StartGameRequestH\000\022;\n\021star" +
+      "tGameResponse\030\002 \001(\0132\036.proto_files.StartG" +
+      "ameResponseH\000\022-\n\nupdateGame\030\003 \001(\0132\027.prot" +
+      "o_files.UpdateGameH\000\0223\n\rupdatePlayers\030\004 " +
+      "\001(\0132\032.proto_files.UpdatePlayersH\000\022A\n\024cha" +
+      "ngePlayerPosition\030\005 \001(\0132!.proto_files.Ch" +
+      "angePlayerPositionH\000B\006\n\004Type\032\016\n\014ErrorWra" +
+      "pperB\006\n\004Typeb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -11535,7 +11705,7 @@ public final class DangerStickman {
     internal_static_proto_files_PacketWrapper_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_files_PacketWrapper_descriptor,
-        new java.lang.String[] {"friend", "user.User", "lobby.Lobby", "lobby.Room", "Ping", "Type", });
+        new java.lang.String[] { "Friend", "User", "Lobby", "Room", "Game", "Ping", "Type", });
     internal_static_proto_files_PacketWrapper_PingMsg_descriptor =
       internal_static_proto_files_PacketWrapper_descriptor.getNestedTypes().get(0);
     internal_static_proto_files_PacketWrapper_PingMsg_fieldAccessorTable = new

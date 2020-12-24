@@ -74,7 +74,8 @@ message UpdatePlayer{
 
 message ChangePlayerPosition{
   int32  player_id = 1;
-  PlayerPosition newPlayerPosition = 2;
+  int32 game_id = 2;
+  PlayerPosition newPlayerPosition = 3;
 }
 
 message PlayerPosition{

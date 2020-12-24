@@ -2754,7 +2754,7 @@ public final class UserMessages {
     internal_static_proto_files_UserResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_files_UserResponse_descriptor,
-        new java.lang.String[] { "user.User", });
+        new java.lang.String[] { "User", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

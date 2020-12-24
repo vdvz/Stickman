@@ -850,7 +850,7 @@ public final class RoomMessages {
   }
 
   public interface RoomOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:proto_files.lobby.Room)
+      // @@protoc_insertion_point(interface_extends:proto_files.Room)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -899,14 +899,14 @@ public final class RoomMessages {
     proto_files.RoomMessages.RoomSettingsOrBuilder getRoomSettingsOrBuilder();
   }
   /**
-   * Protobuf type {@code proto_files.lobby.Room}
+   * Protobuf type {@code proto_files.Room}
    */
   public static final class Room extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:proto_files.lobby.Room)
+      // @@protoc_insertion_point(message_implements:proto_files.Room)
       RoomOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use lobby.Room.newBuilder() to construct.
+    // Use Room.newBuilder() to construct.
     private Room(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
@@ -1269,11 +1269,11 @@ public final class RoomMessages {
       return builder;
     }
     /**
-     * Protobuf type {@code proto_files.lobby.Room}
+     * Protobuf type {@code proto_files.Room}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:proto_files.lobby.Room)
+        // @@protoc_insertion_point(builder_implements:proto_files.Room)
         proto_files.RoomMessages.RoomOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
@@ -1288,7 +1288,7 @@ public final class RoomMessages {
                 proto_files.RoomMessages.Room.class, proto_files.RoomMessages.Room.Builder.class);
       }
 
-      // Construct using proto_files.RoomMessages.lobby.Room.newBuilder()
+      // Construct using proto_files.RoomMessages.Room.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -1875,10 +1875,10 @@ public final class RoomMessages {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:proto_files.lobby.Room)
+      // @@protoc_insertion_point(builder_scope:proto_files.Room)
     }
 
-    // @@protoc_insertion_point(class_scope:proto_files.lobby.Room)
+    // @@protoc_insertion_point(class_scope:proto_files.Room)
     private static final proto_files.RoomMessages.Room DEFAULT_INSTANCE;
     static {
       DEFAULT_INSTANCE = new proto_files.RoomMessages.Room();
@@ -4366,7 +4366,7 @@ public final class RoomMessages {
      *??Точно ли room или отдельное сообщение
      * </pre>
      *
-     * <code>.proto_files.lobby.Room room = 1;</code>
+     * <code>.proto_files.Room room = 1;</code>
      * @return Whether the room field is set.
      */
     boolean hasRoom();
@@ -4375,7 +4375,7 @@ public final class RoomMessages {
      *??Точно ли room или отдельное сообщение
      * </pre>
      *
-     * <code>.proto_files.lobby.Room room = 1;</code>
+     * <code>.proto_files.Room room = 1;</code>
      * @return The room.
      */
     proto_files.RoomMessages.Room getRoom();
@@ -4384,7 +4384,7 @@ public final class RoomMessages {
      *??Точно ли room или отдельное сообщение
      * </pre>
      *
-     * <code>.proto_files.lobby.Room room = 1;</code>
+     * <code>.proto_files.Room room = 1;</code>
      */
     proto_files.RoomMessages.RoomOrBuilder getRoomOrBuilder();
   }
@@ -4490,7 +4490,7 @@ public final class RoomMessages {
      *??Точно ли room или отдельное сообщение
      * </pre>
      *
-     * <code>.proto_files.lobby.Room room = 1;</code>
+     * <code>.proto_files.Room room = 1;</code>
      * @return Whether the room field is set.
      */
     @java.lang.Override
@@ -4502,7 +4502,7 @@ public final class RoomMessages {
      *??Точно ли room или отдельное сообщение
      * </pre>
      *
-     * <code>.proto_files.lobby.Room room = 1;</code>
+     * <code>.proto_files.Room room = 1;</code>
      * @return The room.
      */
     @java.lang.Override
@@ -4514,7 +4514,7 @@ public final class RoomMessages {
      *??Точно ли room или отдельное сообщение
      * </pre>
      *
-     * <code>.proto_files.lobby.Room room = 1;</code>
+     * <code>.proto_files.Room room = 1;</code>
      */
     @java.lang.Override
     public proto_files.RoomMessages.RoomOrBuilder getRoomOrBuilder() {
@@ -4849,7 +4849,7 @@ public final class RoomMessages {
        *??Точно ли room или отдельное сообщение
        * </pre>
        *
-       * <code>.proto_files.lobby.Room room = 1;</code>
+       * <code>.proto_files.Room room = 1;</code>
        * @return Whether the room field is set.
        */
       public boolean hasRoom() {
@@ -4860,7 +4860,7 @@ public final class RoomMessages {
        *??Точно ли room или отдельное сообщение
        * </pre>
        *
-       * <code>.proto_files.lobby.Room room = 1;</code>
+       * <code>.proto_files.Room room = 1;</code>
        * @return The room.
        */
       public proto_files.RoomMessages.Room getRoom() {
@@ -4875,7 +4875,7 @@ public final class RoomMessages {
        *??Точно ли room или отдельное сообщение
        * </pre>
        *
-       * <code>.proto_files.lobby.Room room = 1;</code>
+       * <code>.proto_files.Room room = 1;</code>
        */
       public Builder setRoom(proto_files.RoomMessages.Room value) {
         if (roomBuilder_ == null) {
@@ -4895,7 +4895,7 @@ public final class RoomMessages {
        *??Точно ли room или отдельное сообщение
        * </pre>
        *
-       * <code>.proto_files.lobby.Room room = 1;</code>
+       * <code>.proto_files.Room room = 1;</code>
        */
       public Builder setRoom(
           proto_files.RoomMessages.Room.Builder builderForValue) {
@@ -4913,7 +4913,7 @@ public final class RoomMessages {
        *??Точно ли room или отдельное сообщение
        * </pre>
        *
-       * <code>.proto_files.lobby.Room room = 1;</code>
+       * <code>.proto_files.Room room = 1;</code>
        */
       public Builder mergeRoom(proto_files.RoomMessages.Room value) {
         if (roomBuilder_ == null) {
@@ -4935,7 +4935,7 @@ public final class RoomMessages {
        *??Точно ли room или отдельное сообщение
        * </pre>
        *
-       * <code>.proto_files.lobby.Room room = 1;</code>
+       * <code>.proto_files.Room room = 1;</code>
        */
       public Builder clearRoom() {
         if (roomBuilder_ == null) {
@@ -4953,7 +4953,7 @@ public final class RoomMessages {
        *??Точно ли room или отдельное сообщение
        * </pre>
        *
-       * <code>.proto_files.lobby.Room room = 1;</code>
+       * <code>.proto_files.Room room = 1;</code>
        */
       public proto_files.RoomMessages.Room.Builder getRoomBuilder() {
         
@@ -4965,7 +4965,7 @@ public final class RoomMessages {
        *??Точно ли room или отдельное сообщение
        * </pre>
        *
-       * <code>.proto_files.lobby.Room room = 1;</code>
+       * <code>.proto_files.Room room = 1;</code>
        */
       public proto_files.RoomMessages.RoomOrBuilder getRoomOrBuilder() {
         if (roomBuilder_ != null) {
@@ -4980,7 +4980,7 @@ public final class RoomMessages {
        *??Точно ли room или отдельное сообщение
        * </pre>
        *
-       * <code>.proto_files.lobby.Room room = 1;</code>
+       * <code>.proto_files.Room room = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           proto_files.RoomMessages.Room, proto_files.RoomMessages.Room.Builder, proto_files.RoomMessages.RoomOrBuilder> 
@@ -5611,17 +5611,17 @@ public final class RoomMessages {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.proto_files.lobby.Room room = 1;</code>
+     * <code>.proto_files.Room room = 1;</code>
      * @return Whether the room field is set.
      */
     boolean hasRoom();
     /**
-     * <code>.proto_files.lobby.Room room = 1;</code>
+     * <code>.proto_files.Room room = 1;</code>
      * @return The room.
      */
     proto_files.RoomMessages.Room getRoom();
     /**
-     * <code>.proto_files.lobby.Room room = 1;</code>
+     * <code>.proto_files.Room room = 1;</code>
      */
     proto_files.RoomMessages.RoomOrBuilder getRoomOrBuilder();
   }
@@ -5718,7 +5718,7 @@ public final class RoomMessages {
     public static final int ROOM_FIELD_NUMBER = 1;
     private proto_files.RoomMessages.Room room_;
     /**
-     * <code>.proto_files.lobby.Room room = 1;</code>
+     * <code>.proto_files.Room room = 1;</code>
      * @return Whether the room field is set.
      */
     @java.lang.Override
@@ -5726,7 +5726,7 @@ public final class RoomMessages {
       return room_ != null;
     }
     /**
-     * <code>.proto_files.lobby.Room room = 1;</code>
+     * <code>.proto_files.Room room = 1;</code>
      * @return The room.
      */
     @java.lang.Override
@@ -5734,7 +5734,7 @@ public final class RoomMessages {
       return room_ == null ? proto_files.RoomMessages.Room.getDefaultInstance() : room_;
     }
     /**
-     * <code>.proto_files.lobby.Room room = 1;</code>
+     * <code>.proto_files.Room room = 1;</code>
      */
     @java.lang.Override
     public proto_files.RoomMessages.RoomOrBuilder getRoomOrBuilder() {
@@ -6060,14 +6060,14 @@ public final class RoomMessages {
       private com.google.protobuf.SingleFieldBuilderV3<
           proto_files.RoomMessages.Room, proto_files.RoomMessages.Room.Builder, proto_files.RoomMessages.RoomOrBuilder> roomBuilder_;
       /**
-       * <code>.proto_files.lobby.Room room = 1;</code>
+       * <code>.proto_files.Room room = 1;</code>
        * @return Whether the room field is set.
        */
       public boolean hasRoom() {
         return roomBuilder_ != null || room_ != null;
       }
       /**
-       * <code>.proto_files.lobby.Room room = 1;</code>
+       * <code>.proto_files.Room room = 1;</code>
        * @return The room.
        */
       public proto_files.RoomMessages.Room getRoom() {
@@ -6078,7 +6078,7 @@ public final class RoomMessages {
         }
       }
       /**
-       * <code>.proto_files.lobby.Room room = 1;</code>
+       * <code>.proto_files.Room room = 1;</code>
        */
       public Builder setRoom(proto_files.RoomMessages.Room value) {
         if (roomBuilder_ == null) {
@@ -6094,7 +6094,7 @@ public final class RoomMessages {
         return this;
       }
       /**
-       * <code>.proto_files.lobby.Room room = 1;</code>
+       * <code>.proto_files.Room room = 1;</code>
        */
       public Builder setRoom(
           proto_files.RoomMessages.Room.Builder builderForValue) {
@@ -6108,7 +6108,7 @@ public final class RoomMessages {
         return this;
       }
       /**
-       * <code>.proto_files.lobby.Room room = 1;</code>
+       * <code>.proto_files.Room room = 1;</code>
        */
       public Builder mergeRoom(proto_files.RoomMessages.Room value) {
         if (roomBuilder_ == null) {
@@ -6126,7 +6126,7 @@ public final class RoomMessages {
         return this;
       }
       /**
-       * <code>.proto_files.lobby.Room room = 1;</code>
+       * <code>.proto_files.Room room = 1;</code>
        */
       public Builder clearRoom() {
         if (roomBuilder_ == null) {
@@ -6140,7 +6140,7 @@ public final class RoomMessages {
         return this;
       }
       /**
-       * <code>.proto_files.lobby.Room room = 1;</code>
+       * <code>.proto_files.Room room = 1;</code>
        */
       public proto_files.RoomMessages.Room.Builder getRoomBuilder() {
         
@@ -6148,7 +6148,7 @@ public final class RoomMessages {
         return getRoomFieldBuilder().getBuilder();
       }
       /**
-       * <code>.proto_files.lobby.Room room = 1;</code>
+       * <code>.proto_files.Room room = 1;</code>
        */
       public proto_files.RoomMessages.RoomOrBuilder getRoomOrBuilder() {
         if (roomBuilder_ != null) {
@@ -6159,7 +6159,7 @@ public final class RoomMessages {
         }
       }
       /**
-       * <code>.proto_files.lobby.Room room = 1;</code>
+       * <code>.proto_files.Room room = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           proto_files.RoomMessages.Room, proto_files.RoomMessages.Room.Builder, proto_files.RoomMessages.RoomOrBuilder> 
@@ -7564,17 +7564,17 @@ public final class RoomMessages {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.proto_files.lobby.Room room = 1;</code>
+     * <code>.proto_files.Room room = 1;</code>
      * @return Whether the room field is set.
      */
     boolean hasRoom();
     /**
-     * <code>.proto_files.lobby.Room room = 1;</code>
+     * <code>.proto_files.Room room = 1;</code>
      * @return The room.
      */
     proto_files.RoomMessages.Room getRoom();
     /**
-     * <code>.proto_files.lobby.Room room = 1;</code>
+     * <code>.proto_files.Room room = 1;</code>
      */
     proto_files.RoomMessages.RoomOrBuilder getRoomOrBuilder();
   }
@@ -7671,7 +7671,7 @@ public final class RoomMessages {
     public static final int ROOM_FIELD_NUMBER = 1;
     private proto_files.RoomMessages.Room room_;
     /**
-     * <code>.proto_files.lobby.Room room = 1;</code>
+     * <code>.proto_files.Room room = 1;</code>
      * @return Whether the room field is set.
      */
     @java.lang.Override
@@ -7679,7 +7679,7 @@ public final class RoomMessages {
       return room_ != null;
     }
     /**
-     * <code>.proto_files.lobby.Room room = 1;</code>
+     * <code>.proto_files.Room room = 1;</code>
      * @return The room.
      */
     @java.lang.Override
@@ -7687,7 +7687,7 @@ public final class RoomMessages {
       return room_ == null ? proto_files.RoomMessages.Room.getDefaultInstance() : room_;
     }
     /**
-     * <code>.proto_files.lobby.Room room = 1;</code>
+     * <code>.proto_files.Room room = 1;</code>
      */
     @java.lang.Override
     public proto_files.RoomMessages.RoomOrBuilder getRoomOrBuilder() {
@@ -8013,14 +8013,14 @@ public final class RoomMessages {
       private com.google.protobuf.SingleFieldBuilderV3<
           proto_files.RoomMessages.Room, proto_files.RoomMessages.Room.Builder, proto_files.RoomMessages.RoomOrBuilder> roomBuilder_;
       /**
-       * <code>.proto_files.lobby.Room room = 1;</code>
+       * <code>.proto_files.Room room = 1;</code>
        * @return Whether the room field is set.
        */
       public boolean hasRoom() {
         return roomBuilder_ != null || room_ != null;
       }
       /**
-       * <code>.proto_files.lobby.Room room = 1;</code>
+       * <code>.proto_files.Room room = 1;</code>
        * @return The room.
        */
       public proto_files.RoomMessages.Room getRoom() {
@@ -8031,7 +8031,7 @@ public final class RoomMessages {
         }
       }
       /**
-       * <code>.proto_files.lobby.Room room = 1;</code>
+       * <code>.proto_files.Room room = 1;</code>
        */
       public Builder setRoom(proto_files.RoomMessages.Room value) {
         if (roomBuilder_ == null) {
@@ -8047,7 +8047,7 @@ public final class RoomMessages {
         return this;
       }
       /**
-       * <code>.proto_files.lobby.Room room = 1;</code>
+       * <code>.proto_files.Room room = 1;</code>
        */
       public Builder setRoom(
           proto_files.RoomMessages.Room.Builder builderForValue) {
@@ -8061,7 +8061,7 @@ public final class RoomMessages {
         return this;
       }
       /**
-       * <code>.proto_files.lobby.Room room = 1;</code>
+       * <code>.proto_files.Room room = 1;</code>
        */
       public Builder mergeRoom(proto_files.RoomMessages.Room value) {
         if (roomBuilder_ == null) {
@@ -8079,7 +8079,7 @@ public final class RoomMessages {
         return this;
       }
       /**
-       * <code>.proto_files.lobby.Room room = 1;</code>
+       * <code>.proto_files.Room room = 1;</code>
        */
       public Builder clearRoom() {
         if (roomBuilder_ == null) {
@@ -8093,7 +8093,7 @@ public final class RoomMessages {
         return this;
       }
       /**
-       * <code>.proto_files.lobby.Room room = 1;</code>
+       * <code>.proto_files.Room room = 1;</code>
        */
       public proto_files.RoomMessages.Room.Builder getRoomBuilder() {
         
@@ -8101,7 +8101,7 @@ public final class RoomMessages {
         return getRoomFieldBuilder().getBuilder();
       }
       /**
-       * <code>.proto_files.lobby.Room room = 1;</code>
+       * <code>.proto_files.Room room = 1;</code>
        */
       public proto_files.RoomMessages.RoomOrBuilder getRoomOrBuilder() {
         if (roomBuilder_ != null) {
@@ -8112,7 +8112,7 @@ public final class RoomMessages {
         }
       }
       /**
-       * <code>.proto_files.lobby.Room room = 1;</code>
+       * <code>.proto_files.Room room = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           proto_files.RoomMessages.Room, proto_files.RoomMessages.Room.Builder, proto_files.RoomMessages.RoomOrBuilder> 
@@ -8267,13 +8267,13 @@ public final class RoomMessages {
       "to_files.RoomSettings\"E\n\025CreateNewRoomRe" +
       "sponse\022,\n\013status_room\030\001 \001(\0162\027.proto_file" +
       "s.StatusRoom\"-\n\nUpdateRoom\022\037\n\004room\030\001 \001(\013" +
-      "2\021.proto_files.lobby.Room\"2\n\023AppendToRoomReque" +
+      "2\021.proto_files.Room\"2\n\023AppendToRoomReque" +
       "st\022\n\n\002id\030\001 \001(\005\022\017\n\007id_room\030\002 \001(\005\"7\n\024Appen" +
       "dToRoomResponse\022\037\n\004room\030\001 \001(\0132\021.proto_fi" +
-      "les.lobby.Room\"\025\n\023ExitFromRoomRequest\"\026\n\024ExitF" +
+      "les.Room\"\025\n\023ExitFromRoomRequest\"\026\n\024ExitF" +
       "romRoomResponse\"\037\n\021RandomRoomRequest\022\n\n\002" +
       "id\030\001 \001(\005\"5\n\022RandomRoomResponse\022\037\n\004room\030\001" +
-      " \001(\0132\021.proto_files.lobby.Room*\023\n\nStatusRoom\022\005\n" +
+      " \001(\0132\021.proto_files.Room*\023\n\nStatusRoom\022\005\n" +
       "\001B\020\000B\016B\014RoomMessagesb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
@@ -8291,7 +8291,7 @@ public final class RoomMessages {
     internal_static_proto_files_Room_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_files_Room_descriptor,
-        new java.lang.String[] { "Admin", "game.Player", "RoomSettings", });
+        new java.lang.String[] { "Admin", "Player", "RoomSettings", });
     internal_static_proto_files_RoomSettings_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_proto_files_RoomSettings_fieldAccessorTable = new
@@ -8321,7 +8321,7 @@ public final class RoomMessages {
     internal_static_proto_files_UpdateRoom_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_files_UpdateRoom_descriptor,
-        new java.lang.String[] { "lobby.Room", });
+        new java.lang.String[] { "Room", });
     internal_static_proto_files_AppendToRoomRequest_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_proto_files_AppendToRoomRequest_fieldAccessorTable = new
@@ -8333,7 +8333,7 @@ public final class RoomMessages {
     internal_static_proto_files_AppendToRoomResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_files_AppendToRoomResponse_descriptor,
-        new java.lang.String[] { "lobby.Room", });
+        new java.lang.String[] { "Room", });
     internal_static_proto_files_ExitFromRoomRequest_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_proto_files_ExitFromRoomRequest_fieldAccessorTable = new
@@ -8357,7 +8357,7 @@ public final class RoomMessages {
     internal_static_proto_files_RandomRoomResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_files_RandomRoomResponse_descriptor,
-        new java.lang.String[] { "lobby.Room", });
+        new java.lang.String[] { "Room", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
