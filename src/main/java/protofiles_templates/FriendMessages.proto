@@ -10,7 +10,8 @@ message friend{
 }
 
 message FindFriendsRequest{
-  string strForSearch = 1; //Передается то что мы ввели в строке поиска. либо имя игрока, либо его game-idшник
+  int32 user_id = 1;
+  string strForSearch = 2; //Передается то что мы ввели в строке поиска. либо имя игрока, либо его game-idшник
 }
 message FindFriendsResponse{
   repeated friend friends = 1;

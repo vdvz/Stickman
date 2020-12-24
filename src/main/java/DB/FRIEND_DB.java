@@ -22,9 +22,29 @@ public class FRIEND_DB implements FRIEND_DB_I{
     }
 
     @Override
-    public synchronized void MakeRequestForFriend(String from, String to) {
+    public synchronized void MakeRequestForFriend(String from, String to) throws SQLException {
         MyConnection_I Connection = DB.getInstance().getConnection();
-        //String query =
+        String query = "SELECT COUNT(*) AS count, status FROM friends WHERE user_id==" + from + " or friend_id==" + to + " GROUP BY status;";
+        ResultSet result  = Connection.executeQuery(query);
+        while(result.next()){
+            if(result.getInt("count") != 0){
+                int status = result.getInt("status");
+                if(status == friend.FRIEND_STATUS.INCOMING.ordinal()){
+                    //todo throw exceptioin already incoming
+                }
+                if(status == friend.FRIEND_STATUS.FRIENDSHIP.ordinal()){
+                    //todo throw exception already friends
+                }
+                if(status == friend.FRIEND_STATUS.OUTGOING.ordinal()){
+                    //todo throw exceptioin already incoming
+                }
+            }
+        }
+        query = "INSERT INTO friends (user_id, friend_id, status) VALUES (" + from + ", " + to + ", " + friend.FRIEND_STATUS.OUTGOING +");";
+        Connection.executeQuery(query);
+
+        query = "INSERT INTO friends (user_id, friend_id, status) VALUES (" + to + ", " + from + ", " + friend.FRIEND_STATUS.INCOMING +");";
+        Connection.executeQuery(query);
 
 
         DB.getInstance().releaseConnection(Connection);
