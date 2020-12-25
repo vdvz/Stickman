@@ -33,7 +33,7 @@ public interface USER_I {
 
     void setCount_loss(int count_loss);
 
-    void updateFriends();
+    void UpdateFriends();
 
     void RemoveFriend(int friend_id);
 

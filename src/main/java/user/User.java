@@ -10,7 +10,6 @@ import proto_files.DangerStickman;
 import proto_files.UserMessages;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class User implements ProtobufSerializable, USER_I {
 
@@ -96,8 +95,9 @@ public class User implements ProtobufSerializable, USER_I {
     public void setCount_loss(int count_loss) {
         this.count_loss = count_loss;
     }
+
     @Override
-    public void updateFriends(){
+    public void UpdateFriends(){
         FriendMessages.UpdateFriendsListResponse.Builder builder = FriendMessages.UpdateFriendsListResponse.newBuilder();
         friends.forEach(e -> builder.addFriends((FriendMessages.friend.Builder) e.Serialize()));
         send(DangerStickman.PacketWrapper.newBuilder()
@@ -117,7 +117,7 @@ public class User implements ProtobufSerializable, USER_I {
         } catch (NoSuchElementException e){
             throw new NoSuchFriendException();
         }
-        updateFriends();
+        UpdateFriends();
     }
 
     @Override
@@ -137,7 +137,7 @@ public class User implements ProtobufSerializable, USER_I {
     //friend confirm my request
     public void ConfirmFriendship(Friend confirmFriend){
         AddFriend(confirmFriend);
-        updateFriends();
+        UpdateFriends();
     }
 
     @Override

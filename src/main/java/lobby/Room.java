@@ -7,15 +7,16 @@ import proto_files.RoomMessages;
 import user.User;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Room implements Room_I, ProtobufSerializable {
     private ROOM_STATUS Status;
     private final int Id;
     private String Name;
-    private User Admin = null;
+    private User Admin;
 
-    private final List<User> UsersInRoom = new ArrayList<>();
+    private final List<User> UsersInRoom = Collections.synchronizedList(new ArrayList<>());
 
     private int Damage = 0;
     private int Gravity = 0;
@@ -81,9 +82,11 @@ public class Room implements Room_I, ProtobufSerializable {
     }
 
     public void AddUser(User user){
+        //todo
     }
 
     public void RemoveUser(User user){
+        //todo
     }
 
     @Override
@@ -95,14 +98,17 @@ public class Room implements Room_I, ProtobufSerializable {
     }
 
     private void PickNewAdmin(){
+        //todo
     }
 
     private boolean IsUserAdmin(User user){
+        //todo
         return false;
     }
 
     public List<User> getUsersInRoom() {
-        return UsersInRoom;
+        //mb not
+        return new ArrayList<>(UsersInRoom);
     }
 
     @Override

@@ -41,7 +41,8 @@ public class FriendRequests implements FriendRequests_I{
             throw new NoResponse();
         }
         if(request.hasUpdateFriendsListRequest()){
-
+            UpdateFriendList(request.getUpdateFriendsListRequest().getSelfId());
+            throw new NoResponse();
         }
         throw new UnknownTypeOfRequest();
     }
@@ -119,8 +120,8 @@ public class FriendRequests implements FriendRequests_I{
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-        User fromUser = null;
-        User toUser = null;
+        User fromUser;
+        User toUser;
         try{
             fromUser = Managers.getUserManager().GetUser(from);
             fromUser.RemoveFriend(to);
@@ -136,8 +137,8 @@ public class FriendRequests implements FriendRequests_I{
         }
     }
 
-    private FriendMessages.UpdateFriendsListResponse.Builder UpdateFriendList(Integer for_user){
-        return null;
+    private void UpdateFriendList(Integer for_user){
+        Managers.getUserManager().GetUser(for_user).UpdateFriends();
     }
 
 }
