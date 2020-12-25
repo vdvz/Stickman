@@ -7,9 +7,7 @@ import java.util.NoSuchElementException;
 
 public interface UserManager_I {
 
-
     //Добавляет юзера в список онлайн юзеров
-
     void AddToOnline(User user);
 
     void UserDisconnected(int user_id);

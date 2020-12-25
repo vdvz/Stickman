@@ -1,9 +1,7 @@
 package request_type;
 
 import com.google.protobuf.MessageLite;
-import com.sun.tools.javac.util.List;
 import exceptions.UnknownTypeOfRequest;
-import lobby.Room;
 import managers.Managers;
 import proto_files.DangerStickman;
 import proto_files.LobbyMessages;

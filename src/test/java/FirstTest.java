@@ -53,7 +53,6 @@ public class FirstTest {
     static void initAll(){
     }
 
-    @Test
     void testUserDB(){
         try {
             int set_money = 199;

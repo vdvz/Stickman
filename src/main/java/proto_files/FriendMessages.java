@@ -835,11 +835,17 @@ public final class FriendMessages {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <code>int32 user_id = 1;</code>
+     * @return The userId.
+     */
+    int getUserId();
+
+    /**
      * <pre>
      *Передается то что мы ввели в строке поиска. либо имя игрока, либо его game-idшник
      * </pre>
      *
-     * <code>string strForSearch = 1;</code>
+     * <code>string strForSearch = 2;</code>
      * @return The strForSearch.
      */
     java.lang.String getStrForSearch();
@@ -848,7 +854,7 @@ public final class FriendMessages {
      *Передается то что мы ввели в строке поиска. либо имя игрока, либо его game-idшник
      * </pre>
      *
-     * <code>string strForSearch = 1;</code>
+     * <code>string strForSearch = 2;</code>
      * @return The bytes for strForSearch.
      */
     com.google.protobuf.ByteString
@@ -900,7 +906,12 @@ public final class FriendMessages {
             case 0:
               done = true;
               break;
-            case 10: {
+            case 8: {
+
+              userId_ = input.readInt32();
+              break;
+            }
+            case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
               strForSearch_ = s;
@@ -938,14 +949,25 @@ public final class FriendMessages {
               proto_files.FriendMessages.FindFriendsRequest.class, proto_files.FriendMessages.FindFriendsRequest.Builder.class);
     }
 
-    public static final int STRFORSEARCH_FIELD_NUMBER = 1;
+    public static final int USER_ID_FIELD_NUMBER = 1;
+    private int userId_;
+    /**
+     * <code>int32 user_id = 1;</code>
+     * @return The userId.
+     */
+    @java.lang.Override
+    public int getUserId() {
+      return userId_;
+    }
+
+    public static final int STRFORSEARCH_FIELD_NUMBER = 2;
     private volatile java.lang.Object strForSearch_;
     /**
      * <pre>
      *Передается то что мы ввели в строке поиска. либо имя игрока, либо его game-idшник
      * </pre>
      *
-     * <code>string strForSearch = 1;</code>
+     * <code>string strForSearch = 2;</code>
      * @return The strForSearch.
      */
     @java.lang.Override
@@ -966,7 +988,7 @@ public final class FriendMessages {
      *Передается то что мы ввели в строке поиска. либо имя игрока, либо его game-idшник
      * </pre>
      *
-     * <code>string strForSearch = 1;</code>
+     * <code>string strForSearch = 2;</code>
      * @return The bytes for strForSearch.
      */
     @java.lang.Override
@@ -998,8 +1020,11 @@ public final class FriendMessages {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (userId_ != 0) {
+        output.writeInt32(1, userId_);
+      }
       if (!getStrForSearchBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, strForSearch_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, strForSearch_);
       }
       unknownFields.writeTo(output);
     }
@@ -1010,8 +1035,12 @@ public final class FriendMessages {
       if (size != -1) return size;
 
       size = 0;
+      if (userId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, userId_);
+      }
       if (!getStrForSearchBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, strForSearch_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, strForSearch_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1028,6 +1057,8 @@ public final class FriendMessages {
       }
       proto_files.FriendMessages.FindFriendsRequest other = (proto_files.FriendMessages.FindFriendsRequest) obj;
 
+      if (getUserId()
+          != other.getUserId()) return false;
       if (!getStrForSearch()
           .equals(other.getStrForSearch())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -1041,6 +1072,8 @@ public final class FriendMessages {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + USER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getUserId();
       hash = (37 * hash) + STRFORSEARCH_FIELD_NUMBER;
       hash = (53 * hash) + getStrForSearch().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -1176,6 +1209,8 @@ public final class FriendMessages {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        userId_ = 0;
+
         strForSearch_ = "";
 
         return this;
@@ -1204,6 +1239,7 @@ public final class FriendMessages {
       @java.lang.Override
       public proto_files.FriendMessages.FindFriendsRequest buildPartial() {
         proto_files.FriendMessages.FindFriendsRequest result = new proto_files.FriendMessages.FindFriendsRequest(this);
+        result.userId_ = userId_;
         result.strForSearch_ = strForSearch_;
         onBuilt();
         return result;
@@ -1253,6 +1289,9 @@ public final class FriendMessages {
 
       public Builder mergeFrom(proto_files.FriendMessages.FindFriendsRequest other) {
         if (other == proto_files.FriendMessages.FindFriendsRequest.getDefaultInstance()) return this;
+        if (other.getUserId() != 0) {
+          setUserId(other.getUserId());
+        }
         if (!other.getStrForSearch().isEmpty()) {
           strForSearch_ = other.strForSearch_;
           onChanged();
@@ -1286,13 +1325,44 @@ public final class FriendMessages {
         return this;
       }
 
+      private int userId_ ;
+      /**
+       * <code>int32 user_id = 1;</code>
+       * @return The userId.
+       */
+      @java.lang.Override
+      public int getUserId() {
+        return userId_;
+      }
+      /**
+       * <code>int32 user_id = 1;</code>
+       * @param value The userId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserId(int value) {
+        
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 user_id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUserId() {
+        
+        userId_ = 0;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object strForSearch_ = "";
       /**
        * <pre>
        *Передается то что мы ввели в строке поиска. либо имя игрока, либо его game-idшник
        * </pre>
        *
-       * <code>string strForSearch = 1;</code>
+       * <code>string strForSearch = 2;</code>
        * @return The strForSearch.
        */
       public java.lang.String getStrForSearch() {
@@ -1312,7 +1382,7 @@ public final class FriendMessages {
        *Передается то что мы ввели в строке поиска. либо имя игрока, либо его game-idшник
        * </pre>
        *
-       * <code>string strForSearch = 1;</code>
+       * <code>string strForSearch = 2;</code>
        * @return The bytes for strForSearch.
        */
       public com.google.protobuf.ByteString
@@ -1333,7 +1403,7 @@ public final class FriendMessages {
        *Передается то что мы ввели в строке поиска. либо имя игрока, либо его game-idшник
        * </pre>
        *
-       * <code>string strForSearch = 1;</code>
+       * <code>string strForSearch = 2;</code>
        * @param value The strForSearch to set.
        * @return This builder for chaining.
        */
@@ -1352,7 +1422,7 @@ public final class FriendMessages {
        *Передается то что мы ввели в строке поиска. либо имя игрока, либо его game-idшник
        * </pre>
        *
-       * <code>string strForSearch = 1;</code>
+       * <code>string strForSearch = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearStrForSearch() {
@@ -1366,7 +1436,7 @@ public final class FriendMessages {
        *Передается то что мы ввели в строке поиска. либо имя игрока, либо его game-idшник
        * </pre>
        *
-       * <code>string strForSearch = 1;</code>
+       * <code>string strForSearch = 2;</code>
        * @param value The bytes for strForSearch to set.
        * @return This builder for chaining.
        */
@@ -3433,10 +3503,10 @@ public final class FriendMessages {
     int getSelfId();
 
     /**
-     * <code>int32 confirm_friend_id = 2;</code>
-     * @return The confirmFriendId.
+     * <code>int32 friend_id = 2;</code>
+     * @return The friendId.
      */
-    int getConfirmFriendId();
+    int getFriendId();
 
     /**
      * <code>int32 ConfirmFriendStatus = 3;</code>
@@ -3500,7 +3570,7 @@ public final class FriendMessages {
             }
             case 16: {
 
-              confirmFriendId_ = input.readInt32();
+              friendId_ = input.readInt32();
               break;
             }
             case 24: {
@@ -3551,15 +3621,15 @@ public final class FriendMessages {
       return selfId_;
     }
 
-    public static final int CONFIRM_FRIEND_ID_FIELD_NUMBER = 2;
-    private int confirmFriendId_;
+    public static final int FRIEND_ID_FIELD_NUMBER = 2;
+    private int friendId_;
     /**
-     * <code>int32 confirm_friend_id = 2;</code>
-     * @return The confirmFriendId.
+     * <code>int32 friend_id = 2;</code>
+     * @return The friendId.
      */
     @java.lang.Override
-    public int getConfirmFriendId() {
-      return confirmFriendId_;
+    public int getFriendId() {
+      return friendId_;
     }
 
     public static final int CONFIRMFRIENDSTATUS_FIELD_NUMBER = 3;
@@ -3590,8 +3660,8 @@ public final class FriendMessages {
       if (selfId_ != 0) {
         output.writeInt32(1, selfId_);
       }
-      if (confirmFriendId_ != 0) {
-        output.writeInt32(2, confirmFriendId_);
+      if (friendId_ != 0) {
+        output.writeInt32(2, friendId_);
       }
       if (confirmFriendStatus_ != 0) {
         output.writeInt32(3, confirmFriendStatus_);
@@ -3609,9 +3679,9 @@ public final class FriendMessages {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(1, selfId_);
       }
-      if (confirmFriendId_ != 0) {
+      if (friendId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, confirmFriendId_);
+          .computeInt32Size(2, friendId_);
       }
       if (confirmFriendStatus_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -3634,8 +3704,8 @@ public final class FriendMessages {
 
       if (getSelfId()
           != other.getSelfId()) return false;
-      if (getConfirmFriendId()
-          != other.getConfirmFriendId()) return false;
+      if (getFriendId()
+          != other.getFriendId()) return false;
       if (getConfirmFriendStatus()
           != other.getConfirmFriendStatus()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -3651,8 +3721,8 @@ public final class FriendMessages {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + SELF_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSelfId();
-      hash = (37 * hash) + CONFIRM_FRIEND_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getConfirmFriendId();
+      hash = (37 * hash) + FRIEND_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getFriendId();
       hash = (37 * hash) + CONFIRMFRIENDSTATUS_FIELD_NUMBER;
       hash = (53 * hash) + getConfirmFriendStatus();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -3794,7 +3864,7 @@ public final class FriendMessages {
         super.clear();
         selfId_ = 0;
 
-        confirmFriendId_ = 0;
+        friendId_ = 0;
 
         confirmFriendStatus_ = 0;
 
@@ -3825,7 +3895,7 @@ public final class FriendMessages {
       public proto_files.FriendMessages.ConfirmationFriendResponse buildPartial() {
         proto_files.FriendMessages.ConfirmationFriendResponse result = new proto_files.FriendMessages.ConfirmationFriendResponse(this);
         result.selfId_ = selfId_;
-        result.confirmFriendId_ = confirmFriendId_;
+        result.friendId_ = friendId_;
         result.confirmFriendStatus_ = confirmFriendStatus_;
         onBuilt();
         return result;
@@ -3878,8 +3948,8 @@ public final class FriendMessages {
         if (other.getSelfId() != 0) {
           setSelfId(other.getSelfId());
         }
-        if (other.getConfirmFriendId() != 0) {
-          setConfirmFriendId(other.getConfirmFriendId());
+        if (other.getFriendId() != 0) {
+          setFriendId(other.getFriendId());
         }
         if (other.getConfirmFriendStatus() != 0) {
           setConfirmFriendStatus(other.getConfirmFriendStatus());
@@ -3944,33 +4014,33 @@ public final class FriendMessages {
         return this;
       }
 
-      private int confirmFriendId_ ;
+      private int friendId_ ;
       /**
-       * <code>int32 confirm_friend_id = 2;</code>
-       * @return The confirmFriendId.
+       * <code>int32 friend_id = 2;</code>
+       * @return The friendId.
        */
       @java.lang.Override
-      public int getConfirmFriendId() {
-        return confirmFriendId_;
+      public int getFriendId() {
+        return friendId_;
       }
       /**
-       * <code>int32 confirm_friend_id = 2;</code>
-       * @param value The confirmFriendId to set.
+       * <code>int32 friend_id = 2;</code>
+       * @param value The friendId to set.
        * @return This builder for chaining.
        */
-      public Builder setConfirmFriendId(int value) {
+      public Builder setFriendId(int value) {
         
-        confirmFriendId_ = value;
+        friendId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 confirm_friend_id = 2;</code>
+       * <code>int32 friend_id = 2;</code>
        * @return This builder for chaining.
        */
-      public Builder clearConfirmFriendId() {
+      public Builder clearFriendId() {
         
-        confirmFriendId_ = 0;
+        friendId_ = 0;
         onChanged();
         return this;
       }
@@ -4061,6 +4131,18 @@ public final class FriendMessages {
   public interface RemoveFriendRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:proto_files.RemoveFriendRequest)
       com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int32 self_id = 1;</code>
+     * @return The selfId.
+     */
+    int getSelfId();
+
+    /**
+     * <code>int32 friend_id = 2;</code>
+     * @return The friendId.
+     */
+    int getFriendId();
   }
   /**
    * <pre>
@@ -4111,6 +4193,16 @@ public final class FriendMessages {
             case 0:
               done = true;
               break;
+            case 8: {
+
+              selfId_ = input.readInt32();
+              break;
+            }
+            case 16: {
+
+              friendId_ = input.readInt32();
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -4143,6 +4235,28 @@ public final class FriendMessages {
               proto_files.FriendMessages.RemoveFriendRequest.class, proto_files.FriendMessages.RemoveFriendRequest.Builder.class);
     }
 
+    public static final int SELF_ID_FIELD_NUMBER = 1;
+    private int selfId_;
+    /**
+     * <code>int32 self_id = 1;</code>
+     * @return The selfId.
+     */
+    @java.lang.Override
+    public int getSelfId() {
+      return selfId_;
+    }
+
+    public static final int FRIEND_ID_FIELD_NUMBER = 2;
+    private int friendId_;
+    /**
+     * <code>int32 friend_id = 2;</code>
+     * @return The friendId.
+     */
+    @java.lang.Override
+    public int getFriendId() {
+      return friendId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -4157,6 +4271,12 @@ public final class FriendMessages {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (selfId_ != 0) {
+        output.writeInt32(1, selfId_);
+      }
+      if (friendId_ != 0) {
+        output.writeInt32(2, friendId_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -4166,6 +4286,14 @@ public final class FriendMessages {
       if (size != -1) return size;
 
       size = 0;
+      if (selfId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, selfId_);
+      }
+      if (friendId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, friendId_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -4181,6 +4309,10 @@ public final class FriendMessages {
       }
       proto_files.FriendMessages.RemoveFriendRequest other = (proto_files.FriendMessages.RemoveFriendRequest) obj;
 
+      if (getSelfId()
+          != other.getSelfId()) return false;
+      if (getFriendId()
+          != other.getFriendId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -4192,6 +4324,10 @@ public final class FriendMessages {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SELF_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSelfId();
+      hash = (37 * hash) + FRIEND_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getFriendId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -4329,6 +4465,10 @@ public final class FriendMessages {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        selfId_ = 0;
+
+        friendId_ = 0;
+
         return this;
       }
 
@@ -4355,6 +4495,8 @@ public final class FriendMessages {
       @java.lang.Override
       public proto_files.FriendMessages.RemoveFriendRequest buildPartial() {
         proto_files.FriendMessages.RemoveFriendRequest result = new proto_files.FriendMessages.RemoveFriendRequest(this);
+        result.selfId_ = selfId_;
+        result.friendId_ = friendId_;
         onBuilt();
         return result;
       }
@@ -4403,6 +4545,12 @@ public final class FriendMessages {
 
       public Builder mergeFrom(proto_files.FriendMessages.RemoveFriendRequest other) {
         if (other == proto_files.FriendMessages.RemoveFriendRequest.getDefaultInstance()) return this;
+        if (other.getSelfId() != 0) {
+          setSelfId(other.getSelfId());
+        }
+        if (other.getFriendId() != 0) {
+          setFriendId(other.getFriendId());
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -4429,6 +4577,68 @@ public final class FriendMessages {
             mergeFrom(parsedMessage);
           }
         }
+        return this;
+      }
+
+      private int selfId_ ;
+      /**
+       * <code>int32 self_id = 1;</code>
+       * @return The selfId.
+       */
+      @java.lang.Override
+      public int getSelfId() {
+        return selfId_;
+      }
+      /**
+       * <code>int32 self_id = 1;</code>
+       * @param value The selfId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSelfId(int value) {
+        
+        selfId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 self_id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSelfId() {
+        
+        selfId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int friendId_ ;
+      /**
+       * <code>int32 friend_id = 2;</code>
+       * @return The friendId.
+       */
+      @java.lang.Override
+      public int getFriendId() {
+        return friendId_;
+      }
+      /**
+       * <code>int32 friend_id = 2;</code>
+       * @param value The friendId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFriendId(int value) {
+        
+        friendId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 friend_id = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFriendId() {
+        
+        friendId_ = 0;
+        onChanged();
         return this;
       }
       @java.lang.Override
@@ -5837,20 +6047,21 @@ public final class FriendMessages {
     java.lang.String[] descriptorData = {
       "\n\024FriendMessages.proto\022\013proto_files\"4\n\006f" +
       "riend\022\n\n\002id\030\001 \001(\005\022\014\n\004name\030\002 \001(\t\022\020\n\010troph" +
-      "ies\030\003 \001(\005\"*\n\022FindFriendsRequest\022\024\n\014strFo" +
-      "rSearch\030\001 \001(\t\";\n\023FindFriendsResponse\022$\n\007" +
-      "friends\030\001 \003(\0132\023.proto_files.friend\"8\n\022Ma" +
-      "keFriendsRequest\022\017\n\007self_id\030\001 \001(\005\022\021\n\tfri" +
-      "end_id\030\002 \001(\005\"@\n\031ConfirmationFriendReques" +
-      "t\022#\n\006friend\030\001 \001(\0132\023.proto_files.friend\"e" +
-      "\n\032ConfirmationFriendResponse\022\017\n\007self_id\030" +
-      "\001 \001(\005\022\031\n\021confirm_friend_id\030\002 \001(\005\022\033\n\023Conf" +
-      "irmFriendStatus\030\003 \001(\005\"\025\n\023RemoveFriendReq" +
-      "uest\"+\n\030UpdateFriendsListRequest\022\017\n\007self" +
-      "_id\030\001 \001(\005\"A\n\031UpdateFriendsListResponse\022$" +
-      "\n\007friends\030\001 \003(\0132\023.proto_files.friend*.\n\023" +
-      "ConfirmFriendStatus\022\n\n\006ACCEPT\020\000\022\013\n\007DISMI" +
-      "SS\020\001B\020B\016FriendMessagesb\006proto3"
+      "ies\030\003 \001(\005\";\n\022FindFriendsRequest\022\017\n\007user_" +
+      "id\030\001 \001(\005\022\024\n\014strForSearch\030\002 \001(\t\";\n\023FindFr" +
+      "iendsResponse\022$\n\007friends\030\001 \003(\0132\023.proto_f" +
+      "iles.friend\"8\n\022MakeFriendsRequest\022\017\n\007sel" +
+      "f_id\030\001 \001(\005\022\021\n\tfriend_id\030\002 \001(\005\"@\n\031Confirm" +
+      "ationFriendRequest\022#\n\006friend\030\001 \001(\0132\023.pro" +
+      "to_files.friend\"]\n\032ConfirmationFriendRes" +
+      "ponse\022\017\n\007self_id\030\001 \001(\005\022\021\n\tfriend_id\030\002 \001(" +
+      "\005\022\033\n\023ConfirmFriendStatus\030\003 \001(\005\"9\n\023Remove" +
+      "FriendRequest\022\017\n\007self_id\030\001 \001(\005\022\021\n\tfriend" +
+      "_id\030\002 \001(\005\"+\n\030UpdateFriendsListRequest\022\017\n" +
+      "\007self_id\030\001 \001(\005\"A\n\031UpdateFriendsListRespo" +
+      "nse\022$\n\007friends\030\001 \003(\0132\023.proto_files.frien" +
+      "d*.\n\023ConfirmFriendStatus\022\n\n\006ACCEPT\020\000\022\013\n\007" +
+      "DISMISS\020\001B\020B\016FriendMessagesb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -5867,7 +6078,7 @@ public final class FriendMessages {
     internal_static_proto_files_FindFriendsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_files_FindFriendsRequest_descriptor,
-        new java.lang.String[] { "StrForSearch", });
+        new java.lang.String[] { "UserId", "StrForSearch", });
     internal_static_proto_files_FindFriendsResponse_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_proto_files_FindFriendsResponse_fieldAccessorTable = new
@@ -5891,13 +6102,13 @@ public final class FriendMessages {
     internal_static_proto_files_ConfirmationFriendResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_files_ConfirmationFriendResponse_descriptor,
-        new java.lang.String[] { "SelfId", "ConfirmFriendId", "ConfirmFriendStatus", });
+        new java.lang.String[] { "SelfId", "FriendId", "ConfirmFriendStatus", });
     internal_static_proto_files_RemoveFriendRequest_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_proto_files_RemoveFriendRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_files_RemoveFriendRequest_descriptor,
-        new java.lang.String[] { });
+        new java.lang.String[] { "SelfId", "FriendId", });
     internal_static_proto_files_UpdateFriendsListRequest_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_proto_files_UpdateFriendsListRequest_fieldAccessorTable = new

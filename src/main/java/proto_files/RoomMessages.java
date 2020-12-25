@@ -3825,15 +3825,19 @@ public final class RoomMessages {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.proto_files.StatusRoom status_room = 1;</code>
-     * @return The enum numeric value on the wire for statusRoom.
+     * <code>.proto_files.Room room = 1;</code>
+     * @return Whether the room field is set.
      */
-    int getStatusRoomValue();
+    boolean hasRoom();
     /**
-     * <code>.proto_files.StatusRoom status_room = 1;</code>
-     * @return The statusRoom.
+     * <code>.proto_files.Room room = 1;</code>
+     * @return The room.
      */
-    proto_files.RoomMessages.StatusRoom getStatusRoom();
+    proto_files.RoomMessages.Room getRoom();
+    /**
+     * <code>.proto_files.Room room = 1;</code>
+     */
+    proto_files.RoomMessages.RoomOrBuilder getRoomOrBuilder();
   }
   /**
    * <pre>
@@ -3854,7 +3858,6 @@ public final class RoomMessages {
       super(builder);
     }
     private CreateNewRoomResponse() {
-      statusRoom_ = 0;
     }
 
     @java.lang.Override
@@ -3887,10 +3890,17 @@ public final class RoomMessages {
             case 0:
               done = true;
               break;
-            case 8: {
-              int rawValue = input.readEnum();
+            case 10: {
+              proto_files.RoomMessages.Room.Builder subBuilder = null;
+              if (room_ != null) {
+                subBuilder = room_.toBuilder();
+              }
+              room_ = input.readMessage(proto_files.RoomMessages.Room.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(room_);
+                room_ = subBuilder.buildPartial();
+              }
 
-              statusRoom_ = rawValue;
               break;
             }
             default: {
@@ -3925,23 +3935,30 @@ public final class RoomMessages {
               proto_files.RoomMessages.CreateNewRoomResponse.class, proto_files.RoomMessages.CreateNewRoomResponse.Builder.class);
     }
 
-    public static final int STATUS_ROOM_FIELD_NUMBER = 1;
-    private int statusRoom_;
+    public static final int ROOM_FIELD_NUMBER = 1;
+    private proto_files.RoomMessages.Room room_;
     /**
-     * <code>.proto_files.StatusRoom status_room = 1;</code>
-     * @return The enum numeric value on the wire for statusRoom.
+     * <code>.proto_files.Room room = 1;</code>
+     * @return Whether the room field is set.
      */
-    @java.lang.Override public int getStatusRoomValue() {
-      return statusRoom_;
+    @java.lang.Override
+    public boolean hasRoom() {
+      return room_ != null;
     }
     /**
-     * <code>.proto_files.StatusRoom status_room = 1;</code>
-     * @return The statusRoom.
+     * <code>.proto_files.Room room = 1;</code>
+     * @return The room.
      */
-    @java.lang.Override public proto_files.RoomMessages.StatusRoom getStatusRoom() {
-      @SuppressWarnings("deprecation")
-      proto_files.RoomMessages.StatusRoom result = proto_files.RoomMessages.StatusRoom.valueOf(statusRoom_);
-      return result == null ? proto_files.RoomMessages.StatusRoom.UNRECOGNIZED : result;
+    @java.lang.Override
+    public proto_files.RoomMessages.Room getRoom() {
+      return room_ == null ? proto_files.RoomMessages.Room.getDefaultInstance() : room_;
+    }
+    /**
+     * <code>.proto_files.Room room = 1;</code>
+     */
+    @java.lang.Override
+    public proto_files.RoomMessages.RoomOrBuilder getRoomOrBuilder() {
+      return getRoom();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -3958,8 +3975,8 @@ public final class RoomMessages {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (statusRoom_ != proto_files.RoomMessages.StatusRoom.B.getNumber()) {
-        output.writeEnum(1, statusRoom_);
+      if (room_ != null) {
+        output.writeMessage(1, getRoom());
       }
       unknownFields.writeTo(output);
     }
@@ -3970,9 +3987,9 @@ public final class RoomMessages {
       if (size != -1) return size;
 
       size = 0;
-      if (statusRoom_ != proto_files.RoomMessages.StatusRoom.B.getNumber()) {
+      if (room_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(1, statusRoom_);
+          .computeMessageSize(1, getRoom());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3989,7 +4006,11 @@ public final class RoomMessages {
       }
       proto_files.RoomMessages.CreateNewRoomResponse other = (proto_files.RoomMessages.CreateNewRoomResponse) obj;
 
-      if (statusRoom_ != other.statusRoom_) return false;
+      if (hasRoom() != other.hasRoom()) return false;
+      if (hasRoom()) {
+        if (!getRoom()
+            .equals(other.getRoom())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -4001,8 +4022,10 @@ public final class RoomMessages {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + STATUS_ROOM_FIELD_NUMBER;
-      hash = (53 * hash) + statusRoom_;
+      if (hasRoom()) {
+        hash = (37 * hash) + ROOM_FIELD_NUMBER;
+        hash = (53 * hash) + getRoom().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -4142,8 +4165,12 @@ public final class RoomMessages {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        statusRoom_ = 0;
-
+        if (roomBuilder_ == null) {
+          room_ = null;
+        } else {
+          room_ = null;
+          roomBuilder_ = null;
+        }
         return this;
       }
 
@@ -4170,7 +4197,11 @@ public final class RoomMessages {
       @java.lang.Override
       public proto_files.RoomMessages.CreateNewRoomResponse buildPartial() {
         proto_files.RoomMessages.CreateNewRoomResponse result = new proto_files.RoomMessages.CreateNewRoomResponse(this);
-        result.statusRoom_ = statusRoom_;
+        if (roomBuilder_ == null) {
+          result.room_ = room_;
+        } else {
+          result.room_ = roomBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -4219,8 +4250,8 @@ public final class RoomMessages {
 
       public Builder mergeFrom(proto_files.RoomMessages.CreateNewRoomResponse other) {
         if (other == proto_files.RoomMessages.CreateNewRoomResponse.getDefaultInstance()) return this;
-        if (other.statusRoom_ != 0) {
-          setStatusRoomValue(other.getStatusRoomValue());
+        if (other.hasRoom()) {
+          mergeRoom(other.getRoom());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -4251,58 +4282,123 @@ public final class RoomMessages {
         return this;
       }
 
-      private int statusRoom_ = 0;
+      private proto_files.RoomMessages.Room room_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          proto_files.RoomMessages.Room, proto_files.RoomMessages.Room.Builder, proto_files.RoomMessages.RoomOrBuilder> roomBuilder_;
       /**
-       * <code>.proto_files.StatusRoom status_room = 1;</code>
-       * @return The enum numeric value on the wire for statusRoom.
+       * <code>.proto_files.Room room = 1;</code>
+       * @return Whether the room field is set.
        */
-      @java.lang.Override public int getStatusRoomValue() {
-        return statusRoom_;
+      public boolean hasRoom() {
+        return roomBuilder_ != null || room_ != null;
       }
       /**
-       * <code>.proto_files.StatusRoom status_room = 1;</code>
-       * @param value The enum numeric value on the wire for statusRoom to set.
-       * @return This builder for chaining.
+       * <code>.proto_files.Room room = 1;</code>
+       * @return The room.
        */
-      public Builder setStatusRoomValue(int value) {
-        
-        statusRoom_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.proto_files.StatusRoom status_room = 1;</code>
-       * @return The statusRoom.
-       */
-      @java.lang.Override
-      public proto_files.RoomMessages.StatusRoom getStatusRoom() {
-        @SuppressWarnings("deprecation")
-        proto_files.RoomMessages.StatusRoom result = proto_files.RoomMessages.StatusRoom.valueOf(statusRoom_);
-        return result == null ? proto_files.RoomMessages.StatusRoom.UNRECOGNIZED : result;
-      }
-      /**
-       * <code>.proto_files.StatusRoom status_room = 1;</code>
-       * @param value The statusRoom to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStatusRoom(proto_files.RoomMessages.StatusRoom value) {
-        if (value == null) {
-          throw new NullPointerException();
+      public proto_files.RoomMessages.Room getRoom() {
+        if (roomBuilder_ == null) {
+          return room_ == null ? proto_files.RoomMessages.Room.getDefaultInstance() : room_;
+        } else {
+          return roomBuilder_.getMessage();
         }
-        
-        statusRoom_ = value.getNumber();
-        onChanged();
+      }
+      /**
+       * <code>.proto_files.Room room = 1;</code>
+       */
+      public Builder setRoom(proto_files.RoomMessages.Room value) {
+        if (roomBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          room_ = value;
+          onChanged();
+        } else {
+          roomBuilder_.setMessage(value);
+        }
+
         return this;
       }
       /**
-       * <code>.proto_files.StatusRoom status_room = 1;</code>
-       * @return This builder for chaining.
+       * <code>.proto_files.Room room = 1;</code>
        */
-      public Builder clearStatusRoom() {
-        
-        statusRoom_ = 0;
-        onChanged();
+      public Builder setRoom(
+          proto_files.RoomMessages.Room.Builder builderForValue) {
+        if (roomBuilder_ == null) {
+          room_ = builderForValue.build();
+          onChanged();
+        } else {
+          roomBuilder_.setMessage(builderForValue.build());
+        }
+
         return this;
+      }
+      /**
+       * <code>.proto_files.Room room = 1;</code>
+       */
+      public Builder mergeRoom(proto_files.RoomMessages.Room value) {
+        if (roomBuilder_ == null) {
+          if (room_ != null) {
+            room_ =
+              proto_files.RoomMessages.Room.newBuilder(room_).mergeFrom(value).buildPartial();
+          } else {
+            room_ = value;
+          }
+          onChanged();
+        } else {
+          roomBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.proto_files.Room room = 1;</code>
+       */
+      public Builder clearRoom() {
+        if (roomBuilder_ == null) {
+          room_ = null;
+          onChanged();
+        } else {
+          room_ = null;
+          roomBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.proto_files.Room room = 1;</code>
+       */
+      public proto_files.RoomMessages.Room.Builder getRoomBuilder() {
+        
+        onChanged();
+        return getRoomFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.proto_files.Room room = 1;</code>
+       */
+      public proto_files.RoomMessages.RoomOrBuilder getRoomOrBuilder() {
+        if (roomBuilder_ != null) {
+          return roomBuilder_.getMessageOrBuilder();
+        } else {
+          return room_ == null ?
+              proto_files.RoomMessages.Room.getDefaultInstance() : room_;
+        }
+      }
+      /**
+       * <code>.proto_files.Room room = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          proto_files.RoomMessages.Room, proto_files.RoomMessages.Room.Builder, proto_files.RoomMessages.RoomOrBuilder> 
+          getRoomFieldBuilder() {
+        if (roomBuilder_ == null) {
+          roomBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              proto_files.RoomMessages.Room, proto_files.RoomMessages.Room.Builder, proto_files.RoomMessages.RoomOrBuilder>(
+                  getRoom(),
+                  getParentForChildren(),
+                  isClean());
+          room_ = null;
+        }
+        return roomBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -8264,17 +8360,17 @@ public final class RoomMessages {
       "\006Bounce\030\004 \001(\005\"\"\n\024CreateNewRoomRequest\022\n\n" +
       "\002id\030\001 \001(\005\"Z\n\025ChangeSettingsRequest\022\017\n\007ro" +
       "om_id\030\001 \001(\005\0220\n\rroom_settings\030\002 \001(\0132\031.pro" +
-      "to_files.RoomSettings\"E\n\025CreateNewRoomRe" +
-      "sponse\022,\n\013status_room\030\001 \001(\0162\027.proto_file" +
-      "s.StatusRoom\"-\n\nUpdateRoom\022\037\n\004room\030\001 \001(\013" +
-      "2\021.proto_files.Room\"2\n\023AppendToRoomReque" +
-      "st\022\n\n\002id\030\001 \001(\005\022\017\n\007id_room\030\002 \001(\005\"7\n\024Appen" +
-      "dToRoomResponse\022\037\n\004room\030\001 \001(\0132\021.proto_fi" +
-      "les.Room\"\025\n\023ExitFromRoomRequest\"\026\n\024ExitF" +
-      "romRoomResponse\"\037\n\021RandomRoomRequest\022\n\n\002" +
-      "id\030\001 \001(\005\"5\n\022RandomRoomResponse\022\037\n\004room\030\001" +
-      " \001(\0132\021.proto_files.Room*\023\n\nStatusRoom\022\005\n" +
-      "\001B\020\000B\016B\014RoomMessagesb\006proto3"
+      "to_files.RoomSettings\"8\n\025CreateNewRoomRe" +
+      "sponse\022\037\n\004room\030\001 \001(\0132\021.proto_files.Room\"" +
+      "-\n\nUpdateRoom\022\037\n\004room\030\001 \001(\0132\021.proto_file" +
+      "s.Room\"2\n\023AppendToRoomRequest\022\n\n\002id\030\001 \001(" +
+      "\005\022\017\n\007id_room\030\002 \001(\005\"7\n\024AppendToRoomRespon" +
+      "se\022\037\n\004room\030\001 \001(\0132\021.proto_files.Room\"\025\n\023E" +
+      "xitFromRoomRequest\"\026\n\024ExitFromRoomRespon" +
+      "se\"\037\n\021RandomRoomRequest\022\n\n\002id\030\001 \001(\005\"5\n\022R" +
+      "andomRoomResponse\022\037\n\004room\030\001 \001(\0132\021.proto_" +
+      "files.Room*\023\n\nStatusRoom\022\005\n\001B\020\000B\016B\014RoomM" +
+      "essagesb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -8315,7 +8411,7 @@ public final class RoomMessages {
     internal_static_proto_files_CreateNewRoomResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_files_CreateNewRoomResponse_descriptor,
-        new java.lang.String[] { "StatusRoom", });
+        new java.lang.String[] { "Room", });
     internal_static_proto_files_UpdateRoom_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_proto_files_UpdateRoom_fieldAccessorTable = new
