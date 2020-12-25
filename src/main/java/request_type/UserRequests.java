@@ -47,7 +47,7 @@ public class UserRequests implements UserRequests_I{
         try {
             User user = userDB.GetUser(android_id);
             Managers.getUserManager().AddToOnline(user);
-            return (UserMessages.UserResponse.Builder) user.Serialize();
+            return UserMessages.UserResponse.newBuilder().setUser((UserMessages.user.Builder) user.Serialize());
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
@@ -55,6 +55,6 @@ public class UserRequests implements UserRequests_I{
     }
 
     UserMessages.UserResponse UpdateExistingUser(int user_id) throws NoSuchUserException{
-        return (UserMessages.UserResponse) Managers.getUserManager().GetUser(user_id).Serialize().build();
+        return UserMessages.UserResponse.newBuilder().setUser((UserMessages.user.Builder) Managers.getUserManager().GetUser(user_id).Serialize()).build();
     }
 }

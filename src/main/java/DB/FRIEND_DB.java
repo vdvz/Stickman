@@ -13,7 +13,7 @@ public class FRIEND_DB implements FRIEND_DB_I{
     public synchronized List<Friend> FindAllFriend(String find_query) throws SQLException {
         List<Friend> list = new ArrayList<>();
         MyConnection_I Connection = DB.getInstance().getConnection();
-        String query = "SELECT id, name, trophies FROM users WHERE name like '" + find_query+"' or id==" + find_query +";";
+        String query = "SELECT id, name, trophies FROM users WHERE name like '" + find_query+"' or id=" + find_query +";";
         ResultSet result = Connection.executeQuery(query);
         while(result.next()){
             list.add(new Friend(result.getInt("id"), result.getString("name"), result.getInt("trophies")));
@@ -25,8 +25,8 @@ public class FRIEND_DB implements FRIEND_DB_I{
     @Override
     public synchronized void MakeRequestForFriend(String from, String to) throws SQLException {
         MyConnection_I Connection = DB.getInstance().getConnection();
-        String query = "SELECT COUNT(*) AS count, status FROM friends WHERE (user_id==" + from + " and friend_id==" + to + ") " +
-                " or (user_id==" + to + " and friend_id==" + from + ") GROUP BY status;";
+        String query = "SELECT COUNT(*) AS count, status FROM friends WHERE (user_id=" + from + " and friend_id=" + to + ") " +
+                " or (user_id=" + to + " and friend_id=" + from + ") GROUP BY status;";
         ResultSet result  = Connection.executeQuery(query);
         while(result.next()){
             if(result.getInt("count") != 0){
@@ -56,7 +56,7 @@ public class FRIEND_DB implements FRIEND_DB_I{
     public void ConfirmRequestForFriend(String from, String to) throws SQLException {
         MyConnection_I Connection = DB.getInstance().getConnection();
         String query = "SELECT status, COUNT(friendship_id) AS count " +
-                "FROM friends WHERE user_id==" + from + " and friend_id==" + to + " GROUP BY status;";
+                "FROM friends WHERE user_id=" + from + " and friend_id=" + to + " GROUP BY status;";
         ResultSet result  = Connection.executeQuery(query);
         boolean allRight = false;
         while(result.next()){
@@ -74,8 +74,8 @@ public class FRIEND_DB implements FRIEND_DB_I{
         if(!allRight) {}// todo throw excpetion that indicate that there was no incoming status
 
         query = "SELECT user_id, friend_id, status FROM friends WHERE " +
-                "(user_id==" + from + " and friend_id==" + to + " and status==" + FRIEND_STATUS.INCOMING + ") " +
-                "(user_id==" + to + " and friend_id==" + from + " and status==" + FRIEND_STATUS.OUTGOING + ");";
+                "(user_id=" + from + " and friend_id=" + to + " and status=" + FRIEND_STATUS.INCOMING + ") " +
+                "(user_id=" + to + " and friend_id=" + from + " and status=" + FRIEND_STATUS.OUTGOING + ");";
         result = Connection.executeQuery(query);
         while(result.next()) {
             result.updateInt("status", FRIEND_STATUS.FRIENDSHIP.ordinal());
@@ -88,8 +88,8 @@ public class FRIEND_DB implements FRIEND_DB_I{
     @Override
     public synchronized void RemoveFriend(String from, String to) throws SQLException {
         MyConnection_I Connection = DB.getInstance().getConnection();
-        String query = "DELETE FROM friends WHERE (user_id==" + from + " and friend_id==" + to
-                + ") or (user_id==" + to + " and friend_id==" + from + ");";
+        String query = "DELETE FROM friends WHERE (user_id=" + from + " and friend_id=" + to
+                + ") or (user_id=" + to + " and friend_id=" + from + ");";
 
         Connection.execute(query);
         DB.getInstance().releaseConnection(Connection);
@@ -100,7 +100,7 @@ public class FRIEND_DB implements FRIEND_DB_I{
         List<Friend> list = new ArrayList<>();
         MyConnection_I Connection = DB.getInstance().getConnection();
         String query = "SELECT u.id AS id, u.name AS name, u.trophies AS trophies FROM friends AS f INNER JOIN users AS u " +
-                "ON f.friend_id=u.id WHERE f.user_id==" + user_id + " and status==" + FRIEND_STATUS.FRIENDSHIP + ";";
+                "ON f.friend_id=u.id WHERE f.user_id=" + user_id + " and status=" + FRIEND_STATUS.FRIENDSHIP + ";";
         ResultSet result = Connection.executeQuery(query);
         while(result.next()){
             list.add(new Friend(result.getInt("id"), result.getString("name"), result.getInt("trophies")));

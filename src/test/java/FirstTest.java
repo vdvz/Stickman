@@ -53,6 +53,7 @@ public class FirstTest {
     static void initAll(){
     }
 
+    @Test
     void testUserDB(){
         try {
             int set_money = 199;
@@ -71,7 +72,6 @@ public class FirstTest {
         }
     }
 
-    //resquests
     @Test
     void newUserRequest(){
         try {

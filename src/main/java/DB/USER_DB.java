@@ -30,13 +30,15 @@ public class USER_DB implements USER_DB_I{
     @Override
     public synchronized void SaveUser(User user) throws SQLException {
         MyConnection_I Connection = DB.getInstance().getConnection();
-        String qr = "SELECT * FROM user WHERE user_id==" + user.getId() + ";";
+        String qr = "SELECT * FROM users WHERE id=" + user.getId() + ";";
         ResultSet result = Connection.executeQuery(qr);
-        result.updateInt("money", user.getMoney());
-        result.updateInt("trophies", user.getTrophies());
-        result.updateInt("count_win", user.getCount_win());
-        result.updateInt("count_loss", user.getCount_loss());
-        result.updateRow();
+        if(result.next()) {
+            result.updateInt("money", user.getMoney());
+            result.updateInt("trophies", user.getTrophies());
+            result.updateInt("count_win", user.getCount_win());
+            result.updateInt("count_loss", user.getCount_loss());
+            result.updateRow();
+        }
         DB.getInstance().releaseConnection(Connection);
     }
 

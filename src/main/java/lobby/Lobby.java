@@ -21,7 +21,7 @@ public class Lobby implements Lobby_I, Updatable_I {
     private static final Lobby_I Instance = new Lobby();
     public static Lobby_I getInstance(){ return Instance;}
     private  Lobby(){
-        IntStream.range(0, maxIdRoom).boxed().forEach(IDS::add);
+        //IntStream.range(0, maxIdRoom).boxed().forEach(IDS::add);
     }
 
     static final ArrayBlockingQueue<Integer> IDS = new ArrayBlockingQueue(maxIdRoom);

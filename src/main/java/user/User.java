@@ -14,7 +14,7 @@ import java.util.*;
 public class User implements ProtobufSerializable, USER_I {
 
     private final int id;
-    private String name;
+    private String name = "null";
     private USER_STATUS Status;
     private ChannelHandlerContext channelHandlerContext;
     private int money = 0;
@@ -143,7 +143,7 @@ public class User implements ProtobufSerializable, USER_I {
     @Override
     public MessageLite.Builder Serialize() {
         return UserMessages.user.newBuilder().setId(getId())
-                .setName(getName())
+                .setName(getName()==null ? "null" : getName())
                 .setMoney(getMoney())
                 .setTrophies(getTrophies());
     }
