@@ -25,7 +25,7 @@ public class Point implements ProtobufSerializable {
     }
 
     @Override
-    public MessageLite Serialize() {
-        return GameMessages.Point.newBuilder().setX(getX()).setY(getY()).build();
+    public MessageLite.Builder Serialize() {
+        return GameMessages.Point.newBuilder().setX(getX()).setY(getY());
     }
 }

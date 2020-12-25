@@ -32,7 +32,7 @@ public class Game implements Game_I {
         Bounce = bounce;
     }
 
-    Game(int game_id) {
+    public Game(int game_id) {
         Id = game_id;
     }
 

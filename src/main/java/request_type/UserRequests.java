@@ -5,6 +5,7 @@ import DB.USER_DB_I;
 import com.google.protobuf.MessageLite;
 import exceptions.NoSuchUserException;
 import exceptions.UnknownTypeOfRequest;
+import io.netty.channel.ChannelHandlerContext;
 import managers.Managers;
 import proto_files.DangerStickman;
 import proto_files.UserMessages;
@@ -38,16 +39,15 @@ public class UserRequests implements UserRequests_I{
             } catch(NoSuchUserException e){
                 //todo handle error
             }
-
         }
         throw new UnknownTypeOfRequest();
     }
 
-    UserMessages.UserResponse LoadNewUser(String android_id){
+    UserMessages.UserResponse.Builder LoadNewUser(String android_id){
         try {
             User user = userDB.GetUser(android_id);
             Managers.getUserManager().AddToOnline(user);
-            return (UserMessages.UserResponse) user.Serialize();
+            return (UserMessages.UserResponse.Builder) user.Serialize();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
@@ -55,6 +55,6 @@ public class UserRequests implements UserRequests_I{
     }
 
     UserMessages.UserResponse UpdateExistingUser(int user_id) throws NoSuchUserException{
-        return (UserMessages.UserResponse) Managers.getUserManager().GetUser(user_id).Serialize();
+        return (UserMessages.UserResponse) Managers.getUserManager().GetUser(user_id).Serialize().build();
     }
 }

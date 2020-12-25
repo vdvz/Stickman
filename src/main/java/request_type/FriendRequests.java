@@ -54,7 +54,7 @@ public class FriendRequests implements FriendRequests_I{
             throwables.printStackTrace();
         }
         FriendMessages.FindFriendsResponse.Builder builder = FriendMessages.FindFriendsResponse.newBuilder();
-        finded.forEach(e -> builder.addFriends((FriendMessages.friend) e.Serialize()));
+        finded.forEach(e -> builder.addFriends((FriendMessages.friend.Builder) e.Serialize()));
         return builder;
     }
 
@@ -74,7 +74,7 @@ public class FriendRequests implements FriendRequests_I{
             return;
         }
 
-        toUser.send((DangerStickman.PacketWrapper) new Friend(fromUser.getId(), fromUser.getName(), fromUser.getTrophies()).Serialize());
+        toUser.SendConfirmationRequest(new Friend(fromUser.getId(), fromUser.getName(), fromUser.getTrophies()));
     }
 
     private void ConfirmFriendship(Integer from, Integer to, int status){
@@ -95,16 +95,20 @@ public class FriendRequests implements FriendRequests_I{
             User toUser = null;
             try{
                 fromUser = Managers.getUserManager().GetUser(from);
-                //TODO logic
+                fromUser.ConfirmFriendship(friendDB.GetFriend(to.toString()));
             } catch (NoSuchElementException e){
 
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
             }
 
             try{
                 toUser = Managers.getUserManager().GetUser(to);
-                //TODO logic
+                toUser.ConfirmFriendship(friendDB.GetFriend(from.toString()));
             } catch (NoSuchElementException e){
 
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
             }
         }
     }
@@ -119,14 +123,14 @@ public class FriendRequests implements FriendRequests_I{
         User toUser = null;
         try{
             fromUser = Managers.getUserManager().GetUser(from);
-            //TODO logic
+            fromUser.RemoveFriend(to);
         } catch (NoSuchElementException e){
 
         }
 
         try{
             toUser = Managers.getUserManager().GetUser(to);
-            //TODO logic
+            toUser.RemoveFriend(from);
         } catch (NoSuchElementException e){
 
         }

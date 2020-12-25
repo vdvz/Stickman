@@ -1,5 +1,6 @@
 package DB;
 
+import exceptions.NoSuchUserException;
 import friend.Friend;
 
 import java.sql.ResultSet;
@@ -107,4 +108,15 @@ public class FRIEND_DB implements FRIEND_DB_I{
         DB.getInstance().releaseConnection(Connection);
         return list;
     }
+
+    public Friend GetFriend(String user_id) throws SQLException, NoSuchUserException {
+        MyConnection_I Connection = DB.getInstance().getConnection();
+        String query = "SELECT id, name, trophies FROM users WHERE id=" + user_id + ";";
+        ResultSet result = Connection.executeQuery(query);
+        if(!result.next()) throw new NoSuchUserException();
+        Friend friend = new Friend(result.getInt("id"), result.getString("name"), result.getInt("trophies"));
+        DB.getInstance().releaseConnection(Connection);
+        return friend;
+    }
+
 }

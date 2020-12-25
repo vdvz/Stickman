@@ -62,13 +62,13 @@ public class Player extends Player_A implements ProtobufSerializable {
     }
 
     @Override
-    public MessageLite Serialize() {
+    public MessageLite.Builder Serialize() {
         return GameMessages.Player.newBuilder()
                 .setId(getId())
-                .setPlayerPosition((GameMessages.PlayerPosition) getPlayerPosition().Serialize())
+                .setPlayerPosition((GameMessages.PlayerPosition.Builder) getPlayerPosition().Serialize())
                 .setName(getName())
                 .setPlayerHealth(getHealth())
-                .setPlayerStatus(getStatus()).build();
+                .setPlayerStatus(getStatus());
     }
 
 }

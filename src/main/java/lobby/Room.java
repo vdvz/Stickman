@@ -106,7 +106,7 @@ public class Room implements Room_I, ProtobufSerializable {
     }
 
     @Override
-    public MessageLite Serialize() {
+    public MessageLite.Builder Serialize() {
         return RoomMessages.Room.newBuilder()
                 .setAdmin(getAdmin().getId())
                 //.addAllPlayer()
@@ -114,8 +114,7 @@ public class Room implements Room_I, ProtobufSerializable {
                         .setBounce(getBounce())
                         .setDamage(getDamage())
                         .setGravity(getGravity())
-                        .setSpeed(getSpeed()))
-                .build();
+                        .setSpeed(getSpeed()));
     }
 
     public String getName() {

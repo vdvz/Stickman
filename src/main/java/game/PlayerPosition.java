@@ -74,11 +74,11 @@ public class PlayerPosition implements ProtobufSerializable {
     }
 
     @Override
-    public MessageLite Serialize() {
+    public MessageLite.Builder Serialize() {
         return GameMessages.PlayerPosition.newBuilder()
-                .setHeadPos((GameMessages.Point) getHeadPosition().Serialize())
-                .setLeftHandPos((GameMessages.Point) getLeftHandPosition().Serialize()).setRightHandPos((GameMessages.Point) getRightHandPosition().Serialize())
-                .setLeftFootPos((GameMessages.Point) getLeftFootPosition().Serialize()).setRightFootPos((GameMessages.Point) getRightFootPosition().Serialize())
-                .setShouldersPos((GameMessages.Point) getShoulderPosition().Serialize()).setGroinPos((GameMessages.Point) getGroinPosition().Serialize()).build();
+                .setHeadPos((GameMessages.Point.Builder) getHeadPosition().Serialize())
+                .setLeftHandPos((GameMessages.Point.Builder) getLeftHandPosition().Serialize()).setRightHandPos((GameMessages.Point.Builder) getRightHandPosition().Serialize())
+                .setLeftFootPos((GameMessages.Point.Builder) getLeftFootPosition().Serialize()).setRightFootPos((GameMessages.Point.Builder) getRightFootPosition().Serialize())
+                .setShouldersPos((GameMessages.Point.Builder) getShoulderPosition().Serialize()).setGroinPos((GameMessages.Point.Builder) getGroinPosition().Serialize());
     }
 }
